@@ -1,0 +1,44 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+#heading {
+  padding: 0;
+  margin: 0;
+}
+.cluster {
+  display: flex;
+}
+.cluster i {
+  margin: 0;
+  padding: 10px;
+}
+.cluster h1 {
+  padding: 10px;
+}
+#sos {
+  display: flex;
+  justify-content: center;
+}
+#sos button {
+  padding: 5em 10em;
+  border-radius: 2em;
+  background-color: lightcoral;
+  color: white;
+  transition-duration: 1s;
+}
+#sos button:hover {
+  box-shadow: 1em;
+  background-color: red;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.card img {
+  width: 360px;
+  height: 360px;
+}
+.cards {
+  margin-top: 15px;
+}
