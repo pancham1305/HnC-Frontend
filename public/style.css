@@ -38,95 +38,173 @@ html {
   margin-bottom: 10px;
 }
 
-.topnav #myLinks {
+/* .topnav #myLinks {
   display: none;
   margin-top: 60px;
-}
+} */
 
 .topnav a {
-  color: black;
-  padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
-  display: block;
+  color: black;
 }
-
+/* 
 .topnav .whole {
   margin-top: 20px;
-}
+} */
 
-
+/* 
 .topnav .extra {
-  background-color: rgba(15, 77, 234, 0.396);
+  background-color: rgba(20, 73, 207, 0.396);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
-}
+} */
 
-.topnav .options,
 .topnav .tile {
   display: flex;
   flex-direction: row;
   gap: 25px;
+  font-family: 'Franklin Gothic', Arial, sans-serif; 
 }
 
-.tile img{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-.options a:hover {
-  border-radius: 20px;
-  background-color: rgba(188, 23, 217, 0.222);
+.topnav .options{
+  margin: 10px;
+  padding: 15px;
+  cursor: pointer;
 }
 
 .topnav .tile h2 {
-  margin-top: 5px;
+  margin-top: 15px;
   font-size: 35px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.topnav .searchbar {
+/* .topnav .searchbar {
   width: 250px;
   height: 30px;
   margin-top: 10px;
 }
 
-.topnav .img {
-  object-fit: contain;
-  background-color: rgba(0, 187, 255, 0.53);
-  padding: 20px;
-  border-radius: 16px;
-  position: relative;
+.topnav .searchbar input {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-size: 18px;
+}
+.topnav .searchbar input:focus{
+  outline: 2px red solid;
+} */
+/* .topnav .searchbar input:focus{
+  border: 2px yellow solid;
+} */
+/* 
+.topnav .searchbar:focus{
+  border-color: #e8e925;
+}
+
+.topnav .searchbar button {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  cursor: pointer;
+} */
+
+/* Search Bar CSS Starts */
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+  margin-top: 10px;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Search Bar CSS Ends */
+
+.topnav img {
+  width: 70px;
+  height: 70px;
+  border-radius: 75%;
 }
 
 /* Navbar CSS Ends */
 
-/* SOS Button CSS Starts */
-.sos {
+/* Emergency Portion CSS Starts */
+.emergency {
   display: flex;
-  justify-content: center;
-  margin-top: 10px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  /* margin-top: 30px; */
+  /* margin-bottom: 30px; */
+  background-color: rgba(234, 255, 0, 0.593);
 }
 
-.sos button {
-  margin-top: 60px;
+.emergency span{
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  color: black;
+}
+/* Emergency Portion CSS Ends */
+
+/* SOS Button CSS Starts */
+.emergency .sos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.emergency .sos button {
+  margin: 20px;
   padding: 50px 60px;
   border-radius: 20em;
-  background-color: rgb(218, 46, 46);
-  color: black;
+  background-color: rgba(218, 46, 46, 0.67);
+  color: antiquewhite;
   font-size: 30px;
   font-weight: bold;
-  transition-duration: 1s;
+  transition-duration: 0.45s;
   cursor: pointer;
 }
 
-.sos button:hover {
+.emergency .sos button:hover {
   box-shadow: 1em;
-  background-color: rgba(255, 0, 0, 0.577);
+  background-color: rgba(44, 45, 130, 0.844);
 }
 
 /* SOS Button CSS Ends */
@@ -156,7 +234,7 @@ html {
   margin-left: 25px;
   margin-bottom: 30px;
   padding: 10px;
-  background-color: rgba(0, 187, 255, 0.284);
+  background-color: rgba(0, 187, 255, 0.177);
 }
 
 .card:hover {
@@ -381,3 +459,15 @@ html {
 }
 
 /* Contact Us Part CSS Ends*/
+
+input { 
+  outline: none;
+  border:none;
+}
+
+.searchbtnicon {
+  font-size: 16px;
+}
+.accicon {
+  font-size: 48px;
+}

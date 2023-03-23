@@ -7,14 +7,20 @@
     <title>HnC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+
     <script src="index.js"></script>
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <!-- Material Symbol -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="container">
         <div class="topnav">
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <i class="fa fa-bars" id="cbtn"></i>
             </a>
             <div class="whole">
@@ -23,25 +29,38 @@
                     <a href="#prohos" class="extra">Popular Hospitals Near Me</a>
                     <a href="#contact" class="extra">Contact Us</a>
                 </div>
-            </div>
+            </div> -->
             <div class="tile">
                 <div class="img">
-                    <img src="images\12.png">
+                    <img src="images\logo.png">
                 </div>
                 <h2>HnC</h2>
             </div>
+            <form class="example" action="#home">
+              <input type="text" placeholder="Search.." name="search">
+              <button type="submit"><span class="searchbtnicon material-symbols-outlined">
+                search
+                </span>
+              </button>
+            </form>
+            
+            <!-- <div class="searchbar">
+              <input type="text" placeholder="Search" style="padding: 3px; width: 90%; height:125%; border-radius: 10px;">
+              <i class="fa fa-search"></i>
+          </div> -->
             <div class="options">
-                <a href="#signin">Sign-In</a>
-                <a href="#login">Log-In</a>
-            </div>
-            <div class="searchbar">
-                <input type="text" placeholder="Search" style="padding: 3px">
-                <i class="fa fa-search"></i>
+              <span class="material-symbols-outlined">
+                 <a href="/login">account_circle</a>
+              </span>
             </div>
         </div>
     </div>
-    <div class="sos">
+    <div class="emergency">
+      <span id="nam">Emergency</span>
+      <div class="sos">
         <button>SOS</button>
+      </div>
+      <span id="nam">Emergency</span>
     </div>
     <div class="hospitals">
         <div class="card">
