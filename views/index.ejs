@@ -7,8 +7,14 @@
     <title>HnC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+
     <script src="index.js"></script>
+    <!-- Material Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <!-- Material Symbol -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -32,7 +38,10 @@
             </div>
             <form class="example" action="#home">
               <input type="text" placeholder="Search.." name="search">
-              <button type="submit"><i class="fa fa-search"></i></button>
+              <button type="submit"><span class="searchbtnicon material-symbols-outlined">
+                search
+                </span>
+              </button>
             </form>
             
             <!-- <div class="searchbar">
@@ -40,8 +49,9 @@
               <i class="fa fa-search"></i>
           </div> -->
             <div class="options">
-                <a href="#signin">Sign-In</a>
-                <a href="#login">Log-In</a>
+              <span class="material-symbols-outlined">
+                 <a href="/login">account_circle</a>
+              </span>
             </div>
         </div>
     </div>

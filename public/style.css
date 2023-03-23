@@ -44,11 +44,8 @@ html {
 } */
 
 .topnav a {
-  color: black;
-  padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
-  display: block;
+  color: black;
 }
 /* 
 .topnav .whole {
@@ -64,7 +61,6 @@ html {
   align-items: left;
 } */
 
-.topnav .options,
 .topnav .tile {
   display: flex;
   flex-direction: row;
@@ -73,12 +69,9 @@ html {
 }
 
 .topnav .options{
-  margin-top: 10px;
-}
-
-.options a:hover {
-  border-radius: 20px;
-  background-color: rgba(188, 23, 217, 0.222);
+  margin: 10px;
+  padding: 15px;
+  cursor: pointer;
 }
 
 .topnav .tile h2 {
@@ -241,7 +234,7 @@ form.example::after {
   margin-left: 25px;
   margin-bottom: 30px;
   padding: 10px;
-  background-color: rgba(0, 187, 255, 0.284);
+  background-color: rgba(0, 187, 255, 0.177);
 }
 
 .card:hover {
@@ -470,4 +463,11 @@ form.example::after {
 input { 
   outline: none;
   border:none;
+}
+
+.searchbtnicon {
+  font-size: 16px;
+}
+.accicon {
+  font-size: 48px;
 }

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- import register.css -->
+  <link rel="stylesheet" href="register.css">
+  <!-- Material Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+  <!-- Material Symbol -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined">
+  <link rel="stylesheet" href="style.css">
+
+  <title>Register</title>
+</head>
+<body>
+  <div class="container">
+    <div class="topnav">
+      <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars" id="cbtn"></i>
+        </a>
+        <div class="whole">
+            <div id="myLinks">
+                <a href="#home" class="extra">Home</a>
+                <a href="#prohos" class="extra">Popular Hospitals Near Me</a>
+                <a href="#contact" class="extra">Contact Us</a>
+            </div>
+        </div> -->
+      <div class="tile">
+        <div class="img">
+          <img src="images\logo.png">
+        </div>
+        <h2>HnC</h2>
+      </div>
+      <form class="example" action="#home">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><span class="searchbtnicon material-symbols-outlined">
+            search
+          </span>
+        </button>
+      </form>
+
+      <!-- <div class="searchbar">
+          <input type="text" placeholder="Search" style="padding: 3px; width: 90%; height:125%; border-radius: 10px;">
+          <i class="fa fa-search"></i>
+      </div> -->
+      <div class="options">
+        <span class="material-symbols-outlined">
+          <a href="views">account_circle</a>
+        </span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="const2">
+    <div class="sub-con">
+      <h2>REGISTER</h2>
+      <div class="form">
+        <div class="auths">
+          <a class="auth"
+             href="https://linkedin.com">
+             <span class="material-symbols-outlined" id="phone">
+              call
+              </span>
+              <p>Phone Number</p>
+            </a>
+          <a class="auth" href="google+">
+              <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="google">
+              <p>Google+</p>
+            </a>
+        </div>
+        <div class="sep">
+          <div class="line"></div>
+          <div class="or">OR</div>
+          <div class="line"></div>
+        </div>
+        <div class="main">
+          <input type="email" required id="email" name="email" placeholder="Email" aria-placeholder="Email">
+          <!-- <input type="password" required id="password" name="password" placeholder="password" aria-placeholder="password"> -->
+          <input type="text" hidden id="hidden" value="alumini"> 
+          <div type="submit" id="submit" class="auth">
+            <!-- register icon img -->
+            <span class="material-symbols-outlined">
+              app_registration
+              </span>
+            <p>Register Here!</p></div>         
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="register.js"></script>
+</body>
+</html>
