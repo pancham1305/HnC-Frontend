@@ -59,6 +59,3 @@ setTimeout(async () => {
   console.log(await db.analyze("get", { table: "main", key: "ok" }));
 }, 5000);
 
-// test: {hi:1 ,mom:2};
-
-// test:1
