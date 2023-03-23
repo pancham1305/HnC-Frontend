@@ -1,44 +1,383 @@
-nav {
-  display: flex;
-  justify-content: space-between;
-}
-#heading {
+* {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
-.cluster {
+
+body,
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  width: 100%;
+  margin: 0px;
+  background-color: white;
+  height: 95px;
+  color: black;
+  border-radius: 10px;
+}
+
+
+/* Navbar CSS Starts */
+.topnav {
+  border-bottom: 2px solid rgba(71, 70, 70, 0.2);
+  background-color: rgba(15, 77, 234, 0.396);
   display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 95px;
+  position: relative;
+  z-index: 1;
+  justify-content: space-between;
+  padding: 15px;
+  margin-bottom: 10px;
 }
-.cluster i {
-  margin: 0;
-  padding: 10px;
+
+.topnav #myLinks {
+  display: none;
+  margin-top: 60px;
 }
-.cluster h1 {
-  padding: 10px;
+
+.topnav a {
+  color: black;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
 }
-#sos {
+
+.topnav .whole {
+  margin-top: 20px;
+}
+
+
+.topnav .extra {
+  background-color: rgba(15, 77, 234, 0.396);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.topnav .options,
+.topnav .tile {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+}
+
+.tile img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.options a:hover {
+  border-radius: 20px;
+  background-color: rgba(188, 23, 217, 0.222);
+}
+
+.topnav .tile h2 {
+  margin-top: 5px;
+  font-size: 35px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.topnav .searchbar {
+  width: 250px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+.topnav .img {
+  object-fit: contain;
+  background-color: rgba(0, 187, 255, 0.53);
+  padding: 20px;
+  border-radius: 16px;
+  position: relative;
+}
+
+/* Navbar CSS Ends */
+
+/* SOS Button CSS Starts */
+.sos {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
-#sos button {
-  padding: 5em 10em;
-  border-radius: 2em;
-  background-color: lightcoral;
-  color: white;
+
+.sos button {
+  margin-top: 60px;
+  padding: 50px 60px;
+  border-radius: 20em;
+  background-color: rgb(218, 46, 46);
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
   transition-duration: 1s;
+  cursor: pointer;
 }
-#sos button:hover {
+
+.sos button:hover {
   box-shadow: 1em;
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.577);
 }
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+/* SOS Button CSS Ends */
+
+/* Card CSS Starts */
+
+.hospitals {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 60px;
+  gap: 30px;
 }
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 400px;
+  width: 25%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 25px;
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: rgba(0, 187, 255, 0.284);
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
 .card img {
-  width: 360px;
-  height: 360px;
+  background-color: black;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.cards {
-  margin-top: 15px;
+
+.info {
+  position: relative;
+  padding: 2px 16px;
 }
+
+/* Card CSS Starts */
+
+/* Contact Us Part CSS Starts*/
+.background {
+  display: flex;
+  min-height: 100vh;
+}
+
+.con {
+  flex: 0 1 700px;
+  margin: auto;
+  padding: 10px;
+}
+
+.screen {
+  position: relative;
+  background: #3e3e3e;
+  border-radius: 15px;
+}
+
+.screen:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+  z-index: -1;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #4d4d4f;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.screen-header-left {
+  margin-right: auto;
+}
+
+.screen-header-button {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
+  background: white;
+}
+
+.screen-header-button.close {
+  background: #ed1c6f;
+}
+
+.screen-header-button.maximize {
+  background: #e8e925;
+}
+
+.screen-header-button.minimize {
+  background: #74c54f;
+}
+
+.screen-header-right {
+  display: flex;
+}
+
+.screen-header-ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+
+.screen-body {
+  display: flex;
+}
+
+.screen-body-item {
+  flex: 1;
+  padding: 50px;
+}
+
+.screen-body-item.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #ea1d6f;
+  font-size: 26px;
+}
+
+.app-title:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 25px;
+  height: 4px;
+  background: #ea1d6f;
+}
+
+.app-contact {
+  margin-top: auto;
+  font-size: 8px;
+  color: #888;
+}
+
+.app-form-group {
+  margin-bottom: 15px;
+}
+
+.app-form-group.message {
+  margin-top: 40px;
+}
+
+.app-form-group.buttons {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.app-form-control {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: #ddd;
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.app-form-control::placeholder {
+  color: #666;
+}
+
+.app-form-control:focus {
+  border-bottom-color: #ddd;
+}
+
+.app-form-button {
+  background: none;
+  border: none;
+  color: #ea1d6f;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.app-form-button:hover {
+  color: #b9134f;
+}
+
+.dribbble {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 520px) {
+  .screen-body {
+      flex-direction: column;
+  }
+
+  .screen-body-item.left {
+      margin-bottom: 30px;
+  }
+
+  .app-title {
+      flex-direction: row;
+  }
+
+  .app-title span {
+      margin-right: 12px;
+  }
+
+  .app-title:after {
+      display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .screen-body {
+      padding: 40px;
+  }
+
+  .screen-body-item {
+      padding: 0;
+  }
+}
+
+/* Contact Us Part CSS Ends*/

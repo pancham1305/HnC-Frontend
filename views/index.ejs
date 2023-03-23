@@ -1,74 +1,166 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HnC</title>
-    <script
-      src="https://kit.fontawesome.com/05b9354aca.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div>
-      <div id="navbar">
-        <nav>
-          <div class="cluster">
-            <i class="fa-solid fa-house"></i>
-            <h1 id="heading">HnC</h1>
-          </div>
-          <!-- Input for Search | Submit button | Logo | Name | Profile Logo || Sign in/Sign up -->
-          <img src="" alt="" />
-          <form method="post" action="/">
-            <input type="text" name="search" id="" />
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-          </form>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
 
-          <!-- <button>signin</button> -->
-          <i class="fa-solid fa-user"></i>
-        </nav>
-      </div>
-      <div id="sos">
+<body>
+    <div class="container">
+        <div class="topnav">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars" id="cbtn"></i>
+            </a>
+            <div class="whole">
+                <div id="myLinks">
+                    <a href="#home" class="extra">Home</a>
+                    <a href="#prohos" class="extra">Popular Hospitals Near Me</a>
+                    <a href="#contact" class="extra">Contact Us</a>
+                </div>
+            </div>
+            <div class="tile">
+                <div class="img">
+                    <img src="images\12.png">
+                </div>
+                <h2>HnC</h2>
+            </div>
+            <div class="options">
+                <a href="#signin">Sign-In</a>
+                <a href="#login">Log-In</a>
+            </div>
+            <div class="searchbar">
+                <input type="text" placeholder="Search" style="padding: 3px">
+                <i class="fa fa-search"></i>
+            </div>
+        </div>
+    </div>
+    <div class="sos">
         <button>SOS</button>
-      </div>
-      <div>
-        <div class="cards">
-            <div class="card">
-            <img src="/images/hospital-1.jpg" alt="" />
-            <h1>name</h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-            reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-            veritatis, totam aperiam doloremque aspernatur consectetur sit
-            obcaecati voluptatem odit quidem nesciunt!
-          </div>
-          <div class="card">
+    </div>
+    <div class="hospitals">
+        <div class="card">
+            <img src="/images/hospital-1.jpg" alt="">
+            <div class="info">
+                <h4><b>Hospital-1</b></h4>
+                <br>
+                <p>Specialist In: Blood Testing</p>
+                <br>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+                    reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
+                    veritatis, totam aperiam doloremque aspernatur consectetur sit
+                    obcaecati voluptatem odit quidem nesciunt!</p>
+                
+            </div>
+        </div>
+        <div class="card">
             <img src="/images/hospital-2.jpeg" alt="" />
-            <h1>name</h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-            reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-            veritatis, totam aperiam doloremque aspernatur consectetur sit
-            obcaecati voluptatem odit quidem nesciunt!
-          </div>
-          <div class="card">
+            <div class="info">
+                <h4><b>Hospital-2</b></h4>
+                <br>
+                <p>Specialist In: Dental</p>
+                <br>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+                    reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
+                    veritatis, totam aperiam doloremque aspernatur consectetur sit
+                    obcaecati voluptatem odit quidem nesciunt!</p>
+            </div>
+        </div>
+        <div class="card">
             <img src="/images/hospital-3.jpg" alt="" />
-            <h1>name</h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-            reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-            veritatis, totam aperiam doloremque aspernatur consectetur sit
-            obcaecati voluptatem odit quidem nesciunt!
-          </div>
-          <div class="card">
+            <div class="info">
+                <h4><b>Hospital-3</b></h4>
+                <br>
+                <p>Specialist In: Cardiology</p>
+                <br>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+                    reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
+                    veritatis, totam aperiam doloremque aspernatur consectetur sit
+                    obcaecati voluptatem odit quidem nesciunt!</p>
+            </div>
+        </div>
+        <div class="card">
             <img src="/images/hospital-4.jpeg" alt="" />
-            <h1>name</h1>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-            reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-            veritatis, totam aperiam doloremque aspernatur consectetur sit
-            obcaecati voluptatem odit quidem nesciunt!
+            <div class="info">
+                <h4><b>Hospital-4</b></h4>
+                <br>
+                <p>Specialist In: ENT</p>
+                <br>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+                    reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
+                    veritatis, totam aperiam doloremque aspernatur consectetur sit
+                    obcaecati voluptatem odit quidem nesciunt!</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="/images/hospital-4.jpeg" alt="" />
+            <div class="info">
+                <h4><b>Hospital-5</b></h4>
+                <br>
+                <p>Specialist In: Orthopedists</p>
+                <br>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+                    reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
+                    veritatis, totam aperiam doloremque aspernatur consectetur sit
+                    obcaecati voluptatem odit quidem nesciunt!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="background">
+        <div class="con">
+          <div class="screen">
+            <div class="screen-header">
+              <div class="screen-header-left">
+                <div class="screen-header-button close"></div>
+                <div class="screen-header-button maximize"></div>
+                <div class="screen-header-button minimize"></div>
+              </div>
+              <div class="screen-header-right">
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+                <div class="screen-header-ellipsis"></div>
+              </div>
+            </div>
+            <div class="screen-body">
+              <div class="screen-body-item left">
+                <div class="app-title">
+                  <span>Want To Contribute</span>
+                  <span>Write Us At</span>
+                </div>
+                <div class="app-contact">Mail Us At: HnC@gmail.com</div>
+              </div>
+              <div class="screen-body-item">
+                <div class="app-form">
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="NAME">
+                  </div>
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="EMAIL">
+                  </div>
+                  <div class="app-form-group">
+                    <input class="app-form-control" placeholder="CONTACT NO">
+                  </div>
+                  <div class="app-form-group message">
+                    <input class="app-form-control" placeholder="MESSAGE">
+                  </div>
+                  <div class="app-form-group buttons">
+                    <button class="app-form-button">CANCEL</button>
+                    <button class="app-form-button">SEND</button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </body>
+      
+
+</body>
+
 </html>
