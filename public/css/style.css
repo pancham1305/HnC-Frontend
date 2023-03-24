@@ -22,7 +22,6 @@ html {
   border-radius: 10px;
 }
 
-
 /* Navbar CSS Starts */
 .topnav {
   border-bottom: 2px solid rgba(71, 70, 70, 0.2);
@@ -65,10 +64,10 @@ html {
   display: flex;
   flex-direction: row;
   gap: 25px;
-  font-family: 'Franklin Gothic', Arial, sans-serif; 
+  font-family: "Franklin Gothic", Arial, sans-serif;
 }
 
-.topnav .options{
+.topnav .options {
   margin: 10px;
   padding: 15px;
   cursor: pointer;
@@ -77,7 +76,7 @@ html {
 .topnav .tile h2 {
   margin-top: 15px;
   font-size: 35px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 /* .topnav .searchbar {
@@ -119,7 +118,7 @@ html {
 
 /* Search Bar CSS Starts */
 
-form.example input[type=text] {
+form.example input[type="text"] {
   padding: 10px;
   font-size: 17px;
   border: 1px solid grey;
@@ -134,7 +133,7 @@ form.example button {
   float: left;
   width: 20%;
   padding: 10px;
-  background: #2196F3;
+  background: #2196f3;
   color: white;
   font-size: 17px;
   border: 1px solid grey;
@@ -175,9 +174,9 @@ form.example::after {
   background-color: rgba(234, 255, 0, 0.593);
 }
 
-.emergency span{
+.emergency span {
   font-size: 25px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
   color: black;
 }
@@ -276,7 +275,7 @@ form.example::after {
 }
 
 .screen:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 0;
@@ -284,7 +283,7 @@ form.example::after {
   right: 20px;
   bottom: 0;
   border-radius: 15px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   z-index: -1;
 }
 
@@ -357,7 +356,7 @@ form.example::after {
 }
 
 .app-title:after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   left: 0;
@@ -396,7 +395,7 @@ form.example::after {
   font-size: 14px;
   text-transform: uppercase;
   outline: none;
-  transition: border-color .2s;
+  transition: border-color 0.2s;
 }
 
 .app-form-control::placeholder {
@@ -428,41 +427,41 @@ form.example::after {
 
 @media screen and (max-width: 520px) {
   .screen-body {
-      flex-direction: column;
+    flex-direction: column;
   }
 
   .screen-body-item.left {
-      margin-bottom: 30px;
+    margin-bottom: 30px;
   }
 
   .app-title {
-      flex-direction: row;
+    flex-direction: row;
   }
 
   .app-title span {
-      margin-right: 12px;
+    margin-right: 12px;
   }
 
   .app-title:after {
-      display: none;
+    display: none;
   }
 }
 
 @media screen and (max-width: 600px) {
   .screen-body {
-      padding: 40px;
+    padding: 40px;
   }
 
   .screen-body-item {
-      padding: 0;
+    padding: 0;
   }
 }
 
 /* Contact Us Part CSS Ends*/
 
-input { 
+input {
   outline: none;
-  border:none;
+  border: none;
 }
 
 .searchbtnicon {
@@ -470,4 +469,48 @@ input {
 }
 .accicon {
   font-size: 48px;
+}
+
+.hide {
+  visibility: hidden;
+  max-height: 0;
+}
+
+/* Loader */
+.loading svg polyline {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.loading svg polyline#back {
+  fill: none;
+  stroke: #9ac7ec;
+}
+
+.loading svg polyline#front {
+  fill: none;
+  stroke: #1078cd;
+  stroke-dasharray: 48, 144;
+  stroke-dashoffset: 192;
+  animation: dash_682 1.4s linear infinite;
+}
+
+@keyframes dash_682 {
+  72.5% {
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  height: inherit;
+  align-items: center;
 }

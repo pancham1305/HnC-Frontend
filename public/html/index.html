@@ -1,137 +1,181 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HnC</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-    <script src="index.js"></script>
+    <script type="module" src="../js/index.js"></script>
     <!-- Material Icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    />
     <!-- Material Symbol -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
 
-<body>
-    <div class="container">
+  <body>
+    <div class="loaderContainer hide">
+      <div class="loading">
+  <svg width="64px" height="48px">
+      <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="back"></polyline>
+    <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="front"></polyline>
+    
+  </svg>
+  <svg width="64px" height="48px">
+      <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="back"></polyline>
+    <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="front"></polyline>
+    
+  </svg>
+  <svg width="64px" height="48px">
+      <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="back"></polyline>
+    <polyline points="0.157 23.954, 14 23.954, 21.843 48, 43 0, 50 24, 64 24" id="front"></polyline>
+    
+  </svg>
+</div>
+    </div>
+  <div class="body">
+      <div class="container">
         <div class="topnav">
-            <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars" id="cbtn"></i>
-            </a>
-            <div class="whole">
-                <div id="myLinks">
-                    <a href="#home" class="extra">Home</a>
-                    <a href="#prohos" class="extra">Popular Hospitals Near Me</a>
-                    <a href="#contact" class="extra">Contact Us</a>
-                </div>
-            </div> -->
-            <div class="tile">
-                <div class="img">
-                    <img src="images\logo.png">
-                </div>
-                <h2>HnC</h2>
+          <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                  <i class="fa fa-bars" id="cbtn"></i>
+              </a>
+              <div class="whole">
+                  <div id="myLinks">
+                      <a href="#home" class="extra">Home</a>
+                      <a href="#prohos" class="extra">Popular Hospitals Near Me</a>
+                      <a href="#contact" class="extra">Contact Us</a>
+                  </div>
+              </div> -->
+  
+          <div class="tile">
+            <div class="img">
+              <img src="..\images\logo.png" />
             </div>
-            <form class="example" action="#home">
-              <input type="text" placeholder="Search.." name="search">
-              <button type="submit"><span class="searchbtnicon material-symbols-outlined">
+            <h2>HnC</h2>
+          </div>
+          <form class="example" action="#home">
+            <input type="text" placeholder="Search.." name="search" />
+            <button type="submit">
+              <span class="searchbtnicon material-symbols-outlined">
                 search
-                </span>
-              </button>
-            </form>
-            
-            <!-- <div class="searchbar">
-              <input type="text" placeholder="Search" style="padding: 3px; width: 90%; height:125%; border-radius: 10px;">
-              <i class="fa fa-search"></i>
-          </div> -->
-            <div class="options">
-              <span class="material-symbols-outlined">
-                 <a href="/login">account_circle</a>
               </span>
-            </div>
+            </button>
+          </form>
+  
+          <!-- <div class="searchbar">
+                <input type="text" placeholder="Search" style="padding: 3px; width: 90%; height:125%; border-radius: 10px;">
+                <i class="fa fa-search"></i>
+            </div> -->
+  
+          <div class="options">
+            <span class="material-symbols-outlined">
+              <a href="/login">account_circle</a>
+            </span>
+          </div>
         </div>
-    </div>
-    <div class="emergency">
-      <span id="nam">Emergency</span>
-      <div class="sos">
-        <button>SOS</button>
       </div>
-      <span id="nam">Emergency</span>
-    </div>
-    <div class="hospitals">
+      <div class="emergency">
+        <span id="nam">Emergency</span>
+        <div class="sos">
+          <button>SOS</button>
+        </div>
+        <span id="nam">Emergency</span>
+      </div>
+      <div class="hospitals">
         <div class="card">
-            <img src="/images/hospital-1.jpg" alt="">
-            <div class="info">
-                <h4><b>Hospital-1</b></h4>
-                <br>
-                <p>Specialist In: Blood Testing</p>
-                <br>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-                    reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-                    veritatis, totam aperiam doloremque aspernatur consectetur sit
-                    obcaecati voluptatem odit quidem nesciunt!</p>
-                
-            </div>
+          <img src="../images/hospital-1.jpg" alt="" />
+          <div class="info">
+            <h4><b>Hospital-1</b></h4>
+            <br />
+            <p>Specialist In: Blood Testing</p>
+            <br />
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+              reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
+              veritatis, totam aperiam doloremque aspernatur consectetur sit
+              obcaecati voluptatem odit quidem nesciunt!
+            </p>
+          </div>
         </div>
         <div class="card">
-            <img src="/images/hospital-2.jpeg" alt="" />
-            <div class="info">
-                <h4><b>Hospital-2</b></h4>
-                <br>
-                <p>Specialist In: Dental</p>
-                <br>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-                    reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-                    veritatis, totam aperiam doloremque aspernatur consectetur sit
-                    obcaecati voluptatem odit quidem nesciunt!</p>
-            </div>
+          <img src="../images/hospital-2.jpeg" alt="" />
+          <div class="info">
+            <h4><b>Hospital-2</b></h4>
+            <br />
+            <p>Specialist In: Dental</p>
+            <br />
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+              reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
+              veritatis, totam aperiam doloremque aspernatur consectetur sit
+              obcaecati voluptatem odit quidem nesciunt!
+            </p>
+          </div>
         </div>
         <div class="card">
-            <img src="/images/hospital-3.jpg" alt="" />
-            <div class="info">
-                <h4><b>Hospital-3</b></h4>
-                <br>
-                <p>Specialist In: Cardiology</p>
-                <br>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-                    reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-                    veritatis, totam aperiam doloremque aspernatur consectetur sit
-                    obcaecati voluptatem odit quidem nesciunt!</p>
-            </div>
+          <img src="../images/hospital-3.jpg" alt="" />
+          <div class="info">
+            <h4><b>Hospital-3</b></h4>
+            <br />
+            <p>Specialist In: Cardiology</p>
+            <br />
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+              reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
+              veritatis, totam aperiam doloremque aspernatur consectetur sit
+              obcaecati voluptatem odit quidem nesciunt!
+            </p>
+          </div>
         </div>
         <div class="card">
-            <img src="/images/hospital-4.jpeg" alt="" />
-            <div class="info">
-                <h4><b>Hospital-4</b></h4>
-                <br>
-                <p>Specialist In: ENT</p>
-                <br>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-                    reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-                    veritatis, totam aperiam doloremque aspernatur consectetur sit
-                    obcaecati voluptatem odit quidem nesciunt!</p>
-            </div>
+          <img src="../images/hospital-4.jpeg" alt="" />
+          <div class="info">
+            <h4><b>Hospital-4</b></h4>
+            <br />
+            <p>Specialist In: ENT</p>
+            <br />
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+              reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
+              veritatis, totam aperiam doloremque aspernatur consectetur sit
+              obcaecati voluptatem odit quidem nesciunt!
+            </p>
+          </div>
         </div>
         <div class="card">
-            <img src="/images/hospital-4.jpeg" alt="" />
-            <div class="info">
-                <h4><b>Hospital-5</b></h4>
-                <br>
-                <p>Specialist In: Orthopedists</p>
-                <br>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-                    reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-                    veritatis, totam aperiam doloremque aspernatur consectetur sit
-                    obcaecati voluptatem odit quidem nesciunt!</p>
-            </div>
+          <img src="/images/hospital-4.jpeg" alt="" />
+          <div class="info">
+            <h4><b>Hospital-5</b></h4>
+            <br />
+            <p>Specialist In: Orthopedists</p>
+            <br />
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+              reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
+              veritatis, totam aperiam doloremque aspernatur consectetur sit
+              obcaecati voluptatem odit quidem nesciunt!
+            </p>
+          </div>
         </div>
-    </div>
-
-    <div class="background">
+      </div>
+  
+      <div class="background">
         <div class="con">
           <div class="screen">
             <div class="screen-header">
@@ -157,16 +201,16 @@
               <div class="screen-body-item">
                 <div class="app-form">
                   <div class="app-form-group">
-                    <input class="app-form-control" placeholder="NAME">
+                    <input class="app-form-control" placeholder="NAME" />
                   </div>
                   <div class="app-form-group">
-                    <input class="app-form-control" placeholder="EMAIL">
+                    <input class="app-form-control" placeholder="EMAIL" />
                   </div>
                   <div class="app-form-group">
-                    <input class="app-form-control" placeholder="CONTACT NO">
+                    <input class="app-form-control" placeholder="CONTACT NO" />
                   </div>
                   <div class="app-form-group message">
-                    <input class="app-form-control" placeholder="MESSAGE">
+                    <input class="app-form-control" placeholder="MESSAGE" />
                   </div>
                   <div class="app-form-group buttons">
                     <button class="app-form-button">CANCEL</button>
@@ -178,8 +222,6 @@
           </div>
         </div>
       </div>
-      
 
-</body>
-
+    </div>    <ddi >
 </html>
