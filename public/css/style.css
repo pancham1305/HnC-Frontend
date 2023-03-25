@@ -501,7 +501,7 @@ input {
 
 #css3-spinner-pulse {
 	stroke-dasharray: 281;
-	-webkit-animation: dash 5s infinite linear forwards;
+	animation: dash 5s infinite linear forwards;
 }
 
 /*Animation*/
