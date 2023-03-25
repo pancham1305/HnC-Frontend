@@ -477,34 +477,52 @@ input {
 }
 
 /* Loader */
-.loading svg polyline {
-  fill: none;
-  stroke-width: 3;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+#css3-spinner-svg-pulse-wrapper {
+	position: absolute;
+	overflow: hidden;
+	width: 260px;
+	height: 210px;
+	top: 50%;
+	left: 50%;
+	margin-top: -105px;
+	margin-left: -130px;
+	background-color: transparent;
+	animation: none;
+	-webkit-animation: none;
 }
 
-.loading svg polyline#back {
-  fill: none;
-  stroke: #9ac7ec;
+#css3-spinner-svg-pulse {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -105px;
+	margin-left: -275px;
 }
 
-.loading svg polyline#front {
-  fill: none;
-  stroke: #1078cd;
-  stroke-dasharray: 48, 144;
-  stroke-dashoffset: 192;
-  animation: dash_682 1.4s linear infinite;
+#css3-spinner-pulse {
+	stroke-dasharray: 281;
+	-webkit-animation: dash 5s infinite linear forwards;
 }
 
-@keyframes dash_682 {
-  72.5% {
-    opacity: 0;
-  }
+/*Animation*/
+@-webkit-keyframes dash {
+	from {
+		stroke-dashoffset:814;
+	}
 
-  to {
-    stroke-dashoffset: 0;
-  }
+	to {
+		stroke-dashoffset:-814;
+	}
+}
+
+@keyframes dash {
+	from {
+		stroke-dashoffset:814;
+	}
+
+	to {
+		stroke-dashoffset:-814;
+	}
 }
 
 
