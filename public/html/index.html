@@ -1,17 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HnC</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-
-    <script type="module" src="../js/index.js"></script>
     <!-- Material Icons -->
     <link
       rel="stylesheet"
@@ -26,197 +18,197 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined"
     />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link rel="shortcut icon" href="..\images\favicon1.ico" >
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0"
+    />
+    <!-- import landingpage.css -->
+    <link rel="stylesheet" href="..\css\landingpage.css" />
+    <!-- Importing Language Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Arimo&display=swap"
+      rel="stylesheet"
+    />
+    <title>HnC</title>
+    <link rel="shortcut icon" href="..\images\favicon1.ico" />
   </head>
 
   <body>
-    
-  
-      <div class="container">
-        <div class="topnav">
-          <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                  <i class="fa fa-bars" id="cbtn"></i>
-              </a>
-              <div class="whole">
-                  <div id="myLinks">
-                      <a href="#home" class="extra">Home</a>
-                      <a href="#prohos" class="extra">Popular Hospitals Near Me</a>
-                      <a href="#contact" class="extra">Contact Us</a>
-                  </div>
-              </div> -->
-  
-          <div class="tile">
-            <div class="img">
-              <img src="..\images\logo.png" />
-            </div>
-            <h2>HnC</h2>
+    <div class="cnt">
+      <img src="..\images\4.png" alt="" class="src" />
+      <div class="topnav">
+        <div class="tile">
+          <div class="imgs">
+            <img src="..\images\logo.png" alt="/" />
           </div>
-          <form class="example" action="#home">
-            <input type="text" placeholder="Search.." name="search" />
-            <button type="submit">
-              <span class="searchbtnicon material-symbols-outlined">
-                search
-              </span>
-            </button>
-          </form>
-  
-          <!-- <div class="searchbar">
-                <input type="text" placeholder="Search" style="padding: 3px; width: 90%; height:125%; border-radius: 10px;">
-                <i class="fa fa-search"></i>
-            </div> -->
-  
-          <div class="options">
-            <span class="material-symbols-outlined">
-              <a href="/login">account_circle</a>
-            </span>
-          </div>
+          <h2>HnC</h2>
+        </div>
+        <div class="options">
+          <a href="#login">Login</a>
+          <a href="#signup">Sign-Up</a>
+          <span class="material-symbols-outlined" id="loginicon"> login </span>
         </div>
       </div>
-      <div class="loaderContainer hide">
-      <div id='css3-spinner-svg-pulse-wrapper'>
-  <svg id='css3-spinner-svg-pulse' version='1.2' height='210' width='550' xmlns='http://www.w3.org/2000/svg' viewport='0 0 60 60' xmlns:xlink='http://www.w3.org/1999/xlink'><path id='css3-spinner-pulse' stroke='#275DAD' fill='none' stroke-width='2' stroke-linejoin='round' d='M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210' /></svg>
-</div>
-  </svg>
- 
- 
-</div>
+      <form class="example" action="/api/hospitals">
+        <input
+          type="text"
+          placeholder="PATNA &nbsp;| &nbsp;Search.."
+          name="search"
+        />
+        <button type="submit">
+          <span class="searchbtnicon material-symbols-outlined"> search </span>
+        </button>
+      </form>
     </div>
-      <div class="body">
-      <div class="emergency">
-        <span id="nam">Emergency</span>
-        <div class="sos">
-          <button>SOS</button>
+    <div class="cnt">
+      <img src="..\images\6.png" alt="" class="src" />
+      <div class="aboutus">
+        <span class="head"> Committed To You </span>
+        <div class="infos">
+          <p>
+            HnC is a platform for the students of IIIT Bhagalpur to share their
+            experiences and knowledge with the world.
+          </p>
         </div>
-        <span id="nam">Emergency</span>
       </div>
-      <div class="hospitals">
-        <div class="card">
-          <img src="../images/hospital-1.jpg" alt="" />
-          <div class="info">
-            <h4><b>Hospital-1</b></h4>
-            <br />
-            <p>Specialist In: Blood Testing</p>
-            <br />
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-              reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-              veritatis, totam aperiam doloremque aspernatur consectetur sit
-              obcaecati voluptatem odit quidem nesciunt!
-            </p>
+      <div class="collection">
+        <div class="cds">
+          <div class="tp">
+            <span class="material-symbols-outlined" id="lg"> ecg_heart </span>
+          </div>
+          <div class="btm">
+            <span>Maternity Services</span>
+          </div>
+          <div class="btm2">
+            <span class="material-symbols-outlined" id="lg"> add </span>
           </div>
         </div>
-        <div class="card">
-          <img src="../images/hospital-2.jpeg" alt="" />
-          <div class="info">
-            <h4><b>Hospital-2</b></h4>
-            <br />
-            <p>Specialist In: Dental</p>
-            <br />
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-              reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-              veritatis, totam aperiam doloremque aspernatur consectetur sit
-              obcaecati voluptatem odit quidem nesciunt!
-            </p>
+        <div class="cds">
+          <div class="tp">
+            <span class="material-symbols-outlined" id="lg"> surgical </span>
+          </div>
+          <div class="btm">
+            <span>Surgical Services</span>
+          </div>
+          <div class="btm2">
+            <span class="material-symbols-outlined" id="lg"> add </span>
           </div>
         </div>
-        <div class="card">
-          <img src="../images/hospital-3.jpg" alt="" />
-          <div class="info">
-            <h4><b>Hospital-3</b></h4>
-            <br />
-            <p>Specialist In: Cardiology</p>
-            <br />
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-              reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-              veritatis, totam aperiam doloremque aspernatur consectetur sit
-              obcaecati voluptatem odit quidem nesciunt!
-            </p>
+        <div class="cds">
+          <div class="tp">
+            <span class="material-symbols-outlined" id="lg"> genetics </span>
+          </div>
+          <div class="btm">
+            <span>Gynecological Services</span>
+          </div>
+          <div class="btm2">
+            <span class="material-symbols-outlined" id="lg"> add </span>
           </div>
         </div>
-        <div class="card">
-          <img src="../images/hospital-4.jpeg" alt="" />
-          <div class="info">
-            <h4><b>Hospital-4</b></h4>
-            <br />
-            <p>Specialist In: ENT</p>
-            <br />
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-              reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-              veritatis, totam aperiam doloremque aspernatur consectetur sit
-              obcaecati voluptatem odit quidem nesciunt!
-            </p>
+        <div class="cds">
+          <div class="tp">
+            <span class="material-symbols-outlined" id="lg"> genetics </span>
           </div>
-        </div>
-        <div class="card">
-          <img src="/images/hospital-4.jpeg" alt="" />
-          <div class="info">
-            <h4><b>Hospital-5</b></h4>
-            <br />
-            <p>Specialist In: Orthopedists</p>
-            <br />
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
-              reiciendis cum dolorum ad, maiores aliquam cumque odio possimus
-              veritatis, totam aperiam doloremque aspernatur consectetur sit
-              obcaecati voluptatem odit quidem nesciunt!
-            </p>
+          <div class="btm">
+            <span>Accidental Control</span>
+          </div>
+          <div class="btm2">
+            <span class="material-symbols-outlined" id="lg"> add </span>
           </div>
         </div>
       </div>
-  
-      <div class="background">
-        <div class="con">
-          <div class="screen">
-            <div class="screen-header">
-              <div class="screen-header-left">
-                <div class="screen-header-button close"></div>
-                <div class="screen-header-button maximize"></div>
-                <div class="screen-header-button minimize"></div>
-              </div>
-              <div class="screen-header-right">
-                <div class="screen-header-ellipsis"></div>
-                <div class="screen-header-ellipsis"></div>
-                <div class="screen-header-ellipsis"></div>
-              </div>
-            </div>
-            <div class="screen-body">
-              <div class="screen-body-item left">
-                <div class="app-title">
-                  <span>Want To Contribute</span>
-                  <span>Write Us At</span>
-                </div>
-                <div class="app-contact">Mail Us At: HnC@gmail.com</div>
-              </div>
-              <div class="screen-body-item">
-                <div class="app-form">
-                  <div class="app-form-group">
-                    <input class="app-form-control" placeholder="NAME" />
-                  </div>
-                  <div class="app-form-group">
-                    <input class="app-form-control" placeholder="EMAIL" />
-                  </div>
-                  <div class="app-form-group">
-                    <input class="app-form-control" placeholder="CONTACT NO" />
-                  </div>
-                  <div class="app-form-group message">
-                    <input class="app-form-control" placeholder="MESSAGE" />
-                  </div>
-                  <div class="app-form-group buttons">
-                    <button class="app-form-button">CANCEL</button>
-                    <button class="app-form-button">SEND</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="cnt">
+      <img src="..\images\5.png" alt="" class="src" />
 
+      <!-- Purana Footer Section Starts -->
+      <!-- <div class="background">
+            <div class="con">
+              <div class="screen">
+                <div class="screen-header">
+                  <div class="screen-header-left">
+                    <div class="screen-header-button close"></div>
+                    <div class="screen-header-button maximize"></div>
+                    <div class="screen-header-button minimize"></div>
+                  </div>
+                  <div class="screen-header-right">
+                    <div class="screen-header-ellipsis"></div>
+                    <div class="screen-header-ellipsis"></div>
+                    <div class="screen-header-ellipsis"></div>
+                  </div>
+                </div>
+                <div class="screen-body">
+                  <div class="screen-body-item left">
+                    <div class="app-title">
+                      <span>Want To Contribute</span>
+                      <span>Write Us At</span>
+                    </div>
+                    <div class="app-contact">Mail Us At: HnC@gmail.com</div>
+                  </div>
+                  <div class="screen-body-item">
+                    <div class="app-form">
+                      <div class="app-form-group">
+                        <input class="app-form-control" placeholder="NAME">
+                      </div>
+                      <div class="app-form-group">
+                        <input class="app-form-control" placeholder="EMAIL">
+                      </div>
+                      <div class="app-form-group">
+                        <input class="app-form-control" placeholder="CONTACT NO">
+                      </div>
+                      <div class="app-form-group message">
+                        <input class="app-form-control" placeholder="MESSAGE">
+                      </div>
+                      <div class="app-form-group buttons">
+                        <button class="app-form-button">CANCEL</button>
+                        <button class="app-form-button">SEND</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> -->
+      <!-- Purana Footer Section Ends -->
+
+      <!-- Naya Footer Section Starts -->
+      <div class="foot">
+        <div class="raw">
+          <div class="imgs1">
+            <img src="..\images\logo.png" alt="/" />
+          </div>
+        </div>
+        <div class="const2">
+          <div class="left">
+            <div class="top">
+              <!-- <span class="true">About Us</span>
+                        <span class="true1">HnC is a platform for the students of IIIT Bhagalpur to share their
+                            experiences
+                            and
+                            knowledge
+                            with
+                            the
+                            world.</span> -->
+              <span class="tam"> Under Progress </span>
+              <button class="btn">Reach Us</button>
+            </div>
+          </div>
+          <div class="right">
+            <span class="first">Get In Touch</span>
+            <span class="second">Mailing Address</span>
+            <span class="second1"
+              >Hostel No. 2, IIIT Bhagalpur, Bhagalpur, Bihar, India</span
+            >
+            <span class="third">Email Address</span>
+            <span class="third1">hnc@gmail.com</span>
+            <span class="fourth">Phone</span>
+            <span class="fourth1">9874563210</span>
+          </div>
+        </div>
+      </div>
+      <!-- Naya Footer Section Ends -->
     </div>
-      
-    </body>
+  </body>
 </html>

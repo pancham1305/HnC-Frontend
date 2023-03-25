@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0px;
   padding: 0px;
 }
@@ -39,11 +39,7 @@ body {
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
 .topnav a {
@@ -65,13 +61,13 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  font-family: 'Arimo', sans-serif;
+  font-family: "Arimo", sans-serif;
 }
 
 .topnav .tile h2 {
   /* margin-top: 15px; */
   font-size: 60px;
-  font-family: 'Arimo', sans-serif;
+  font-family: "Arimo", sans-serif;
   /* margin-left: 0px; */
   color: white;
   font-weight: bolder;
@@ -133,7 +129,7 @@ body {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: #f1f1f1
+  background-color: #f1f1f1;
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
@@ -187,7 +183,7 @@ form.example {
   /* margin-top:   8%; */
 }
 
-form.example input[type=text] {
+form.example input[type="text"] {
   padding: 10px;
   font-size: 20px;
   border: 1px solid grey;
@@ -204,7 +200,7 @@ form.example button {
   height: 60px;
   width: 80px;
   padding: 4px;
-  background: #2196F3;
+  background: #2196f3;
   color: white;
   font-size: 17px;
   /* border: 1px solid grey; */
@@ -366,7 +362,7 @@ input[type="checkbox"] {
   margin-top: 30px;
   margin-left: 25px;
   margin-bottom: 30px;
-  padding: 10px;
+  padding: 28px;
   background-color: rgba(0, 187, 255, 0.177);
 }
 
@@ -613,13 +609,13 @@ input[type="checkbox"] {
 
 /* Purana Footer Section CSS Ends */
 
-.foot{
+.foot {
   margin-top: 20px;
   width: 100%;
   background-color: #1a1a1a;
 }
 
-.foot .ifs{
+.foot .ifs {
   width: 100%;
   height: 120px;
   background-color: #1a1a1a;
@@ -646,7 +642,7 @@ form {
   border-radius: 5px;
   line-height: 22px;
   background-color: transparent;
-  border: 2px solid #CC6666;
+  border: 2px solid #cc6666;
   transition: all 0.3s;
   padding: 13px;
   margin-bottom: 15px;
@@ -656,7 +652,7 @@ form {
 }
 
 .feedback-input:focus {
-  border: 2px solid #CC4949;
+  border: 2px solid #cc4949;
 }
 
 textarea {
@@ -666,9 +662,9 @@ textarea {
 }
 
 [type="submit"] {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
   width: 100%;
-  background: #CC6666;
+  background: #cc6666;
   border-radius: 5px;
   border: 0;
   cursor: pointer;
@@ -682,5 +678,64 @@ textarea {
 }
 
 [type="submit"]:hover {
-  background: #CC4949;
+  background: #cc4949;
+}
+
+/* Loader */
+#css3-spinner-svg-pulse-wrapper {
+  position: absolute;
+  overflow: hidden;
+  width: 260px;
+  height: 210px;
+  top: 50%;
+  left: 50%;
+  margin-top: -105px;
+  margin-left: -130px;
+  background-color: transparent;
+  animation: none;
+  -webkit-animation: none;
+}
+
+#css3-spinner-svg-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -105px;
+  margin-left: -275px;
+}
+
+#css3-spinner-pulse {
+  stroke-dasharray: 281;
+  animation: dash 5s infinite linear forwards;
+}
+
+/*Animation*/
+@-webkit-keyframes dash {
+  from {
+    stroke-dashoffset: 814;
+  }
+
+  to {
+    stroke-dashoffset: -814;
+  }
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 814;
+  }
+
+  to {
+    stroke-dashoffset: -814;
+  }
+}
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  height: inherit;
+  align-items: center;
+}
+.hide {
+  visibility: hidden;
+  max-height: 0;
 }
