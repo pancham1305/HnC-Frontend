@@ -531,11 +531,12 @@ form.example::after {
 
 .foot .const2 {
   width: 1200px;
+
   /* background-color: #000; */
   justify-content: left;
+  justify-content: center;
   align-items: left;
   margin: auto;
-  margin-top: 150px;
 }
 
 .foot .const2 .left {
