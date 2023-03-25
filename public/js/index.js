@@ -11,7 +11,8 @@ function myFunction() {
     btn.classList.remove("fa-bars");
   }
 }
-
+// navigator.geolocation.getCurrentPosition((e)=>);
+console.log(location);
 // Fetch Hospital Details
 var requestOptions = {
   method: "GET",
@@ -22,7 +23,7 @@ let url =
 // DOM Variables
 const loader = document.querySelector(".loaderContainer");
 const body = document.querySelector(".body");
-
+// loader.classList.remove("hide");
 // Functional Programming Starts
 
 const info = async () => {
