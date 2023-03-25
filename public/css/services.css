@@ -1,0 +1,686 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+html,
+body {
+  height: auto;
+  height: 100%;
+  width: 100%;
+}
+
+/* Navbar CSS Starts */
+
+.topnav {
+  border-bottom: 2px solid rgba(71, 70, 70, 0.2);
+  background-color: rgba(8, 42, 129, 0.692);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 95px;
+  position: relative;
+  z-index: 1;
+  justify-content: space-between;
+  /* margin-bottom: 10px; */
+}
+
+.topnav .options {
+  margin: 10px;
+  padding: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  /* width: 225px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.topnav a {
+  text-decoration: none;
+  color: black;
+  gap: 30px;
+  margin: 10px;
+}
+
+.topnav #loginicon {
+  font-size: 30px;
+  font-weight: 1000;
+  height: 30px;
+  width: 30px;
+  /* margin-top: 5px; */
+}
+
+.topnav .tile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: 'Arimo', sans-serif;
+}
+
+.topnav .tile h2 {
+  /* margin-top: 15px; */
+  font-size: 60px;
+  font-family: 'Arimo', sans-serif;
+  /* margin-left: 0px; */
+  color: white;
+  font-weight: bolder;
+}
+
+.topnav .imgs {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.topnav img {
+  width: 125px;
+  height: 125px;
+  border-radius: 75%;
+}
+
+.topnav .center {
+  height: 100%;
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: left;
+  /* background-color: yellow; */
+  /* gap: 50px; */
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  height: 100%;
+  padding: 0px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  margin-top: 90px;
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+  display: block;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  border: 1px solid grey;
+  color: rgba(132, 122, 122, 0.899);
+  width: 100%;
+  height: 60px;
+  padding: 25px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 22px;
+}
+
+.dropbtn .material-symbols-outlined {
+  font-size: 25px;
+  font-weight: 1000;
+  height: 30px;
+  width: 30px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #b2d6b29b;
+  color: white;
+}
+
+/* Search Bar CSS Starts */
+
+form.example {
+  position: relative;
+  display: flex;
+  height: 40px;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  /* margin: 25%; */
+  /* margin-top:   8%; */
+}
+
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid grey;
+  float: left;
+  height: 40px;
+  width: 400px;
+  background: #f1f1f1;
+  margin-top: 10px;
+}
+
+/* Style the submit button */
+form.example button {
+  float: left;
+  height: 60px;
+  width: 80px;
+  padding: 4px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  /* border: 1px solid grey; */
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Search Bar CSS Ends */
+
+/* Navbar CSS Ends */
+
+.filter {
+  /* background-color: red; */
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.filter .box {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: left;
+  gap: 50px;
+  padding: 15px;
+}
+
+ul {
+  list-style: none;
+}
+
+label {
+  cursor: pointer;
+}
+
+li {
+  padding: 0.5em;
+}
+
+.filters {
+  width: 250px;
+  box-shadow: 0 0 0.5em 0 rgba(0, 0, 0, 0.3);
+  padding: 1.5em;
+  position: absolute;
+}
+
+.filters__list li {
+  display: flex;
+  align-items: center;
+  user-select: none;
+  padding-bottom: 1em;
+  line-height: 0;
+}
+
+.filters__list li:last-child {
+  padding-bottom: 0;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5em;
+}
+
+.filters:not(.filters--active) {
+  display: none;
+}
+
+.button {
+  background: darkgoldenrod;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border: 0;
+  outline: 0;
+  text-align: left;
+  min-width: 150px;
+  display: inline-flex;
+  justify-content: space-between;
+  color: #f5f5f5;
+  cursor: pointer;
+}
+
+.button::after {
+  font-family: sans-serif;
+  content: "▼";
+  padding-left: 0.5em;
+}
+
+.button--highlight::after {
+  content: "✓";
+}
+
+/* Information Div CSS Starts */
+.results {
+  /* background-color: red; */
+  width: 95%;
+  height: 60px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.results .data {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: left;
+  font-size: 30px;
+  font-weight: 500;
+  margin-left: 15px;
+  color: rgba(112, 103, 103, 0.829);
+  border-bottom: 1px solid rgba(112, 103, 103, 0.829);
+  /* border-bottom: 100px; */
+}
+
+/* Information Div CSS Ends */
+
+/* Card CSS Starts */
+
+.hospitals {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 30px;
+}
+
+.hospitals .collection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.hospitals .collection .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 300px;
+  width: 300px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  margin-left: 25px;
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: rgba(0, 187, 255, 0.177);
+}
+
+.hospitals .card .image {
+  width: 75%;
+  height: 75%;
+  margin-top: 10px;
+}
+
+.hospitals .collection .card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.hospitals .collection .card img {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.hospitals .collection .finfo {
+  width: 100%;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hospitals .collection .finfo .left {
+  width: 40%;
+  height: 100px;
+  float: left;
+  padding: 10px;
+}
+
+.hospitals .collection .finfo .right {
+  margin-left: 50%;
+  height: 80px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.hospitals .collection .finfo .right button {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 1rem 1rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #199819db;
+  color: ghostwhite;
+  margin-top: 10px;
+}
+
+.hospitals .collection .finfo .right button span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
+
+/* Card CSS Ends */
+
+/*  Puarana Footer Section CSS Starts */
+
+/* .background {
+  display: flex;
+  min-height: 55vh;
+  margin-top: 100px;
+}
+
+.con {
+  flex: 0 1 700px;
+  margin: auto;
+  padding: 10px;
+}
+
+.screen {
+  position: relative;
+  background: #3e3e3e;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+  height: 400px;
+  width: 700px;
+}
+
+.screen:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+  z-index: -1;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: #4d4d4f;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.screen-header-left {
+  margin-right: auto;
+}
+
+.screen-header-button {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 3px;
+  border-radius: 8px;
+  background: white;
+}
+
+.screen-header-button.close {
+  background: #ed1c6f;
+}
+
+.screen-header-button.maximize {
+  background: #e8e925;
+}
+
+.screen-header-button.minimize {
+  background: #74c54f;
+}
+
+.screen-header-right {
+  display: flex;
+}
+
+.screen-header-ellipsis {
+  width: 3px;
+  height: 3px;
+  margin-left: 2px;
+  border-radius: 8px;
+  background: #999;
+}
+
+.screen-body {
+  display: flex;
+}
+
+.screen-body-item {
+  flex: 1;
+  padding: 50px;
+}
+
+.screen-body-item.left {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-title {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: #ea1d6f;
+  font-size: 26px;
+}
+
+.app-title:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 25px;
+  height: 4px;
+  background: #ea1d6f;
+}
+
+.app-contact {
+  margin-top: auto;
+  font-size: 8px;
+  color: #888;
+}
+
+.app-form-group {
+  margin-bottom: 15px;
+}
+
+.app-form-group.message {
+  margin-top: 40px;
+}
+
+.app-form-group.buttons {
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.app-form-control {
+  width: 100%;
+  padding: 10px 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  color: #ddd;
+  font-size: 14px;
+  text-transform: uppercase;
+  outline: none;
+  transition: border-color .2s;
+}
+
+.app-form-control::placeholder {
+  color: #666;
+}
+
+.app-form-control:focus {
+  border-bottom-color: #ddd;
+}
+
+.app-form-button {
+  background: none;
+  border: none;
+  color: #ea1d6f;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+}
+
+.app-form-button:hover {
+  color: #b9134f;
+}
+
+.dribbble {
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+} */
+
+/* Purana Footer Section CSS Ends */
+
+.foot{
+  margin-top: 20px;
+  width: 100%;
+  background-color: #1a1a1a;
+}
+
+.foot .ifs{
+  width: 100%;
+  height: 120px;
+  background-color: #1a1a1a;
+  display: flex;
+  font-family: Helvetica, Arial, sans-serif;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.756);
+  font-size: 40px;
+}
+
+form {
+  max-width: 400px;
+  max-height: 400px;
+  margin: auto;
+  padding: 20px;
+}
+
+.feedback-input {
+  color: white;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 5px;
+  line-height: 22px;
+  background-color: transparent;
+  border: 2px solid #CC6666;
+  transition: all 0.3s;
+  padding: 13px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  outline: 0;
+}
+
+.feedback-input:focus {
+  border: 2px solid #CC4949;
+}
+
+textarea {
+  height: 150px;
+  line-height: 150%;
+  resize: vertical;
+}
+
+[type="submit"] {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100%;
+  background: #CC6666;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: all 0.3s;
+  margin-top: -4px;
+  font-weight: 700;
+}
+
+[type="submit"]:hover {
+  background: #CC4949;
+}
