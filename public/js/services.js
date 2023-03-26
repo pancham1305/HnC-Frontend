@@ -124,7 +124,7 @@ const info = async () => {
     const div3 = document.createElement("div3");
     div3.classList.add("image");
     const div4 = document.createElement("div");
-    div4.classList.add("left");
+    div4.classList.add("top");
     const h4 = document.createElement("h4");
     const b = document.createElement("b"); //h4=>b
     const p = document.createElement("p");
@@ -134,7 +134,7 @@ const info = async () => {
     span.id = "star";
     span.innerText = "star";
     const div5 = document.createElement("div");
-    div5.classList.add("right");
+    div5.classList.add("bottom");
     const p2 = document.createElement("p");
     p2.innerHTML = "<b>Rating:</b>";
     // p2=> span
