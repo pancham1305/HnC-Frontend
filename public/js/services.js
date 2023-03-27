@@ -26,6 +26,7 @@ var button = document.getElementById("filter-button");
 var container = document.getElementById("filter-container");
 var input = document.querySelectorAll("input");
 
+
 button.onclick = function (e) {
   e.stopPropagation();
   if (container.classList.contains("filters--active")) {
