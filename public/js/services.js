@@ -13,7 +13,7 @@ for (let i of links) {
     cityName.innerText = text;
   });
 }
-  
+
 // Filter Box JS
 
 var button = document.getElementById("filter-button");
@@ -59,13 +59,6 @@ for (var i = 0; i < input.length; i++) {
   };
 }
 
-// document.querySelector("#contact-form").addEventListener("submit", (e) => {
-//   e.preventDefault();
-//   e.target.elements.name.value = "";
-//   e.target.elements.email.value = "";
-//   e.target.elements.message.value = "";
-// });
-
 const getLoc = new Promise((res, rej) => {
   navigator.geolocation.getCurrentPosition(
     (e) => {
@@ -85,13 +78,16 @@ var requestOptions = {
 // DOM Variables
 const loader = document.querySelector(".loaderContainer");
 const body = document.querySelector(".hospitals");
-const apikey = "61ad97c925f74a92b2c4abdf86bb1e37";
+
+const s = document.querySelector(".search");
+const btn1 = document.querySelector(".sub");
+const collection = document.querySelector(".collection");
 // Functional Programming Starts
 // Hospital info Extraction
 const info = async () => {
   // User location
   const dt = await getLoc.catch((e) => {
-    document.querySelector("body").innerText = e;
+    collection.innerText = e;
   });
 
   if (!dt) {
@@ -100,83 +96,130 @@ const info = async () => {
   let lat = dt.coords.latitude;
   let long = dt.coords.longitude;
   // Reverse geocoding => Finding place_id
-  const exactloc = await fetch(
-    `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${long}&apiKey=61ad97c925f74a92b2c4abdf86bb1e37`,
-    requestOptions
-  ).then((r) => r.json());
-
+  const exactloc = await fetch(`http://localhost:50000/api/userLoc`, {
+    method: "POST",
+    body: JSON.stringify({ lat, long }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((r) => r.json());
+  console.log(exactloc);
   let place_id = exactloc.features[0].properties.place_id;
-  //using place_id to find hospitals nearby.
-  let url = `https://api.geoapify.com/v2/places?categories=healthcare,healthcare.hospital&filter=place:${place_id}&limit=20&apiKey=${apikey}`;
-  const Hosinfo = await fetch(url, requestOptions).then((e) => e.json());
-  console.log(Hosinfo);
+  let url = `http://localhost:50000/api/hospitals`;
+  const Hosinfo = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify({ place_id }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((e) => e.json());
+  // console.log(Hosinfo);
   Hosinfo.features.forEach((e) => {
-    const div = document.createElement("div");
-    div.classList.add("card");
-    const div2 = document.createElement("div");
-    div2.classList.add("finfo");
-    const div3 = document.createElement("div3");
-    div3.classList.add("image");
-    const div4 = document.createElement("div");
-    div4.classList.add("top");
-    const h4 = document.createElement("h4");
-    const b = document.createElement("b"); //h4=>b
-    const p = document.createElement("p");
-    const br = document.createElement("br");
-    const span = document.createElement("span");
-    span.classList.add("material-symbols-outlined");
-    span.id = "star";
-    span.innerText = "star";
-    const div5 = document.createElement("div");
-    div5.classList.add("bottom");
-    const p2 = document.createElement("p");
-    p2.innerHTML = "<b>Rating:</b>";
-    // p2=> span
-    const btn = document.createElement("button");
-    const span2 = document.createElement("span");
-    span2.innerText = "Status";
-    // hospitals => div =>div3=> div4 => h4 => b
-    // div4 => p => span
-    // div => div2
-    // div2 => div5 => btn=> span;
-    // -----------------------------
-
-    const img = document.createElement("img");
-    img.src = "../images/hospital-1.jpg";
-    div3.appendChild(img);
-    b.innerText = e.properties.name;
-    h4.appendChild(b);
-    p.appendChild(br);
-    p.innerHTML = `<br><b>Address:</b> ${e.properties.formatted}`;
-    // Insertions Start
-    h4.appendChild(b);
-    div4.appendChild(h4);
-    div4.appendChild(p); //left
-    div4.innerHTML += "<br>";
-    p2.appendChild(span);
-    div4.appendChild(p2);
-
-    // -----------------------
-    btn.appendChild(span2);
-    div5.appendChild(btn);
-    div.appendChild(div3);
-    div.appendChild(div2);
-    div2.appendChild(div4);
-    div2.appendChild(div5);
-    const collection = document.querySelector(".collection");
-    collection.appendChild(div);
+    cardCreation(e.properties.name, e.properties.formatted);
   });
 };
 
 // Function for loader
+let executed = true;
 const loadData = async () => {
   loader.classList.remove("hide");
   body.classList.add("hide");
   await info().catch((e) => {
     console.log(e);
-    document.querySelector("body").innerText = "Internet issues";
+    collection.innerText = "Internet issues";
   });
   loader.classList.add("hide");
   body.classList.remove("hide");
+  executed = false;
 };
-loadData();
+
+if (executed && !localStorage.getItem("searchinfo")) {
+  loadData();
+}
+
+const search = async (a, b) => {
+  let url = `http://localhost:50000/api/search/`;
+  const info = await fetch(url, {
+    method: "POST",
+    body: JSON.stringify({ city: b, query: a }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then((e) => e.json());
+  console.log(info);
+  return info;
+};
+
+btn1.addEventListener("click", async (e) => {
+  e.preventDefault();
+  loader.classList.remove("hide");
+  body.classList.add("hide");
+  const params = {
+    cityname: cityName.innerText,
+    query: s.value,
+  };
+  const info = await search(params.query, params.cityname);
+  console.log(info.results);
+  collection.innerHTML = "";
+  for (let i of info.results) {
+    cardCreation(i.name, i.address_line2);
+  }
+  loader.classList.add("hide");
+  body.classList.remove("hide");
+});
+
+const cardCreation = (name, address) => {
+  const div = document.createElement("div");
+  div.classList.add("card");
+  const div2 = document.createElement("div");
+  div2.classList.add("finfo");
+  const div3 = document.createElement("div3");
+  div3.classList.add("image");
+  const div4 = document.createElement("div");
+  div4.classList.add("top");
+  const h4 = document.createElement("h4");
+  const b = document.createElement("b");
+  const p = document.createElement("p");
+  const br = document.createElement("br");
+  const span = document.createElement("span");
+  span.classList.add("material-symbols-outlined");
+  span.id = "star";
+  span.innerText = "star";
+  const div5 = document.createElement("div");
+  div5.classList.add("bottom");
+  const p2 = document.createElement("p");
+  p2.innerHTML = "<b>Rating:</b>";
+  const btn = document.createElement("button");
+  const span2 = document.createElement("span");
+  span2.innerText = "Status";
+  const img = document.createElement("img");
+  img.src = "../images/hospital-1.jpg";
+  div3.appendChild(img);
+  b.innerText = name;
+  h4.appendChild(b);
+  p.appendChild(br);
+  p.innerHTML = `<br><b>Address:</b> ${address}`;
+  // Insertions Start
+  h4.appendChild(b);
+  div4.appendChild(h4);
+  div4.appendChild(p); //left
+  div4.innerHTML += "<br>";
+  p2.appendChild(span);
+  div4.appendChild(p2);
+  btn.appendChild(span2);
+  div5.appendChild(btn);
+  div.appendChild(div3);
+  div.appendChild(div2);
+  div2.appendChild(div4);
+  div2.appendChild(div5);
+  collection.appendChild(div);
+};
+
+if (localStorage.getItem("searchinfo")) {
+  const { name, query } = JSON.parse(localStorage.getItem("searchinfo"));
+  console.log(name, query);
+  s.value = query;
+  cityName.innerText = name;
+  document.getElementById("clk").click();
+  localStorage.removeItem("searchinfo");
+}

@@ -12,3 +12,15 @@ for (let i of links) {
     cityName.innerText = text;
   });
 }
+const searchBar = document.querySelector(".search");
+const btn = document.querySelector(".btn");
+
+btn.addEventListener("click", async (e) => {
+  e.preventDefault();
+  const info = searchBar.value;
+  const name = cityName.innerText;
+  const query = searchBar.value;
+  console.log(name, query);
+  localStorage.setItem("searchinfo", JSON.stringify({ name, query }));
+  window.location.href = "http://localhost:5500/public/html/services.html";
+});
