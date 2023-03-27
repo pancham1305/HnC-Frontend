@@ -96,16 +96,19 @@ const info = async () => {
   let lat = dt.coords.latitude;
   let long = dt.coords.longitude;
   // Reverse geocoding => Finding place_id
-  const exactloc = await fetch(`http://localhost:50000/api/userLoc`, {
-    method: "POST",
-    body: JSON.stringify({ lat, long }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then((r) => r.json());
+  const exactloc = await fetch(
+    `https://HnC-Backend.pancham1305.repl.co/api/userLoc`,
+    {
+      method: "POST",
+      body: JSON.stringify({ lat, long }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  ).then((r) => r.json());
   console.log(exactloc);
   let place_id = exactloc.features[0].properties.place_id;
-  let url = `http://localhost:50000/api/hospitals`;
+  let url = `https://HnC-Backend.pancham1305.repl.co/api/hospitals`;
   const Hosinfo = await fetch(url, {
     method: "POST",
     body: JSON.stringify({ place_id }),
@@ -138,7 +141,7 @@ if (executed && !localStorage.getItem("searchinfo")) {
 }
 
 const search = async (a, b) => {
-  let url = `http://localhost:50000/api/search/`;
+  let url = `https://HnC-Backend.pancham1305.repl.co/api/search/`;
   const info = await fetch(url, {
     method: "POST",
     body: JSON.stringify({ city: b, query: a }),
