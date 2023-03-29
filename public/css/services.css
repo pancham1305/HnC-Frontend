@@ -17,7 +17,6 @@ body {
   background-color: rgba(8, 42, 129, 0.692);
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
   align-items: center;
   width: 100%;
   height: 95px;
@@ -28,16 +27,19 @@ body {
 }
 
 .topnav .options {
-  margin: 10px;
-  padding: 15px;
   font-size: 20px;
   cursor: pointer;
   /* width: 225px; */
   display: flex;
+  height: 100%;
+  width: 10%;
   justify-content: center;
   align-items: center;
 }
 
+.topnav  .options a {
+    font-size: 36px;
+}
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
@@ -46,7 +48,6 @@ body {
   text-decoration: none;
   color: black;
   gap: 30px;
-  margin: 10px;
 }
 
 .topnav #loginicon {
@@ -61,6 +62,9 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  height:100%;
+  width:20%;
+  justify-content: space-around;
   font-family: "Arimo", sans-serif;
 }
 
@@ -77,13 +81,13 @@ body {
   display: flex;
   flex-direction: row;
   gap: 25px;
+  height:100%;
   align-items: center;
-  margin-top: 10px;
+  justify-content: center;
 }
 
 .topnav img {
-  width: 125px;
-  height: 125px;
+  height: 90%;
   border-radius: 75%;
 }
 
@@ -92,8 +96,8 @@ body {
   width: 600px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
   /* background-color: yellow; */
   /* gap: 50px; */
 }
@@ -102,21 +106,30 @@ body {
 .dropdown {
   position: relative;
   display: flex;
-  flex-direction: row;
-  width: 40%;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
   height: 100%;
   padding: 0px;
+
 }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-  margin-top: 90px;
+  margin-top: 360px;
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
-  background-color: #f6f6f6;
+  background-color: #fffbfb;
   min-width: 230px;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
   z-index: 1;
+  
 }
 
 /* Links inside the dropdown */
@@ -134,7 +147,7 @@ body {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
-  display: block;
+  display: flex;
 }
 
 /* Dropdown Button */
@@ -148,11 +161,11 @@ body {
   color: rgba(132, 122, 122, 0.899);
   width: 100%;
   height: 60px;
-  padding: 25px;
   font-size: 16px;
   border: none;
   cursor: pointer;
-  margin-top: 22px;
+    border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
 }
 
 .dropbtn .material-symbols-outlined {
@@ -174,8 +187,9 @@ body {
 form.example {
   position: relative;
   display: flex;
-  height: 40px;
+  height: 100%;
   width: 80%;
+  justify-content: center;
   justify-content: center;
   align-items: center;
   padding: 0px;
@@ -186,26 +200,27 @@ form.example {
 form.example input[type="text"] {
   padding: 10px;
   font-size: 20px;
-  border: 1px solid grey;
   float: left;
   height: 40px;
   width: 400px;
   background: #f1f1f1;
-  margin-top: 10px;
+  border:none;
+  outline: none;;
 }
 
 /* Style the submit button */
 form.example button {
-  float: left;
   height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 80px;
-  padding: 4px;
   background: #2196f3;
   color: white;
   font-size: 17px;
   /* border: 1px solid grey; */
   cursor: pointer;
-  margin-top: 10px;
 }
 
 form.example button:hover {
@@ -685,7 +700,8 @@ textarea {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   width: 100%;
   background: #cc6666;
-  border-radius: 5px;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
   border: 0;
   cursor: pointer;
   color: white;
@@ -693,7 +709,6 @@ textarea {
   padding-top: 10px;
   padding-bottom: 10px;
   transition: all 0.3s;
-  margin-top: -4px;
   font-weight: 700;
 }
 
@@ -758,3 +773,4 @@ textarea {
   height: inherit;
   align-items: center;
 }
+
