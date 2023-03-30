@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+        font-family: 'Arimo', sans-serif;
 }
 
 html,
@@ -155,9 +156,55 @@ span {
   margin-right: 0;
 }
 
+.err {
+  width:500px;
+  height:auto;
+  background-color: #ffffff;
+word-wrap: break-word;
+white-space: pre-wrap;
+word-break: break-word;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+  transition: 0.5ms;
+  color: rgb(255, 68, 0);
+  font-weight:600;
+  flex-direction: column;
+  }
+
+  .closebtn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    background-color: #0f0f0f;
+    color:#ffffff;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+    cursor: pointer;
+  }
+
+  .etext {
+    padding: 16px;
+  }
+
 @media only screen and (max-width: 550px) {
   .box {
     width: 90%;
     height: 500px;
+  }
+
+  .err {
+    width: 90%;
   }
 }
