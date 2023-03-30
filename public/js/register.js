@@ -2,7 +2,7 @@ const email = document.getElementById("email");
 const pass = document.getElementById("password");
 const username = document.getElementById("username");
 const btn = document.getElementById("submit");
-url = "http://localhost:50000/api/register";
+url = "https://HnC-Backend.pancham1305.repl.co/api/register";
 btn.addEventListener("click", (e) => {
   e.preventDefault();
   const u = username.value;
