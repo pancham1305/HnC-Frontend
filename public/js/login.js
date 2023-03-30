@@ -37,11 +37,11 @@ login.addEventListener( 'click', async( e ) =>
                 body: JSON.stringify( data ),
             },
         ).then( ( d ) => d.json() );
-    
+    console.log(resData)
         if ( resData.status === 200 )
         {
-            localStorage.setItem( 'user', resData.data );
-            window.location.href = '/dashboard';
+            localStorage.setItem( 'user', JSON.stringify(resData.data) );
+            window.location.href = './services.html';
         } else
         {
             const error = document.getElementById( 'error' );
