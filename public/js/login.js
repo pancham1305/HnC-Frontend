@@ -37,7 +37,6 @@ login.addEventListener( 'click', async( e ) =>
                 body: JSON.stringify( data ),
             },
         ).then( ( d ) => d.json() );
-    console.log(resData)
         if ( resData.status === 200 )
         {
             localStorage.setItem( 'user', JSON.stringify(resData.data) );
