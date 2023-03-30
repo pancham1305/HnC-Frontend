@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- import login.css -->
-  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="../css/login.css">
   <!-- Material Icons -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
@@ -19,92 +19,26 @@
 </head>
 
 <body>
-  <div class="container">
-    <div class="topnav">
-      <!-- <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars" id="cbtn"></i>
-        </a>
-        <div class="whole">
-            <div id="myLinks">
-                <a href="#home" class="extra">Home</a>
-                <a href="#prohos" class="extra">Popular Hospitals Near Me</a>
-                <a href="#contact" class="extra">Contact Us</a>
-            </div>
-        </div> -->
-      <div class="tile">
-        <div class="img">
-          <img src="images\logo.png">
-        </div>
-        <h2>HnC</h2>
-      </div>
-      <form class="example" action="#home">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><span class="searchbtnicon material-symbols-outlined">
-            search
-          </span>
-        </button>
-      </form>
-
-      <!-- <div class="searchbar">
-          <input type="text" placeholder="Search" style="padding: 3px; width: 90%; height:125%; border-radius: 10px;">
-          <i class="fa fa-search"></i>
-      </div> -->
-      <div class="options">
-        <span class="material-symbols-outlined">
-          <a href="views">account_circle</a>
-        </span>
-      </div>
+ <div class="container">
+  <form action="" class="box">
+    <div class="logo">
+    <img src="..\images\logo.png" alt="/">
     </div>
-  </div>
-  <div class="const">
-      <h2>LOGIN</h2>
-      <div class="form">
-        <div class="auths">
-          <a class="auth" href="">
-            <span class="material-icons-outlined">
-              call
-            </span>
-            <p>Phone Number</p>
-          </a>
-          <a class="auth"
-            href="https://accounts.google.com/v3/signin/identifier?dsh=S402691468%3A1679583700687995&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&ifkv=AQMjQ7TBPtFF_b8i7yRiGO7VdrMQwcsxoPU1yPQ6CGy42b7wqXwO0MMrsRDGnXbxI3ZS0m1_A8Z6Fg&rip=1&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin">
-            <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="google">
-            <p>Google+</p>
-          </a>
-        </div>
-        <div class="sep">
-          <div class="line"></div>
-          <div class="or">OR</div>
-          <div class="line"></div>
-        </div>
-        <div class="main">
-          <input type="email" required id="email" name="email" placeholder="Email" aria-placeholder="Email">
-          <input type="password" required id="password" name="password" placeholder="Password"
-            aria-placeholder="Password">
-          <!-- <input type="text" hidAden id="hidden" value="user"> -->
-          <div type="submit" id="submit" class="auth">
-            <!-- Login icon img -->
-            <img src="https://img.icons8.com/color/48/000000/login-rounded-right.png" alt="login">
-            <p>Login</p>
-          </div>
-          <div class="adv">
-            <span>
-              OR
-            </span>
-          </div>
-          <div type="submit" id="submit" class="auth" href="/register.html">
-            <!-- register icon img -->
-            <span class="material-icons-outlined">
-              app_registration
-            </span>
-            <a href="/register.html">
-              <p>Register Here!</p>
-            </a>
-          </div>
-        </div>
-      </div>
-  </div>
-  <script src="login.js"></script>
+    <div class="fields">
+    <label for="email">Email</label>
+    <input type="email
+    " class="email" id="email">
+        <label for="password">Password</label>
+    <input type="password
+    " class="password" id="pass">
+    </div>
+    <a href="" class="forgor">forgot password...</a>
+
+    <button type="submit" class="btn" id="login">Login</button>
+
+    <div class="text"><span>new User?</span>&nbsp;&nbsp;<a href="./register.html" class="signup">Sign-Up</a></div>
+    </form>
+ </div>
 </body>
 
 </html>
