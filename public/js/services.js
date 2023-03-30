@@ -62,6 +62,7 @@ for (var i = 0; i < input.length; i++) {
 const getLoc = new Promise((res, rej) => {
   navigator.geolocation.getCurrentPosition(
     (e) => {
+      console.log(e);
       res(e);
     },
     (e) => {
