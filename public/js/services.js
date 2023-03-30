@@ -65,6 +65,7 @@ const getLoc = new Promise((res, rej) => {
       res(e);
     },
     (e) => {
+      console.error(e);
       rej("Location Access Denied");
     }
   );
