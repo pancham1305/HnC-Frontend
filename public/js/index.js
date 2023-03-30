@@ -22,5 +22,5 @@ btn.addEventListener("click", async (e) => {
   const query = searchBar.value;
   console.log(name, query);
   localStorage.setItem("searchinfo", JSON.stringify({ name, query }));
-  window.location.href = "http://localhost:5500/public/html/services.html";
+  window.location.href = "./html/services.html";
 });

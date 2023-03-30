@@ -3,7 +3,7 @@ const login = document.getElementById( 'login' );
 error.style.height = "0px";
 error.style.top = "-30px";
         
-const closebtn = document.getElementById("close");
+const closebtn = document.getElementById("closeerrorbtn");
 
 closebtn.addEventListener("click", () => {
     const error = document.getElementById("error");
@@ -26,10 +26,6 @@ login.addEventListener( 'click', async( e ) =>
             token: localStorage.getItem( 'token' ),
         };
 
-        const error = document.getElementById( "error" );
-        error.style.height = "";
-        error.style.top = "";
-        error.innerHTML += `<div class='etext'>${ `i`.repeat( 2000 ) }</div>`;
 
         const resData = await fetch(
             "https://HnC-Backend.pancham1305.repl.co/api/login",
