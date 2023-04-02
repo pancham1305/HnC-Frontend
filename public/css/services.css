@@ -37,9 +37,10 @@ body {
   align-items: center;
 }
 
-.topnav  .options a {
-    font-size: 36px;
+.topnav .options a {
+  font-size: 36px;
 }
+
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
@@ -62,8 +63,8 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  height:100%;
-  width:20%;
+  height: 100%;
+  width: 20%;
   justify-content: space-around;
   font-family: "Arimo", sans-serif;
 }
@@ -81,7 +82,7 @@ body {
   display: flex;
   flex-direction: row;
   gap: 25px;
-  height:100%;
+  height: 100%;
   align-items: center;
   justify-content: center;
 }
@@ -129,7 +130,7 @@ body {
   box-shadow: 0 0 16px rgba(0, 0, 0, 0.3);
   border-radius: 16px;
   z-index: 1;
-  
+
 }
 
 /* Links inside the dropdown */
@@ -164,7 +165,7 @@ body {
   font-size: 16px;
   border: none;
   cursor: pointer;
-    border-top-left-radius: 16px;
+  border-top-left-radius: 16px;
   border-bottom-left-radius: 16px;
 }
 
@@ -204,8 +205,9 @@ form.example input[type="text"] {
   height: 40px;
   width: 400px;
   background: #f1f1f1;
-  border:none;
-  outline: none;;
+  border: none;
+  outline: none;
+  ;
 }
 
 /* Style the submit button */
@@ -715,10 +717,12 @@ textarea {
 [type="submit"]:hover {
   background: #cc4949;
 }
+
 .hide {
   visibility: hidden;
   max-height: 0;
 }
+
 #css3-spinner-svg-pulse-wrapper {
   position: absolute;
   overflow: hidden;
@@ -773,4 +777,138 @@ textarea {
   height: inherit;
   align-items: center;
 }
+/* 
+.emergencybtn {
+  border: none;
+  color: white;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: 88%;
+  margin-top: 32%;
+  position: fixed;
+  cursor: pointer;
+}
 
+.emergencybtn .circle {
+  text-decoration: none;
+  position: relative;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: #fff;
+  width: 9em;
+  height: 9em;
+  line-height: 2em;
+  text-align: center;
+  background: linear-gradient(90deg, red, red, red, red);
+  background-size: 300%;
+  border-radius: 200px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.emergencybtn .circle:hover {
+  animation: ani 8s linear infinite;
+  border: none;
+}
+
+.emergency .circle:before {
+  content: '';
+  z-index: -1;
+  background: linear-gradient(90deg, red, red, red, red);
+  background-size: 400%;
+  border-radius: 100%;
+  transition: 1s;
+}
+
+.emergency .circle:hover::before {
+  filter: blur(20px);
+}
+
+.emergency .circle:active {
+  background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+} */
+
+
+.emergencybtn {
+  border: none;
+  color: white;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  margin-left: 87%;
+  margin-top: 32%;
+  position: fixed;
+  cursor: pointer;
+}
+
+.cld {
+  text-decoration: none;
+  position: relative;
+  border: none;
+  font-size: 14px;
+  font-family: inherit;
+  color: #fff;
+  width: 9em;
+  height: 9em;
+  line-height: 2em;
+  text-align: center;
+  background: linear-gradient(90deg,red,red,red,red);
+  background-size: 300%;
+  border-radius: 500px;
+  z-index: 1;
+}
+
+.cld .content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.cld:hover {
+  animation: ani 8s linear infinite;
+  border: none;
+}
+
+@keyframes ani {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
+}
+
+.cld:before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(90deg,red,red,red,red);
+  background-size: 400%;
+  border-radius: 100%;
+  transition: 1s;
+}
+
+.cld:hover::before {
+  filter: blur(20px);
+}
+
+.cld:active {
+  background: linear-gradient(32deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+}
