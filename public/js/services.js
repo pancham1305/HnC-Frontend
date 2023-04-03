@@ -185,9 +185,25 @@ const cardCreation = (name, address) => {
   const p = document.createElement("p");
   const br = document.createElement("br");
   const span = document.createElement("span");
+  const spanI = document.createElement("spanI");
+  const spanII = document.createElement("spanII");
+  const spanIII = document.createElement("spanIII");
+  const spanIV = document.createElement("spanIV");
   span.classList.add("material-symbols-outlined");
   span.id = "star";
   span.innerText = "star";
+  spanI.classList.add("material-symbols-outlined");
+  spanI.id = "star";
+  spanI.innerText = "star";
+  spanII.classList.add("material-symbols-outlined");
+  spanII.id = "star";
+  spanII.innerText = "star";
+  spanIII.classList.add("material-symbols-outlined");
+  spanIII.id = "star";
+  spanIII.innerText = "star";
+  spanIV.classList.add("material-symbols-outlined");
+  spanIV.id = "star";
+  spanIV.innerText = "star";
   const div5 = document.createElement("div");
   div5.classList.add("bottom");
   const p2 = document.createElement("p");
@@ -208,6 +224,10 @@ const cardCreation = (name, address) => {
   div4.appendChild(p); //left
   div4.innerHTML += "<br>";
   p2.appendChild(span);
+  p2.appendChild(spanI);
+  p2.appendChild(spanII);
+  p2.appendChild(spanIII);
+  p2.appendChild(spanIV);
   div4.appendChild(p2);
   btn.appendChild(span2);
   div5.appendChild(btn);
