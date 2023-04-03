@@ -17,11 +17,11 @@ login.addEventListener( 'click', async( e ) =>
     {
         e.preventDefault();
 
-        const email = document.getElementById( 'email' ).value;
+        const phone = document.getElementById( 'email' ).value;
         const password = document.getElementById( 'pass' ).value;
-
+        console.log(email, password)
         const data = {
-            email,
+            phone,
             password,
             token: localStorage.getItem( 'token' ),
         };
@@ -37,6 +37,7 @@ login.addEventListener( 'click', async( e ) =>
                 body: JSON.stringify( data ),
             },
         ).then( ( d ) => d.json() );
+        console.log(resData)
         if ( resData.status === 200 )
         {
             localStorage.setItem( 'user', JSON.stringify(resData.data) );

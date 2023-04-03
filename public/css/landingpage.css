@@ -62,7 +62,7 @@ body {
     transition: 250ms;
 }
 
-.topnav .options:hover {
+.topnav a:hover {
     background-color: rgba(0, 0, 0, 0.29);
     color: #fff;
 }
@@ -71,10 +71,16 @@ body {
     text-decoration: none;
     color: rgb(206, 206, 206);
     font-family: "Arimo";
-    gap: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height:100%;
+    width:100%;
+    align-items: center;
+    transition: 250ms;
 }
 
-.topnav #loginicon {
+.topnav .loginicon {
     font-size: 30px;
     font-weight: 1000;
     height: 30px;
