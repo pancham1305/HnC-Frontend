@@ -845,8 +845,8 @@ textarea {
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-left: 87%;
-  margin-top: 32%;
+  bottom:0;
+  right:0;
   position: fixed;
   cursor: pointer;
 }

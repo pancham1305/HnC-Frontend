@@ -111,6 +111,10 @@ body {
 
 }
 
+.forgor {
+  display:none;
+}
+
 .btn {
     width: 80%;
     height: 40px;
@@ -197,6 +201,7 @@ word-break: break-word;
   .etext {
     padding: 16px;
   }
+
 
 @media only screen and (max-width: 550px) {
   .box {
