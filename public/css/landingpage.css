@@ -881,8 +881,15 @@ form.example::after {
     font-size: 17px;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    display: flex;
+    padding: 0px;
+    display: contents;
+}
+
+.cds .btm .servicesnames{
+    display:contents;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 .cds .btm2 {
