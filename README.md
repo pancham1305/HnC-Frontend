@@ -8,7 +8,7 @@
 
 >*  **HTML & CSS** --- To develop the FrontEnd of the website
 >
- >* **JavaScript** --- To react according to the inputs entered by the user.
+ >* **JavaScript** --- for creating a web server for backend that handle all website requests and api requests
 >
 >*  **NodeJS** --- Used to implement various functionalities in the FronEnd and BackEnd part of the website.
 >
