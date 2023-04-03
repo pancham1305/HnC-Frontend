@@ -1,8 +1,12 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+let isDropdownToggled = false;
+document.addEventListener( 'DOMContentLoaded', () =>
+{ 
+  const drop = document.getElementById( "dropbtn" );
+  drop.innerHTML = `${cities.map(city => `<option class="links">${city}</option>`).join("\n")}`
+})
+
 const cityName = document.querySelector(".cityName");
 const links = document.querySelectorAll(".links");
 for (let i of links) {
@@ -24,3 +28,4 @@ btn.addEventListener("click", async (e) => {
   localStorage.setItem("searchinfo", JSON.stringify({ name, query }));
   window.location.href = "./html/services.html";
 });
+
