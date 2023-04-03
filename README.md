@@ -27,3 +27,13 @@
 >
 >* We are also worrking on the Emergency Feature that will help the patients to call the ambulance from the hospital nearest to them by JUST ONE CLICK!!!. We will be adding this feature at the earliest.
 >
+
+## Team:
+
+>* Tushar Bharti
+>
+>* Dhruv Srivastava
+>
+>* Pancham Mehta
+>
+>* Jayant Maurya
