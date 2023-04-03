@@ -464,7 +464,6 @@ input[type="checkbox"] {
 
 .hospitals .collection .finfo .bottom button span {
   position: relative;
-  z-index: 10;
   transition: color 0.4s;
 }
 
@@ -840,18 +839,25 @@ textarea {
 .emergencybtn {
   border: none;
   color: white;
-  width: 200px;
-  height: 200px;
+  width: 9em;
+  height: 9em;
   justify-content: center;
   align-items: center;
   display: flex;
-  margin-left: 87%;
-  margin-top: 32%;
+  bottom:16px;
+  right:16px;
   position: fixed;
   cursor: pointer;
+    background: linear-gradient(90deg,red,red,red,red);
+  border-radius:  100%;
+  z-index: 2;
 }
 
 .cld {
+  /* background: linear-gradient(90deg,red,red,red,red); */
+  background-size: 400%;
+  border-radius: 100%;
+  transition: 250ms;
   text-decoration: none;
   position: relative;
   border: none;
@@ -865,7 +871,8 @@ textarea {
   background: linear-gradient(90deg,red,red,red,red);
   background-size: 300%;
   border-radius: 500px;
-  z-index: 1;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .cld .content{
@@ -873,12 +880,15 @@ textarea {
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  transition: 250ms;
   font-weight: 800;
+  cursor: pointer;
 }
 
-.cld:hover {
+.cld:hover,.cld .content:hover {
   animation: ani 8s linear infinite;
   border: none;
+  box-shadow: 0 0 64px 0 red;
 }
 
 @keyframes ani {
@@ -891,22 +901,9 @@ textarea {
   }
 }
 
-.cld:before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  z-index: -1;
-  background: linear-gradient(90deg,red,red,red,red);
-  background-size: 400%;
-  border-radius: 100%;
-  transition: 1s;
-}
 
-.cld:hover::before {
-  filter: blur(20px);
+.cld:hover {
+  backdrop-filter: blur(20px) brightness(0.5);
 }
 
 .cld:active {

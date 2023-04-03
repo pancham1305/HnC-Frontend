@@ -1,7 +1,8 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family: 'Arimo';
+    font-family: "Arimo";
+    box-sizing: border-box;
 }
 
 html,
@@ -14,7 +15,6 @@ body {
 
 .cnt {
     width: 100%;
-    height: 100vh;
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -30,7 +30,7 @@ body {
     mask-repeat: no-repeat;
     position: absolute;
     z-index: -1;
-    filter: blur(5px) ;
+    filter: blur(5px);
 }
 
 /* Navbar CSS Starts */
@@ -52,22 +52,26 @@ body {
 }
 
 .topnav .options {
-    margin: 10px;
-    padding: 15px;
     font-size: 20px;
     cursor: pointer;
     width: 225px;
     display: flex;
+    height: 100%;
     justify-content: center;
     align-items: center;
+    transition: 250ms;
+}
+
+.topnav .options:hover {
+    background-color: rgba(0, 0, 0, 0.29);
+    color: #fff;
 }
 
 .topnav a {
     text-decoration: none;
     color: rgb(206, 206, 206);
-    font-family: 'Arimo';
+    font-family: "Arimo";
     gap: 30px;
-    margin: 10px;
 }
 
 .topnav #loginicon {
@@ -75,7 +79,7 @@ body {
     font-weight: 1000;
     height: 30px;
     width: 30px;
-    color:rgb(206, 206, 206);
+    color: rgb(206, 206, 206);
     /* margin-top: 5px; */
 }
 
@@ -85,8 +89,8 @@ body {
     justify-content: space-around;
     align-items: center;
     justify-content: center;
-    height:100%;
-    gap:16px;
+    height: 100%;
+    gap: 16px;
     font-family: "Arimo", sans-serif;
     padding: 16px;
 }
@@ -104,7 +108,7 @@ body {
     flex-direction: row;
     gap: 25px;
     justify-content: center;
-    height:100%;
+    height: 100%;
     align-items: center;
 }
 
@@ -135,11 +139,12 @@ body {
 }
 
 #first {
-  background-image: url("../images/4.png") !important;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+    background-image: url("../images/4.png") !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
 }
 
 .sub-con h2 {
@@ -302,26 +307,26 @@ body {
 
 /* Search Bar CSS Starts */
 .con {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height:100%;
-  padding: 0;
-  backdrop-filter: blur(2px);
-  background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    backdrop-filter: blur(2px);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 .cent {
-    height: 60px;
-    width: 50%;
+    height: 100%;
+    width: 80%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     /* background-color: yellow; */
     position: relative;
-    padding: 12.5%;
+    margin: 12.5%;
     /* top: 25%; */
 }
 
@@ -334,7 +339,10 @@ body {
     align-items: center;
     flex: 1;
     text-align: center;
-    height: 100%;
+    background-color: #f1f1f1;
+    height: 60px;
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
     /* padding: 0px; */
 }
 
@@ -378,12 +386,13 @@ body {
     color: rgba(132, 122, 122, 0.899);
     width: 100%;
     height: 100%;
-    padding: 20px;
+    background-color: #f1f1f1;
     font-size: 16px;
     border: none;
     border-top-left-radius: 16px;
     border-bottom-left-radius: 16px;
     cursor: pointer;
+    text-align: center;
 }
 
 .dropbtn .material-symbols-outlined {
@@ -406,7 +415,7 @@ form.example {
     position: relative;
     display: flex;
     height: 60px;
-    /* width: 62%; */
+    width: 80%;
     justify-content: center;
     align-items: center;
     padding: 0px;
@@ -419,8 +428,8 @@ form.example input[type="text"] {
     font-size: 20px;
     border: 1px solid grey;
     float: left;
-    height: 40px;
-    width: 400px;
+    height: 100%;
+    width: 90%;
     background: #f1f1f1;
     border: none;
     outline: none;
@@ -430,7 +439,8 @@ form.example input[type="text"] {
 form.example button {
     float: left;
     height: 100%;
-    width: 80px;
+    width: 20%;
+    max-width: 180px;
     padding: 4px;
     background: #2196f3;
     color: white;
@@ -632,28 +642,27 @@ form.example::after {
 
 /* Naya Footer Section Starts */
 #third {
-  background-image: url("../images/5.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  backdrop-filter: blur(2px);
-  background-attachment: fixed;
-  height:50vh;
+    background-image: url("../images/5.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(2px);
+    background-attachment: fixed;
+    height: 50vh;
 }
 
 #footercon {
-  background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 .foot {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  height:100%;
-  padding: 16px;
-  box-sizing: border-box;
-
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    box-sizing: border-box;
 }
 .foot .raw {
     display: flex;
@@ -667,14 +676,13 @@ form.example::after {
     flex-direction: row;
     gap: 25px;
     align-items: center;
-
 }
 
 .foot img {
     width: 200px;
     height: 200px;
     border-radius: 75%;
-    filter: drop-shadow(0 0 24px rgba(255, 255, 255, 0.559))
+    filter: drop-shadow(0 0 24px rgba(255, 255, 255, 0.559));
 }
 
 .foot .const2 {
@@ -687,25 +695,25 @@ form.example::after {
 }
 
 .foot .const2 .left {
-  height:100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     /* background-color: green; */
     justify-content: center;
     align-items: center;
-    gap:16px;
+    gap: 16px;
 }
 
 .foot .const2 .left .top {
-  height:100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     /* background-color: green; */
     justify-content: center;
     align-items: center;
-    gap:16px;
+    gap: 16px;
 }
 
 .foot .const2 .left .top .tam {
@@ -752,7 +760,7 @@ form.example::after {
     display: flex;
     height: 100%;
     width: 100%;
-    gap:16px;
+    gap: 16px;
     flex-direction: column;
 }
 
@@ -763,7 +771,7 @@ form.example::after {
 .second1,
 .third1,
 .fourth1 {
-    color:  rgb(206, 206, 206);
+    color: rgb(206, 206, 206);
     font-size: 20px;
     display: flex;
     justify-content: center;
@@ -788,30 +796,35 @@ form.example::after {
 
 /* About Us Section CSS Starts */
 #second {
-  background-image: url("../images/6.png");
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
+    background-image: url("../images/6.png");
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .aboutus {
     /* background-color: orange; */
-    height: 300px;
-    width: 1200px;
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 32px;
+
     /* margin-top: 60px; */
-    padding: 40px;
 }
 
 .aboutus .head {
     display: flex;
     flex-direction: row;
-    justify-content: left;
-    align-items: left;
+    justify-content: center;
+    align-items: center;
     font-family: "Arimo", sans-serif;
     font-size: 110px;
     font-weight: bolder;
-    margin-left: 10px;
     color: rgb(50, 47, 47);
 }
 
@@ -829,11 +842,15 @@ form.example::after {
 
 .collection {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
-    flex:1;
+    height: auto;
+    padding-bottom: 32px;
+    padding-top: 32px;
+    gap: 64px;
 }
 
 .cds {
@@ -853,15 +870,10 @@ form.example::after {
     color: black;
 }
 
-.cds .tp,
-.btm,
-.btm2 {
-    margin-top: 10px;
-}
-
 .cds #lg {
     font-size: 40px;
     justify-content: center;
+    display: flex;
     align-items: center;
 }
 
@@ -870,15 +882,76 @@ form.example::after {
     justify-content: center;
     align-items: center;
     padding: 10px;
+    display: flex;
 }
 
 .cds .btm2 {
     font-size: 20px;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
-    padding: 10px;
     cursor: pointer;
+    display: flex;
 }
-
+#footercon,
+#third {
+    max-height: 300px;
+}
 /* About Us Section CSS Ends */
+
+@media only screen and (max-width: 689px) {
+    .aboutus .head {
+        font-size: 4rem;
+    }
+    .cds {
+        width: 150px;
+        height: 150px;
+    }
+
+    .foot {
+        flex-direction: column;
+    }
+    .dropbtn,
+    .dropbtn .material-symbols-outlined {
+        font-size: 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .dropdown,
+    form.example {
+        height: 40px;
+    }
+    form.example input[type="text"] {
+        font-size: 12px;
+    }
+    .foot {
+        padding: 0;
+        height: auto;
+    }
+    #footercon {
+        max-height: 100vh;
+        height: 100vh;
+    }
+    .foot .const2 {
+        flex-direction: column;
+    }
+    .foot .const2 .left {
+        padding-bottom: 32px;
+    }
+    form.example button {
+        font-size: 12px;
+    }
+
+    .foot .const2 .right .first,
+    .second,
+    .third,
+    .fourth {
+        font-size: 16px;
+    }
+    .foot .const2 .right .second1,
+    .third1,
+    .fourth1 {
+        font-size: 12px;
+    }
+}
