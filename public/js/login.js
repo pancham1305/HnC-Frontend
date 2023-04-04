@@ -12,11 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
          password.type = "text";
          // only save the part that was selected
          const x = p.slice(password.selectionStart, password.selectionEnd);
-         console.log(p, x, "*".repeat(p.length - x.length) + x);
-        password.value = "*".repeat( p.length - x.length ) + x;
+        password.value = p.split( "" ).map( ( y, i ) => i >= password.selectionStart && i < password.selectionEnd ? y : "*" ).join( "" );
         // keep the part selected after the update
         password.focus();
-        console.log(password.selectionStart, password.selectionEnd)
         password.setSelectionRange(password.selectionStart, password.selectionEnd);
     }
 
@@ -68,8 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
             ).then((d) => d.json());
             if ( resData.status === 200 )
             {
-                document.cookie = "token="
-                localStorage.setItem("user", JSON.stringify(resData.data));
+                localStorage.setItem( "user", JSON.stringify( resData.data ) );
+                localStorage.setItem("token", resData.token);
                 window.location.href = "./services.html";
             } else {
              sendError(resData.message)
