@@ -1,18 +1,22 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
 
-const cityName = document.querySelector(".cityName");
-const links = document.querySelectorAll(".links");
-for (let i of links) {
-  i.addEventListener("click", (e) => {
-    e.preventDefault();
-    const text = e.target.innerText.toUpperCase();
-    cityName.innerText = text;
-  });
-}
+document.addEventListener( 'DOMContentLoaded', () =>
+{ 
+  const drop = document.getElementById( "dropbtn" );
+  const s = document.querySelector(".search");
+  drop.innerHTML = `${ cities.map( city => `<option class="links">${ city }</option>` ).join( "\n" ) }`
+  
+  if (localStorage.getItem("searchinfo")) {
+      const { name, query,selectedIndex } = JSON.parse(localStorage.getItem("searchinfo"));
+      console.log(name, query,selectedIndex);
+    s.value = query;
+    console.log(drop.selectedIndex)
+    drop.selectedIndex = selectedIndex;
+      document.getElementById("clk").click();
+      localStorage.removeItem("searchinfo");
+  }
+})
 
 // Filter Box JS
 
@@ -78,7 +82,7 @@ var requestOptions = {
 // DOM Variables
 const loader = document.querySelector(".loaderContainer");
 const body = document.querySelector(".hospitals");
-
+const drop = document.getElementById("dropbtn");
 const s = document.querySelector(".search");
 const btn1 = document.querySelector(".sub");
 const collection = document.querySelector(".collection");
@@ -158,7 +162,7 @@ btn1.addEventListener("click", async (e) => {
   loader.classList.remove("hide");
   body.classList.add("hide");
   const params = {
-    cityname: cityName.innerText,
+    cityname: drop.options[drop.selectedIndex].value,
     query: s.value,
   };
   const info = await search(params.query, params.cityname);
@@ -238,11 +242,5 @@ const cardCreation = (name, address) => {
   collection.appendChild(div);
 };
 
-if (localStorage.getItem("searchinfo")) {
-  const { name, query } = JSON.parse(localStorage.getItem("searchinfo"));
-  console.log(name, query);
-  s.value = query;
-  cityName.innerText = name;
-  document.getElementById("clk").click();
-  localStorage.removeItem("searchinfo");
-}
+
+
