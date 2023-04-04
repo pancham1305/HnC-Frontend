@@ -27,10 +27,9 @@ checkupbtn.addEventListener("click", async (e) => {
 
 // For Hospital Data
 const getData = async () => {
-  const hospitalinfo = JSON.parse(localStorage.getItem("hospitalinfo"));
   const a = new URLSearchParams(window.location.search);
-  const b = a.get("id");
-  console.log(hospitalinfo, b);
+  const [b,hospitalinfo] = a.get("id").split(":");
+
   // localStorage.removeItem("hospitalinfo");
   loader.classList.remove("hide");
   body.classList.add("hide");

@@ -2,6 +2,9 @@
 
 * {
   font-family: "Exo 2", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: none;
 }
 body,
 html {
@@ -34,7 +37,7 @@ html {
   border-radius: 32px;
 }
 
-img {
+#Profile img {
   border-radius: 50%;
   width: 300px;
 }

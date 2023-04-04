@@ -1,92 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Material Icons -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-    />
-    <!-- Material Symbol -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- <link
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Material Icons -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+        />
+        <!-- Material Symbol -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined"
+        />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <!-- <link
       href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap"
       rel="stylesheet"
     /> -->
-    <!-- import landingpage.css -->
-    <!-- Importing Language Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Arimo&display=swap"
-      rel="stylesheet"
-    />
+        <!-- import landingpage.css -->
+        <!-- Importing Language Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Arimo&display=swap"
+            rel="stylesheet"
+        />
 
-    <link rel="stylesheet" href="../css/profile.css" />
-    <link rel="shortcut icon" href="../images/favicon1.ico" />
-    <title>HnC</title>
-  </head>
-  <body>
-    <div id="main">
-      <div id="Profile">
-        <div class="logo">
-          <img src="../images/Dhruv_Profile_photo.jpg" alt="" />
-        </div>
-        <div class="details">
-          <section>
-            Name:
-            <div class="det">Dhruv</div>
-          </section>
-          <div class="part">
-            <section>
-              Age:
-              <div class="det">20</div>
-            </section>
-            <section>
-              Blood Group:
-              <div class="det">O+</div>
-            </section>
-          </div>
-          <section>
-            Phone:
-            <div class="det">9891764292</div>
-          </section>
-        </div>
-      </div>
-      <div id="MedHis"></div>
-    </div>
-
-    <div class="cen">
-      <div class="center">
-        <h2 style="text-align: center">Medical History</h2>
-        <div class="MedicalDet">
-          <!-- Yahan mai grid mein kaam kar sakta hu --><!-- Ek bana raha Example ke liye -->
-          <div class=""><h3>Regency</h3></div>
-
-          <div class="name">
-            <div class="part2">Checkup: General</div>
-            <div class="part2">
-              <section>Date - Time</section>
-              <section class="currency">200₨</section>
+        <link rel="stylesheet" href="../css/profile.css" />
+        <link rel="stylesheet" href="../css/navbar.css" />
+        <link rel="shortcut icon" href="../images/favicon1.ico" />
+        <title>HnC</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <div class="tile">
+                <div class="imgs">
+                    <img
+                        src="../images/logo.png"
+                        onclick="window.location.href='../'"
+                        alt="/"
+                    />
+                </div>
+                <h2>HnC</h2>
             </div>
-          </div>
+            <div class="options">
+                <a onclick="localStorage.getItem('user') ? window.location.href='./profile.html' : window.location.href='./login.html'">
+                    ><span class="material-symbols-outlined"
+                        >account_circle</span
+                    ></a
+                >
+            </div>
         </div>
-        <!-- <div class="MedicalDet">
+        <div id="main">
+            <div id="Profile">
+                <div class="logo">
+                    <img src="../images/Dhruv_Profile_photo.jpg" alt="" />
+                </div>
+                <div class="details">
+                    <section>
+                        Name:
+                        <div class="det">Dhruv</div>
+                    </section>
+                    <div class="part">
+                        <section>
+                            Age:
+                            <div class="det">20</div>
+                        </section>
+                        <section>
+                            Blood Group:
+                            <div class="det">O+</div>
+                        </section>
+                    </div>
+                    <section>
+                        Phone:
+                        <div class="det">9891764292</div>
+                    </section>
+                </div>
+            </div>
+            <div id="MedHis"></div>
+        </div>
+
+        <div class="cen">
+            <div class="center">
+                <h2 style="text-align: center">Medical History</h2>
+                <div class="MedicalDet">
+                    <!-- Yahan mai grid mein kaam kar sakta hu --><!-- Ek bana raha Example ke liye -->
+                    <div class=""><h3>Regency</h3></div>
+
+                    <div class="name">
+                        <div class="part2">Checkup: General</div>
+                        <div class="part2">
+                            <section>Date - Time</section>
+                            <section class="currency">200₨</section>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="MedicalDet">
           
           <section class="detail">Hospital Name</section>
           <section class="detail">Type</section>
@@ -95,7 +115,7 @@
           <section class="detail">Time</section>
           <section class="detail">Payment</section>
         </div> -->
-      </div>
-    </div>
-  </body>
+            </div>
+        </div>
+    </body>
 </html>

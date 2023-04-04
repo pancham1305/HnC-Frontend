@@ -13,7 +13,7 @@ document.addEventListener( 'DOMContentLoaded', async() =>
     s.value = query;
     console.log(drop.selectedIndex)
     drop.selectedIndex = selectedIndex;
-      document.getElementById("clk").click();
+      document.getElementById("btn").click();
       localStorage.removeItem("searchinfo");
   } 
 })
@@ -84,7 +84,7 @@ const loader = document.querySelector(".loaderContainer");
 const body = document.querySelector(".hospitals");
 const drop = document.getElementById("dropbtn");
 const s = document.querySelector(".search");
-const btn1 = document.querySelector(".sub");
+const btn1 = document.getElementById("btn");
 const collection = document.querySelector(".collection");
 // Functional Programming Starts
 // Hospital info Extraction
@@ -126,8 +126,10 @@ const info = async () => {
   }).then((e) => e.json());
    console.log(Hosinfo, "a");
   let i = 0;
-  Hosinfo.features.forEach((e) => {
-    newCardCreation(e.properties.name, e.properties.formatted,e.sig);
+  Hosinfo.features.forEach( ( e ) =>
+  {
+    console.log( e );
+    newCardCreation({...e.properties,...e});
     i++;
   });
 };
@@ -178,7 +180,7 @@ btn1.addEventListener("click", async (e) => {
   for ( let i of info.results )
   {
     console.log( i );
-    newCardCreation(i.name, i.formatted, i.sig);
+    newCardCreation(i);
   }
   loader.classList.add("hide");
   body.classList.remove("hide");
@@ -262,7 +264,7 @@ const cardCreation = ( name, address, id ) =>
   div.appendChild(form);
 };
 
-const newCardCreation = ( name, address, id ) =>
+const newCardCreation = ( data ) =>
 { 
   const con = document.createElement( 'a' );
   con.classList.add( 'card' );
@@ -279,40 +281,32 @@ const newCardCreation = ( name, address, id ) =>
   info.style.width = "100%";
   info.style.height = "40%";
 
-  con.href = `./hospital.html?id=${ id.iv }:${ id.data }`;
+  con.href = `./hospital.html?id=${ data.sig.iv }:${ data.sig.data }`;
 
   const namet = document.createElement( 'h3' );
-  namet.innerText = name;
-  namet.style.color = "white";
-  namet.style.margin = "0";
-  namet.style.padding = "0";
+  namet.innerText = data.name;
+
   namet.classList.add( 'name' );
   info.appendChild( namet );
   con.appendChild( info );
 
   const addr = document.createElement( 'p' );
-  addr.innerText = address;
-  addr.style.color = "white";
-  addr.style.margin = "0";
-  addr.style.padding = "0";
+  addr.innerText = data.address_line1 + "\n"+data.address_line2;
+
   addr.classList.add( 'address' );
   info.appendChild( addr );
 
   const rating = document.createElement( 'p' );
   rating.classList.add( 'rating' );
-  rating.innerText = "Rating: 4.5";
-  rating.style.color = "white";
-  rating.style.margin = "0";
-  rating.style.padding = "0";
+  rating.innerText = `Rating: ${data.rating}`;
+
   rating.classList.add( 'rating' );
   info.appendChild( rating );
 
   const status = document.createElement( 'div' );
   status.classList.add( 'status' );
-  status.innerText = "Available";
-  status.style.color = "white";
-  status.style.margin = "0";
-  status.style.padding = "0";
+  if(data.status === 'Unavailable') status.style.backgroundColor = "red";
+  status.innerText = data.status;
   
   con.appendChild( status );
 };

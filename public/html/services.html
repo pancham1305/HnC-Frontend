@@ -14,6 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0" />
     <!-- import landingpage.css -->
     <link rel="stylesheet" href="../css/services.css">
+        <link rel="stylesheet" href="../css/navbar.css" />
     <!-- Importing Language Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,39 +28,17 @@
 
 <body>
     <div class="cnt">
-        <div class="topnav">
-            <div class="tile">
-                <div class="imgs">
-                    <img src="..\images\logo.png" onclick="window.location.href='../'" alt="/">
-                </div>
-                <h2>HnC</h2>
-            </div>
-            <div class="center">
-                <div class="dropdown">
-            <select  class="dropbtn" id="dropbtn" dropzone="" contenteditable="true">
-                            <!-- <select class="cityName" contenteditable="true">KANPUR</select>
-              <span class="material-symbols-outlined"> arrow_drop_down </span> -->
-
-              
-            </select>
-            
-            
+    <div class="topnav">
+        <div class="tile">
+          <div class="imgs">
+            <img src="../images/logo.png" onclick="window.location.href='../'" alt="/" />
           </div>
-                <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
-                <form class="example" action="#home">
-                    <input class="search" type="text" placeholder="Search hospitals near you" name="search">
-                    <button type="submit" id="clk" class="sub"><span class="searchbtnicon material-symbols-outlined">
-                            search
-                        </span>
-                    </button>
-                </form>
-            </div>
-            <div class="options">
-                <span class="material-symbols-outlined">
-                    <a href="login.html">account_circle</a>
-                </span>
-            </div>
+          <h2>HnC</h2>
         </div>
+        <div class="options">
+          <a onclick="localStorage.getItem('user') ? window.location.href='./profile.html' : window.location.href='./login.html'"><span class="material-symbols-outlined">account_circle</span></a>
+        </div>
+    </div>
         <div class="emergencybtn">
             <!-- <div class="circle">
                 <span class="content">Emergency Button</span>
@@ -101,11 +80,39 @@
         </div>
     </div>
     <div class="results">
+<div class="con" id="firstcon">
+        <div class="cent">
+          <div class="dropdown">
+            <select onclick="myFunction()" class="dropbtn" id="dropbtn" dropzone="" contenteditable="true">
+                            <!-- <select class="cityName" contenteditable="true">KANPUR</select>
+              <span class="material-symbols-outlined"> arrow_drop_down </span> -->
+
+              
+            </select>
+            
+            
+          </div>
+          <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
+          <form class="example" action="" method="get">
+            <input
+              type="text"
+              placeholder="Search hospitals near you"
+              name="search"
+              class="search"
+            />
+            <button type="submit" class="btn" id="btn">
+              <span class="searchbtnicon material-symbols-outlined">
+                search
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
         <div class="data">
             <span>Results Based on the filters chosen..</span>
         </div>
     </div>
-    <div class="loaderContainer hide">
+    <div class="loaderContainer">
         <div id='css3-spinner-svg-pulse-wrapper'>
             <svg id='css3-spinner-svg-pulse' version='1.2' height='210' width='550' xmlns='http://www.w3.org/2000/svg'
                 viewpo  rt='0 0 60 60' xmlns:xlink='http://www.w3.org/1999/xlink'>
@@ -115,6 +122,7 @@
         </div>
         </svg>
     </div>
+
     <div class="hospitals">
         <div class="collection">
             <!-- <div class="card">
@@ -203,20 +211,7 @@
             </div>
         </div>
     </div> -->
-    <!-- Purana Footer Section Ends-->
-    <div class="foot">
-        <div class="footinfo">
-            <span class="ifs">
-                Contact Us
-            </span>
-        </div>
-        <form>
-            <input name="name" type="text" class="feedback-input" placeholder="Name" />
-            <input name="email" type="text" class="feedback-input" placeholder="Email" />
-            <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
-            <input type="submit" value="SUBMIT" />
-        </form>
-    </div>
+   
     </div>
 
 </body>
