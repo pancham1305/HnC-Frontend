@@ -97,8 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
         } ).then( ( d ) => d.json() );
         if ( res.status === 200 )
         {
-            document.cookie = "guest=true";
-
             localStorage.setItem( "user", JSON.stringify( res.data ) );
             window.location.href = "./services.html";
         }
