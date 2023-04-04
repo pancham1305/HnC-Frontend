@@ -69,7 +69,7 @@ const getLoc = new Promise((res, rej) => {
       res(e);
     },
     (e) => {
-      rej("Location Access Denied With Error: "+ e.message);
+      rej("Location Access Denied With Error: " + e.message);
     }
   );
 });
@@ -88,6 +88,7 @@ const btn1 = document.querySelector(".sub");
 const collection = document.querySelector(".collection");
 // Functional Programming Starts
 // Hospital info Extraction
+let data = [];
 const info = async () => {
   // User location
   const dt = await getLoc.catch((e) => {
@@ -97,6 +98,7 @@ const info = async () => {
   if (!dt) {
     return;
   }
+
   let lat = dt.coords.latitude;
   let long = dt.coords.longitude;
   // Reverse geocoding => Finding place_id
@@ -110,19 +112,22 @@ const info = async () => {
       },
     }
   ).then((r) => r.json());
-  console.log(exactloc);
+  // console.log(exactloc);
   let place_id = exactloc.features[0].properties.place_id;
   let url = `https://HnC-Backend.pancham1305.repl.co/api/hospitals`;
-  const Hosinfo = await fetch(url, {
+  const { Hosinfo, id } = await fetch(url, {
     method: "POST",
     body: JSON.stringify({ place_id }),
     headers: {
       "Content-Type": "application/json",
     },
   }).then((e) => e.json());
-  // console.log(Hosinfo);
+  // console.log(Hosinfo, id, "a");
+  data = id;
+  let i = 0;
   Hosinfo.features.forEach((e) => {
-    cardCreation(e.properties.name, e.properties.formatted);
+    cardCreation(e.properties.name, e.properties.formatted, id[i]);
+    i++;
   });
 };
 
@@ -138,6 +143,21 @@ const loadData = async () => {
   loader.classList.add("hide");
   body.classList.remove("hide");
   executed = false;
+  const card = document.querySelectorAll(".card");
+  for (let i of card) {
+    i.addEventListener("click", (e) => {
+      e.preventDefault();
+      const id = i.childNodes[2].firstChild.value;
+
+      for (let i = 0; i < data.length; i++) {
+        if (data[i].iv === id) {
+          localStorage.setItem("hospitalinfo", JSON.stringify(data[i].data));
+          break;
+        }
+      }
+      window.location.href = `/public/html/medhis.html?id=${id}`;
+    });
+  }
 };
 
 if (executed && !localStorage.getItem("searchinfo")) {
@@ -175,7 +195,7 @@ btn1.addEventListener("click", async (e) => {
   body.classList.remove("hide");
 });
 
-const cardCreation = (name, address) => {
+const cardCreation = (name, address, id) => {
   const div = document.createElement("div");
   div.classList.add("card");
   const div2 = document.createElement("div");
@@ -240,6 +260,15 @@ const cardCreation = (name, address) => {
   div2.appendChild(div4);
   div2.appendChild(div5);
   collection.appendChild(div);
+  const form = document.createElement("form");
+  form.method = "GET";
+  form.action = "/hospital";
+  const input = document.createElement("input");
+  input.type = "hidden";
+  input.name = "id";
+  input.value = id.iv;
+  form.appendChild(input);
+  div.appendChild(form);
 };
 
 
