@@ -1,11 +1,11 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 
-document.addEventListener( 'DOMContentLoaded', () =>
+document.addEventListener( 'DOMContentLoaded', async() =>
 { 
   const drop = document.getElementById( "dropbtn" );
   const s = document.querySelector(".search");
-  drop.innerHTML = `${ cities.map( city => `<option class="links">${ city }</option>` ).join( "\n" ) }`
+  drop.innerHTML = `${ cities.map( city => `<option class="links">${ city.name }</option>` ).join( "\n" ) }`
   
   if (localStorage.getItem("searchinfo")) {
       const { name, query,selectedIndex } = JSON.parse(localStorage.getItem("searchinfo"));
@@ -15,7 +15,7 @@ document.addEventListener( 'DOMContentLoaded', () =>
     drop.selectedIndex = selectedIndex;
       document.getElementById("clk").click();
       localStorage.removeItem("searchinfo");
-  }
+  } 
 })
 
 // Filter Box JS
@@ -113,20 +113,21 @@ const info = async () => {
     }
   ).then((r) => r.json());
   // console.log(exactloc);
-  let place_id = exactloc.features[0].properties.place_id;
+  let ind = cities.findIndex( x => x.name === exactloc.features[ 0 ].properties.county || x.name === exactloc.features[ 0 ].properties.state_district );
+  drop.selectedIndex = ind;
+  let place_id = exactloc.features[ 0 ].properties.place_id;
   let url = `https://HnC-Backend.pancham1305.repl.co/api/hospitals`;
-  const { Hosinfo, id } = await fetch(url, {
+  const Hosinfo = await fetch(url, {
     method: "POST",
     body: JSON.stringify({ place_id }),
     headers: {
       "Content-Type": "application/json",
     },
   }).then((e) => e.json());
-  // console.log(Hosinfo, id, "a");
-  data = id;
+   console.log(Hosinfo, "a");
   let i = 0;
   Hosinfo.features.forEach((e) => {
-    cardCreation(e.properties.name, e.properties.formatted, id[i]);
+    newCardCreation(e.properties.name, e.properties.formatted,e.sig);
     i++;
   });
 };
@@ -143,21 +144,7 @@ const loadData = async () => {
   loader.classList.add("hide");
   body.classList.remove("hide");
   executed = false;
-  const card = document.querySelectorAll(".card");
-  for (let i of card) {
-    i.addEventListener("click", (e) => {
-      e.preventDefault();
-      const id = i.childNodes[2].firstChild.value;
 
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].iv === id) {
-          localStorage.setItem("hospitalinfo", JSON.stringify(data[i].data));
-          break;
-        }
-      }
-      window.location.href = `/public/html/medhis.html?id=${id}`;
-    });
-  }
 };
 
 if (executed && !localStorage.getItem("searchinfo")) {
@@ -188,14 +175,18 @@ btn1.addEventListener("click", async (e) => {
   const info = await search(params.query, params.cityname);
   console.log(info.results);
   collection.innerHTML = "";
-  for (let i of info.results) {
-    cardCreation(i.name, i.address_line2);
+  for ( let i of info.results )
+  {
+    console.log( i );
+    newCardCreation(i.name, i.formatted, i.sig);
   }
   loader.classList.add("hide");
   body.classList.remove("hide");
 });
 
-const cardCreation = (name, address, id) => {
+const cardCreation = ( name, address, id ) =>
+{
+  console.log(name, address, id);
   const div = document.createElement("div");
   div.classList.add("card");
   const div2 = document.createElement("div");
@@ -271,5 +262,57 @@ const cardCreation = (name, address, id) => {
   div.appendChild(form);
 };
 
+const newCardCreation = ( name, address, id ) =>
+{ 
+  const con = document.createElement( 'a' );
+  con.classList.add( 'card' );
+  con.style.backgroundImage = "url('../images/hospital.avif')";
+  con.style.backgroundSize = "cover";
+  con.style.backgroundPosition = "center";
+  con.style.backgroundRepeat = "no-repeat";
+  con.style.width = "300px";
+  con.style.height = "480px";
+  con.style.borderRadius = "10px";
+  collection.appendChild( con );
+  const info = document.createElement( 'div' );
+  info.classList.add( 'info' );
+  info.style.width = "100%";
+  info.style.height = "40%";
 
+  con.href = `./hospital.html?id=${ id.iv }:${ id.data }`;
 
+  const namet = document.createElement( 'h3' );
+  namet.innerText = name;
+  namet.style.color = "white";
+  namet.style.margin = "0";
+  namet.style.padding = "0";
+  namet.classList.add( 'name' );
+  info.appendChild( namet );
+  con.appendChild( info );
+
+  const addr = document.createElement( 'p' );
+  addr.innerText = address;
+  addr.style.color = "white";
+  addr.style.margin = "0";
+  addr.style.padding = "0";
+  addr.classList.add( 'address' );
+  info.appendChild( addr );
+
+  const rating = document.createElement( 'p' );
+  rating.classList.add( 'rating' );
+  rating.innerText = "Rating: 4.5";
+  rating.style.color = "white";
+  rating.style.margin = "0";
+  rating.style.padding = "0";
+  rating.classList.add( 'rating' );
+  info.appendChild( rating );
+
+  const status = document.createElement( 'div' );
+  status.classList.add( 'status' );
+  status.innerText = "Available";
+  status.style.color = "white";
+  status.style.margin = "0";
+  status.style.padding = "0";
+  
+  con.appendChild( status );
+};
