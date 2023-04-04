@@ -357,6 +357,12 @@ body {
     /* padding: 0px; */
 }
 
+.links {
+    padding-top: 5px;
+    height:30px;
+    padding-bottom: 5px;
+}
+
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
     margin-top: 90px;
@@ -409,7 +415,25 @@ body {
     text-align: center;
     border: none;
     outline: none;
+    transition: 250ms;
+    background-color: #0b7dda;
+    color: #fff;
 }
+.dropbtn.arrow {
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    background-color: #0b7dda;
+    color: #fff;
+}
+
+/* change color of arrow in select tag */
+
+select 
+
+/* .dropbtn:hover {
+    background-color: #0b7dda;
+    color: #fff;
+} */
 
 .dropbtn .material-symbols-outlined {
     font-size: 25px;

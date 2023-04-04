@@ -22,6 +22,7 @@
     <link rel="shortcut icon" href="..\images\favicon1.ico">
     <!-- Linking JavaScript File -->
     <script defer src="../js/services.js"></script>
+    <script defer src="../js/cities.js"></script>
 </head>
 
 <body>
@@ -35,22 +36,15 @@
             </div>
             <div class="center">
                 <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn">
-                        <span class="cityName">KANPUR</span>
-                        <span class="material-symbols-outlined">
-                            arrow_drop_down
-                        </span>
-                    </button>
-                    <div id="myDropdown" class="dropdown-content">
-                        <a href="" class="links">Mumbai</a>
-                        <a href="" class="links">Chennai</a>
-                        <a href="" class="links">Ahmedabad</a>
-                        <a href="" class="links">Bengaluru</a>
-                        <a href="" class="links">Pune</a>
-                        <a href="" class="links">Kolkata</a>
-                        <a href="" class="links">Hyderabad</a>
-                    </div>
-                </div>
+            <select  class="dropbtn" id="dropbtn" dropzone="" contenteditable="true">
+                            <!-- <select class="cityName" contenteditable="true">KANPUR</select>
+              <span class="material-symbols-outlined"> arrow_drop_down </span> -->
+
+              
+            </select>
+            
+            
+          </div>
                 <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
                 <form class="example" action="#home">
                     <input class="search" type="text" placeholder="Search hospitals near you" name="search">
