@@ -126,6 +126,9 @@ const info = async () => {
   }).then((e) => e.json());
    console.log(Hosinfo, "a");
   let i = 0;
+  Hosinfo.features = Hosinfo.features.sort( ( a, b) => b.rating - a.rating );
+  Hosinfo.features = [...Hosinfo.features.filter( x => x.status === 'Available' ),...Hosinfo.features.filter( x => x.status !== 'Available' )];
+  
   Hosinfo.features.forEach( ( e ) =>
   {
     console.log( e );

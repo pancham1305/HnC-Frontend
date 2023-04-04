@@ -4,19 +4,56 @@ document.addEventListener("DOMContentLoaded", () => {
     error.style.height = "0px";
     error.style.top = "-30px";
 
+    const password = document.getElementById( "pass" );
+    let p = password?.value;
+
+    const updatepass = () =>
+    {
+         password.type = "text";
+         // only save the part that was selected
+         const x = p.slice(password.selectionStart, password.selectionEnd);
+         console.log(p, x, "*".repeat(p.length - x.length) + x);
+        password.value = "*".repeat( p.length - x.length ) + x;
+        // keep the part selected after the update
+        password.focus();
+        console.log(password.selectionStart, password.selectionEnd)
+        password.setSelectionRange(password.selectionStart, password.selectionEnd);
+    }
+
+    const restorePass = () =>
+    {
+        console.log(p)
+        password.type = "password";
+        password.value = p;
+    }
+
+    password?.addEventListener( 'change', ( e ) => p = e.target.value );
+    password?.addEventListener( 'keyup', ( e ) => p = e.target.value );
+    password?.addEventListener( 'select', ( e ) => updatepass() );
+    password.onblur = password.onfocus = password.onmousedown = restorePass;
+
     const closebtn = document.getElementById("closeerrorbtn");
     console.log({ closebtn });
 
     login.addEventListener("click", async (e) => {
         try {
             e.preventDefault();
-
-            const phone = document.getElementById("email").value;
-            const password = document.getElementById("pass").value;
+            
+     
+            let phone = document.getElementById("email").value;
+            const password = document.getElementById( "pass" ).value;
+            if ( !phone || !password ) return sendError( "Please fill all the fields" );
+            if ( phone.length === 13 ) phone = phone.slice( 3 );
+            
+            phone = Number( phone ).toString();
+            if ( isNaN( phone ) || phone.length !== 10 ) return sendError( "Invalid Phone Number" );
+            if ( password.length < 8 ) return sendError( "Password must be atleast 8 characters long" );
+            
+            
             const data = {
                 phone,
                 password,
-                token: localStorage.getItem("token"),
+                token: localStorage.getItem("uid"),
             };
 
             const resData = await fetch(
@@ -29,17 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     body: JSON.stringify(data),
                 },
             ).then((d) => d.json());
-            if (resData.status === 200) {
+            if ( resData.status === 200 )
+            {
+                document.cookie = "token="
                 localStorage.setItem("user", JSON.stringify(resData.data));
                 window.location.href = "./services.html";
             } else {
-                const error = document.getElementById("error");
-                error.style.height = "";
-                error.style.top = "";
-                error.innerHTML += `<div class='etext'>${resData.message}</div>`;
+             sendError(resData.message)
             }
         } catch (e) {
-            console.log(e);
+            sendError(`Failed to login: ${e.message}`)
         }
     } );
     
@@ -47,10 +83,10 @@ document.addEventListener("DOMContentLoaded", () => {
     guestbtn.addEventListener( "click", async( e ) =>
     { 
         const data = {
-            phone: "0000000000",
-            password: "thisisguest",
-            token: "guest.token.somethingig",
-        }
+            phone: "+910000000000",
+            password: "guestuserrocks",
+            uid: "0000000000000000000000000000000000000000000000000000000000000000",
+        };
 
         const res = await fetch( "https://HnC-Backend.pancham1305.repl.co/api/login", {
             method: "POST",
@@ -61,6 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
         } ).then( ( d ) => d.json() );
         if ( res.status === 200 )
         {
+            document.cookie = "guest=true";
+
             localStorage.setItem( "user", JSON.stringify( res.data ) );
             window.location.href = "./services.html";
         }
@@ -82,3 +120,13 @@ document.addEventListener("click", (e) => {
     error.style.height = "0px";
     error.style.top = "-30px";
 });
+
+function sendError ( msg )
+{
+       const error = document.getElementById("error");
+       error.style.height = "";
+       error.style.top = "";
+       error.innerHTML += `<div class='etext'>${msg}</div>`;
+}
+
+
