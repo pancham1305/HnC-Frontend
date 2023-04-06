@@ -113,7 +113,7 @@ const info = async () => {
     }
   ).then((r) => r.json());
   // console.log(exactloc);
-  let ind = cities.findIndex( x => x.name === exactloc.features[ 0 ].properties.county || x.name === exactloc.features[ 0 ].properties.state_district );
+  let ind = cities.findIndex( x => x.name === exactloc.features[0] .properties.city || x.name === exactloc.features[ 0 ].properties.county || x.name === exactloc.features[ 0 ].properties.state_district );
   drop.selectedIndex = ind;
   let place_id = exactloc.features[ 0 ].properties.place_id;
   let url = `https://HnC-Backend.pancham1305.repl.co/api/hospitals`;
@@ -166,7 +166,7 @@ const search = async (a, b) => {
     },
   }).then((e) => e.json());
   console.log( info );
-  info.results = info.results.sort( ( a, b ) => b.rating - a.rating );
+  info.results = info.results.filter(x => x.city === drop.options[drop.selectedIndex].value ).sort( ( a, b ) => b.rating - a.rating );
   info.results = [...info.results.filter( x => x.status === 'Available' ),...info.results.filter( x => x.status !== 'Available' )];
   return info;
 };
