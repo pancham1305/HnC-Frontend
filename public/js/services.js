@@ -165,7 +165,9 @@ const search = async (a, b) => {
       "Content-Type": "application/json",
     },
   }).then((e) => e.json());
-  console.log(info);
+  console.log( info );
+  info.results = info.results.sort( ( a, b ) => b.rating - a.rating );
+  info.results = [...info.results.filter( x => x.status === 'Available' ),...info.results.filter( x => x.status !== 'Available' )];
   return info;
 };
 

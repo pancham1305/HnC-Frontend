@@ -140,9 +140,7 @@ btnup.addEventListener("click", async (e) => {
   {
     btnup.textContent = "Done";
     profile.src = imgLink;
+    window.location.reload();
   }, 1000 );
-  setTimeout( () =>
-  {
-    btnup.textContent = "Upload";
-  }, 4000 ); 
+ 
 });
