@@ -1,10 +1,15 @@
+const user = JSON.parse(localStorage.getItem("user"));
 document.addEventListener("DOMContentLoaded", () => {
   const error = document.getElementById("error");
   error.style.height = "0px";
   error.style.top = "-30px";
+
+  const profile = document.getElementById("profileAvatar");
+  if (user.hasProfile) {
+    profile.src = "https://HnC-Backend.pancham1305.repl.co/images/"+user.uid;
+  }
 });
 const center = document.querySelector(".center");
-const user = JSON.parse(localStorage.getItem("user"));
 const body = document.querySelector("body");
 
 const hidid = document.getElementById("hidid");
@@ -108,19 +113,27 @@ document.addEventListener("click", (e) => {
 
 const img = document.getElementById("img");
 const btnup = document.getElementById("Upload");
-const imgupload = document.getElementById("imgupload")
+const imgupload = document.getElementById("imgupload");
+const profile = document.getElementById("profileAvatar");
+if (user.uid === "0".repeat(64)) {
+  imgupload.remove();
+}
 btnup.addEventListener("click", async (e) => {
   e.preventDefault();
-  const hidid = document.getElementById("hidid")
+  const hidid = document.getElementById("hidid");
   const formData = new FormData(imgupload);
 
   let url = "https://HnC-Backend.pancham1305.repl.co/api/upload";
-  const imglink = await fetch(url, {
+  const {imgLink,hasProfile} = await fetch(url, {
     method: "POST",
     body: formData,
     headers: {
       "x-uid": hidid.value,
     },
   }).then((e) => e.json());
-  console.log(imglink);
+  
+  console.log(imgLink);
+  user.hasProfile = hasProfile;
+  localStorage.setItem("user", JSON.stringify(user));
+  profile.src = imgLink;
 });

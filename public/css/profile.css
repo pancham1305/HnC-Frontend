@@ -39,8 +39,10 @@ html {
 }
 
 #Profile img {
-  border-radius: 50%;
+  border-radius: 100%;
   width: 300px;
+  height: 300px;
+  border:2px solid darkcyan;
 }
 
 .details {
@@ -65,6 +67,7 @@ html {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  gap:32px;
   width: 100%;
 }
 
@@ -81,11 +84,13 @@ html {
 
 .det {
   width: 100%;
-  padding: 0.5em 0;
+  padding: 0.5em;
+  padding-left: 1em;
   background-color: gainsboro;
+  box-sizing: border-box;
 }
 .part section .det {
-  width: 90%;
+  width: 100%;
 }
 .MedicalDet {
   padding: 16px;
@@ -104,7 +109,7 @@ html {
   min-height: 500px;
   border-radius: 32px;
   box-shadow: 0 0 32px rgba(0, 0, 0, 0.19), 0 0.6em 0.6em rgba(0, 0, 0, 0.23);
-  gap: 16px;
+  gap: 64px;
   padding-top: 32px;
   padding-bottom: 32px;
 }
@@ -218,7 +223,6 @@ button:active {
   flex-direction: column;
   gap: 32px;
   /* background-image: url("https://i.pinimg.com/564x/9b/47/a0/9b47a023caf29f113237d61170f34ad9.jpg"); */
-  
 }
 .err {
   width: 500px;
