@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const profile = document.getElementById("profileAvatar");
   if (user.hasProfile) {
-    profile.src = "https://HnC-Backend.pancham1305.repl.co/images/"+user.uid;
+    profile.src = "https://HnC-Backend.pancham1305.repl.co/images/" + user.uid;
   }
 });
 const center = document.querySelector(".center");
@@ -121,10 +121,10 @@ if (user.uid === "0".repeat(64)) {
 btnup.addEventListener("click", async (e) => {
   e.preventDefault();
   const hidid = document.getElementById("hidid");
-  const formData = new FormData( imgupload );
+  const formData = new FormData(imgupload);
   btnup.textContent = "Uploading...";
   let url = "https://HnC-Backend.pancham1305.repl.co/api/upload";
-  const {imgLink,hasProfile} = await fetch(url, {
+  const { imgLink, hasProfile } = await fetch(url, {
     method: "POST",
     body: formData,
     headers: {
@@ -133,14 +133,19 @@ btnup.addEventListener("click", async (e) => {
   }).then((e) => e.json());
   console.log(imgLink);
   user.hasProfile = hasProfile;
-  
+
   localStorage.setItem("user", JSON.stringify(user));
   profile.src = "../images/guestlogo.jpg";
-  setTimeout( () =>
-  {
+  setTimeout(() => {
     btnup.textContent = "Done";
     profile.src = imgLink;
     window.location.reload();
-  }, 1000 );
- 
+  }, 1000);
 });
+const login = document.getElementById("login");
+if (user) {
+  login.innerHTML = `${user.username}
+            <span class="material-symbols-outlined" id="loginicon">
+              login
+            </span>`;
+}

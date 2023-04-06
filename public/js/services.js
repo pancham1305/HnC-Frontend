@@ -1,22 +1,25 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 
-document.addEventListener( 'DOMContentLoaded', async() =>
-{ 
-  const drop = document.getElementById( "dropbtn" );
+document.addEventListener("DOMContentLoaded", async () => {
+  const drop = document.getElementById("dropbtn");
   const s = document.querySelector(".search");
-  drop.innerHTML = `${ cities.map( city => `<option class="links">${ city.name }</option>` ).join( "\n" ) }`
-  
+  drop.innerHTML = `${cities
+    .map((city) => `<option class="links">${city.name}</option>`)
+    .join("\n")}`;
+
   if (localStorage.getItem("searchinfo")) {
-      const { name, query,selectedIndex } = JSON.parse(localStorage.getItem("searchinfo"));
-      console.log(name, query,selectedIndex);
+    const { name, query, selectedIndex } = JSON.parse(
+      localStorage.getItem("searchinfo")
+    );
+    console.log(name, query, selectedIndex);
     s.value = query;
-    console.log(drop.selectedIndex)
+    console.log(drop.selectedIndex);
     drop.selectedIndex = selectedIndex;
-      document.getElementById("btn").click();
-      localStorage.removeItem("searchinfo");
-  } 
-})
+    document.getElementById("btn").click();
+    localStorage.removeItem("searchinfo");
+  }
+});
 
 // Filter Box JS
 
@@ -113,9 +116,14 @@ const info = async () => {
     }
   ).then((r) => r.json());
   // console.log(exactloc);
-  let ind = cities.findIndex( x => x.name === exactloc.features[0] .properties.city || x.name === exactloc.features[ 0 ].properties.county || x.name === exactloc.features[ 0 ].properties.state_district );
+  let ind = cities.findIndex(
+    (x) =>
+      x.name === exactloc.features[0].properties.city ||
+      x.name === exactloc.features[0].properties.county ||
+      x.name === exactloc.features[0].properties.state_district
+  );
   drop.selectedIndex = ind;
-  let place_id = exactloc.features[ 0 ].properties.place_id;
+  let place_id = exactloc.features[0].properties.place_id;
   let url = `https://HnC-Backend.pancham1305.repl.co/api/hospitals`;
   const Hosinfo = await fetch(url, {
     method: "POST",
@@ -124,15 +132,17 @@ const info = async () => {
       "Content-Type": "application/json",
     },
   }).then((e) => e.json());
-   console.log(Hosinfo, "a");
+  console.log(Hosinfo, "a");
   let i = 0;
-  Hosinfo.features = Hosinfo.features.sort( ( a, b) => b.rating - a.rating );
-  Hosinfo.features = [...Hosinfo.features.filter( x => x.status === 'Available' ),...Hosinfo.features.filter( x => x.status !== 'Available' )];
-  
-  Hosinfo.features.forEach( ( e ) =>
-  {
-    console.log( e );
-    newCardCreation({...e.properties,...e});
+  Hosinfo.features = Hosinfo.features.sort((a, b) => b.rating - a.rating);
+  Hosinfo.features = [
+    ...Hosinfo.features.filter((x) => x.status === "Available"),
+    ...Hosinfo.features.filter((x) => x.status !== "Available"),
+  ];
+
+  Hosinfo.features.forEach((e) => {
+    console.log(e);
+    newCardCreation({ ...e.properties, ...e });
     i++;
   });
 };
@@ -149,7 +159,6 @@ const loadData = async () => {
   loader.classList.add("hide");
   body.classList.remove("hide");
   executed = false;
-
 };
 
 if (executed && !localStorage.getItem("searchinfo")) {
@@ -165,9 +174,14 @@ const search = async (a, b) => {
       "Content-Type": "application/json",
     },
   }).then((e) => e.json());
-  console.log( info );
-  info.results = info.results.filter(x => x.city === drop.options[drop.selectedIndex].value ).sort( ( a, b ) => b.rating - a.rating );
-  info.results = [...info.results.filter( x => x.status === 'Available' ),...info.results.filter( x => x.status !== 'Available' )];
+  console.log(info);
+  info.results = info.results
+    .filter((x) => x.city === drop.options[drop.selectedIndex].value)
+    .sort((a, b) => b.rating - a.rating);
+  info.results = [
+    ...info.results.filter((x) => x.status === "Available"),
+    ...info.results.filter((x) => x.status !== "Available"),
+  ];
   return info;
 };
 
@@ -182,17 +196,15 @@ btn1.addEventListener("click", async (e) => {
   const info = await search(params.query, params.cityname);
   console.log(info.results);
   collection.innerHTML = "";
-  for ( let i of info.results )
-  {
-    console.log( i );
+  for (let i of info.results) {
+    console.log(i);
     newCardCreation(i);
   }
   loader.classList.add("hide");
   body.classList.remove("hide");
 });
 
-const cardCreation = ( name, address, id ) =>
-{
+const cardCreation = (name, address, id) => {
   console.log(name, address, id);
   const div = document.createElement("div");
   div.classList.add("card");
@@ -269,10 +281,9 @@ const cardCreation = ( name, address, id ) =>
   div.appendChild(form);
 };
 
-const newCardCreation = ( data ) =>
-{ 
-  const con = document.createElement( 'a' );
-  con.classList.add( 'card' );
+const newCardCreation = (data) => {
+  const con = document.createElement("a");
+  con.classList.add("card");
   con.style.backgroundImage = "url('../images/hospital.avif')";
   con.style.backgroundSize = "cover";
   con.style.backgroundPosition = "center";
@@ -280,38 +291,50 @@ const newCardCreation = ( data ) =>
   con.style.width = "300px";
   con.style.height = "480px";
   con.style.borderRadius = "10px";
-  collection.appendChild( con );
-  const info = document.createElement( 'div' );
-  info.classList.add( 'info' );
+  collection.appendChild(con);
+  const info = document.createElement("div");
+  info.classList.add("info");
   info.style.width = "100%";
   info.style.height = "40%";
 
-  con.href = `./hospital.html?id=${ data.sig.iv }:${ data.sig.data }`;
+  con.href = `./hospital.html?id=${data.sig.iv}:${data.sig.data}`;
 
-  const namet = document.createElement( 'h3' );
+  const namet = document.createElement("h3");
   namet.innerText = data.name;
 
-  namet.classList.add( 'name' );
-  info.appendChild( namet );
-  con.appendChild( info );
+  namet.classList.add("name");
+  info.appendChild(namet);
+  con.appendChild(info);
 
-  const addr = document.createElement( 'p' );
-  addr.innerText = data.address_line1 + "\n"+data.address_line2;
+  const addr = document.createElement("p");
+  addr.innerText = data.address_line1 + "\n" + data.address_line2;
 
-  addr.classList.add( 'address' );
-  info.appendChild( addr );
+  addr.classList.add("address");
+  info.appendChild(addr);
 
-  const rating = document.createElement( 'p' );
-  rating.classList.add( 'rating' );
+  const rating = document.createElement("p");
+  rating.classList.add("rating");
   rating.innerText = `Rating: ${data.rating}`;
 
-  rating.classList.add( 'rating' );
-  info.appendChild( rating );
+  rating.classList.add("rating");
+  info.appendChild(rating);
 
-  const status = document.createElement( 'div' );
-  status.classList.add( 'status' );
-  if(data.status === 'Unavailable') status.style.backgroundColor = "red";
+  const status = document.createElement("div");
+  status.classList.add("status");
+  if (data.status === "Unavailable") status.style.backgroundColor = "red";
   status.innerText = data.status;
-  
-  con.appendChild( status );
+
+  con.appendChild(status);
 };
+
+const login = document.getElementById("login");
+
+const user = JSON.parse(localStorage.getItem("user"));
+if (user) {
+  login.innerHTML = `${user.username}
+            <span class="material-symbols-outlined" id="loginicon">
+              login
+            </span>`;
+}
+login.style.fontSize = "20px";
+login.style.flexDirection = "row";
