@@ -4,8 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
   error.style.top = "-30px";
 });
 const center = document.querySelector(".center");
-const user = localStorage.getItem("user");
+const user = JSON.parse(localStorage.getItem("user"));
 const body = document.querySelector("body");
+
+const hidid = document.getElementById("hidid");
+hidid.value = user.uid;
+
 const cardCreation = (data) => {
   //Hospital Name
   const mainDiv = document.createElement("div");
@@ -23,7 +27,9 @@ const cardCreation = (data) => {
   divpart1of2.innerHTML = `${data.type}: ${data.typeValue}`;
   const divpart2of2 = document.createElement("div");
   divpart2of2.classList.add("part2");
-  divpart2of2.innerHTML = `<section>${data.date === 'NaN' ? 'NaN' : new Date(data.date).toLocaleString()}</section><section class="currency">${data.payment}Rs</section>`;
+  divpart2of2.innerHTML = `<section>${
+    data.date === "NaN" ? "NaN" : new Date(data.date).toLocaleString()
+  }</section><section class="currency">${data.payment}Rs</section>`;
 
   div1.appendChild(divpart1of2);
   div1.appendChild(divpart2of2);
@@ -43,7 +49,7 @@ const getProfileData = async () => {
 };
 
 const showdata = (profileData) => {
-  let data = JSON.parse(profileData);
+  let data = profileData;
   const username = data.username;
   let age = data.age;
   let bloodGroup = data.bloodgroup;
@@ -99,3 +105,22 @@ document.addEventListener("click", (e) => {
 // 2nd div.part2 => 2*section
 // 1st section => innerText:Date-Time
 // 2nd section.currency: Payment
+
+const img = document.getElementById("img");
+const btnup = document.getElementById("Upload");
+const imgupload = document.getElementById("imgupload")
+btnup.addEventListener("click", async (e) => {
+  e.preventDefault();
+  const hidid = document.getElementById("hidid")
+  const formData = new FormData(imgupload);
+
+  let url = "https://HnC-Backend.pancham1305.repl.co/api/upload";
+  const imglink = await fetch(url, {
+    method: "POST",
+    body: formData,
+    headers: {
+      "x-uid": hidid.value,
+    },
+  }).then((e) => e.json());
+  console.log(imglink);
+});

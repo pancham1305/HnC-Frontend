@@ -217,14 +217,16 @@ button:active {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  /* background-image: url("https://i.pinimg.com/564x/9b/47/a0/9b47a023caf29f113237d61170f34ad9.jpg"); */
+  
 }
 .err {
-  width:500px;
-  height:auto;
+  width: 500px;
+  height: auto;
   background-color: #ffffff;
-word-wrap: break-word;
-white-space: pre-wrap;
-word-break: break-word;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word;
   display: flex;
   position: absolute;
   top: 0;
@@ -238,22 +240,22 @@ word-break: break-word;
   box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
   transition: 0.5ms;
   color: rgb(255, 68, 0);
-  font-weight:600;
+  font-weight: 600;
   flex-direction: column;
-  }
-    .closebtn {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
-    background-color: #0f0f0f;
-    color:#ffffff;
-    font-size: 18px;
-    padding-left: 16px;
-    padding-right: 16px;
-    cursor: pointer;
-  }
- .etext {
-    padding: 16px;
-  }
+}
+.closebtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  background-color: #0f0f0f;
+  color: #ffffff;
+  font-size: 18px;
+  padding-left: 16px;
+  padding-right: 16px;
+  cursor: pointer;
+}
+.etext {
+  padding: 16px;
+}

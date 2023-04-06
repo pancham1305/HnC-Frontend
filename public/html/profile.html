@@ -79,8 +79,26 @@
     <div id="main">
       <div id="Profile">
         <div class="logo">
-          <img src="../images/Dhruv_Profile_photo.jpg" alt="" />
-          <button id="logout">logout</button>
+          <img
+            src="https://i.pinimg.com/564x/9b/47/a0/9b47a023caf29f113237d61170f34ad9.jpg"
+            alt=""
+          />
+          <form
+            method=""
+            action=""
+            enctype=""
+            id="imgupload"
+          >
+            <input
+              type="file"
+              name="img"
+              id="img"
+              accept="image/jpeg, image/png, image/jpg"
+            />
+            <input type="hidden" name="uid" id="hidid" value="" />
+            <button id="Upload">Upload</button>
+          </form>
+          <button id="logout">Logout</button>
         </div>
         <div class="details">
           <section>
@@ -109,7 +127,7 @@
     <div class="cen">
       <div class="center">
         <h2 style="text-align: center">Medical History</h2>
-        
+
         <!-- <div class="MedicalDet">
           
           <section class="detail">Hospital Name</section>
