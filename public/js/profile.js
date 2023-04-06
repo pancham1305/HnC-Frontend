@@ -121,8 +121,8 @@ if (user.uid === "0".repeat(64)) {
 btnup.addEventListener("click", async (e) => {
   e.preventDefault();
   const hidid = document.getElementById("hidid");
-  const formData = new FormData(imgupload);
-
+  const formData = new FormData( imgupload );
+  btnup.textContent = "Uploading...";
   let url = "https://HnC-Backend.pancham1305.repl.co/api/upload";
   const {imgLink,hasProfile} = await fetch(url, {
     method: "POST",
@@ -131,9 +131,18 @@ btnup.addEventListener("click", async (e) => {
       "x-uid": hidid.value,
     },
   }).then((e) => e.json());
-  
   console.log(imgLink);
   user.hasProfile = hasProfile;
+  
   localStorage.setItem("user", JSON.stringify(user));
-  profile.src = imgLink;
+  profile.src = "../images/guestlogo.jpg";
+  setTimeout( () =>
+  {
+    btnup.textContent = "Done";
+    profile.src = imgLink;
+  }, 1000 );
+  setTimeout( () =>
+  {
+    btnup.textContent = "Upload";
+  }, 4000 ); 
 });
