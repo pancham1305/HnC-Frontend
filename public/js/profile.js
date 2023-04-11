@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const profile = document.getElementById("profileAvatar");
   if (user.hasProfile) {
-    profile.src = "https://HnC-Backend.pancham1305.repl.co/images/" + user.uid;
+    profile.src = "http://34.131.71.19:8080/images/" + user.uid;
   }
 });
 const center = document.querySelector(".center");
@@ -126,7 +126,7 @@ btnup.addEventListener("click", async (e) => {
   const hidid = document.getElementById("hidid");
   const formData = new FormData(imgupload);
   btnup.textContent = "Uploading...";
-  let url = "https://HnC-Backend.pancham1305.repl.co/api/upload";
+  let url = "http://34.131.71.19:8080/api/upload";
   const { imgLink, hasProfile } = await fetch(url, {
     method: "POST",
     body: formData,

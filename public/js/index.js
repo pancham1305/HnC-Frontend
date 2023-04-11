@@ -11,16 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
         const { latitude, longitude } = pos.coords;
-        const exactloc = await fetch(
-          `https://HnC-Backend.pancham1305.repl.co/api/userLoc`,
-          {
-            method: "POST",
-            body: JSON.stringify({ lat: latitude, long: longitude }),
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        ).then((r) => r.json());
+        const exactloc = await fetch(`http://34.131.71.19:8080/api/userLoc`, {
+          method: "POST",
+          body: JSON.stringify({ lat: latitude, long: longitude }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }).then((r) => r.json());
         console.log(exactloc);
         loc = exactloc.features[0].properties.county;
         console.log(loc);
@@ -63,7 +60,7 @@ const login = document.getElementById("login");
 
 const user = JSON.parse(localStorage.getItem("user"));
 if (user) {
-    login.innerHTML = `${user.username}
+  login.innerHTML = `${user.username}
             <span class="material-symbols-outlined" id="loginicon">
               login
             </span>`;

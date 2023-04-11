@@ -34,16 +34,13 @@ document.addEventListener("DOMContentLoaded", async () => {
     const id = new URLSearchParams(window.location.search).get("id");
     const [b, hospitalinfo] = id.split(":");
 
-    const data = await fetch(
-      "https://hnc-backend.pancham1305.repl.co/api/hospital",
-      {
-        method: "POST",
-        body: JSON.stringify({ hospitalinfo, b }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    ).then((r) => r.json());
+    const data = await fetch("http://34.131.71.19:8080/api/hospital", {
+      method: "POST",
+      body: JSON.stringify({ hospitalinfo, b }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((r) => r.json());
     const arr = data.split(":");
     console.log(arr);
     const [lat, lng] = arr[1].split(",").map((x) => parseFloat(x));
