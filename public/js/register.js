@@ -62,13 +62,16 @@ document.addEventListener("DOMContentLoaded", () => {
         bloodgroup,
       };
 
-      const resData = await fetch("http://34.131.71.19:8080/api/register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }).then((d) => d.json());
+      const resData = await fetch(
+        "https://hnc-backend.pancham1305.repl.co/api/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      ).then((d) => d.json());
       console.log(resData);
       if (resData.status === 200) {
         localStorage.setItem("user", JSON.stringify(resData.data));

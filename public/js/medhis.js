@@ -33,13 +33,16 @@ const getData = async () => {
   // localStorage.removeItem("hospitalinfo");
   loader?.classList.remove("hide");
   body?.classList.add("hide");
-  const data = await fetch("http://34.131.71.19:8080/api/hospital", {
-    method: "POST",
-    body: JSON.stringify({ hospitalinfo, b }),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  }).then((r) => r.json());
+  const data = await fetch(
+    "https://hnc-backend.pancham1305.repl.co/api/hospital",
+    {
+      method: "POST",
+      body: JSON.stringify({ hospitalinfo, b }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }
+  ).then((r) => r.json());
   const arr = data.split(":");
   console.log(arr);
   showdata(arr);
