@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = {
       phone: "+910000000000",
       password: "guestOogwayrocks",
-      uid: "0000000000000000000000000000000000000000000000000000000000000000",
+      uid: "0".repeat(64),
     };
 
     const res = await fetch(

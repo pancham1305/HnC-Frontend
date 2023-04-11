@@ -77,14 +77,14 @@ viewmap?.addEventListener( "click", async ( e ) =>
   window.location.href = `./map.html?id=${id}`;
 } );
 
-const name = document.getElementById( "name" );
+const Name = document.getElementById( "username" );
 const age = document.getElementById( "age" );
 const bloodgroup = document.getElementById( "bloodgroup" );
 const phone = document.getElementById( "phone" );
 const type = document.getElementById( "type" );
 const typevalue = document.getElementById( "typevalue" );
 
-name.value = user?.username;
+Name.value = user?.username;
 age.value = user?.age;
 bloodgroup.value = user?.bloodgroup;
 phone.value = user?.phone;
@@ -92,6 +92,17 @@ phone.value = user?.phone;
 type.innerHTML = `
 ${Object.keys( list ).map( x => `<option value="${ x }">${ x[ 0 ].toUpperCase() + x.slice( 1 ) }</option>` ).join("\n")}
 `;
+
+  typevalue.innerHTML = `
+  ${list["test"]
+      .map(
+          (x) =>
+              `<option value="${x}">${
+                  x[0].toUpperCase() + x.slice(1)
+              }</option>`,
+      )
+      .join("\n")}
+  `;
 
 type?.addEventListener( 'change', async ( e ) =>
 { 
