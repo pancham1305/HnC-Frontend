@@ -304,11 +304,15 @@ input[type="checkbox"] {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
   background-color: rgba(0, 187, 255, 0.177);
   cursor: pointer;
   text-decoration: none;
   position: relative;
+  transition: 250ms;
+  box-sizing: border-box;
 }
 
 .hospitals .card .image {
@@ -319,7 +323,8 @@ input[type="checkbox"] {
 }
 
 .hospitals .collection .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+  transform: scale(1.05);
 }
 
 .hospitals .collection .card img {
@@ -336,8 +341,11 @@ input[type="checkbox"] {
   align-items: center;
   gap:16px;
   padding: 20px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
+  background-color: rgba(77, 77, 77, 0.3);
   box-sizing: content-box;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
   /* background-color: yellow; */
 }
 .name {
@@ -356,14 +364,14 @@ input[type="checkbox"] {
 .address {
   font-size: 15px;
   font-weight: 500;
-  color: rgb(206, 206, 206);
+  color: rgb(241, 241, 241);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .rating {
   font-size: 12px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.829);
+  color: rgba(234, 234, 234, 0.829);
   display: flex;
   flex-direction: row;
   justify-content: flex-start;

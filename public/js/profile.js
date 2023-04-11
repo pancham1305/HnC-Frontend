@@ -69,7 +69,7 @@ const showdata = (profileData) => {
   document.getElementById("age").innerHTML = age;
   document.getElementById("bloodGroup").innerHTML = bloodGroup;
   document.getElementById("phone").innerHTML = phone;
-  if (data.medHistory.length) {
+  if (data.medHistory?.length) {
     data.medHistory.forEach((e) => {
       cardCreation(e);
     });

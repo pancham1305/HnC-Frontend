@@ -63,7 +63,7 @@ const login = document.getElementById("login");
 
 const user = JSON.parse(localStorage.getItem("user"));
 if (user) {
-  login.innerHTML = `${user.username}
+    login.innerHTML = `${user.username}
             <span class="material-symbols-outlined" id="loginicon">
               login
             </span>`;
