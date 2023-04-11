@@ -1,4 +1,7 @@
 const user = JSON.parse(localStorage.getItem("user"));
+if (!user) {
+  window.location.href("./login.html");
+}
 document.addEventListener("DOMContentLoaded", () => {
   const error = document.getElementById("error");
   error.style.height = "0px";
