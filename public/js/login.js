@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   guestbtn.addEventListener("click", async (e) => {
     const data = {
       phone: "+910000000000",
-      password: "guestuserrocks",
+      password: "guestOogwayrocks",
       uid: "0000000000000000000000000000000000000000000000000000000000000000",
     };
 
