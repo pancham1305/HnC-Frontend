@@ -21,7 +21,7 @@ const cardCreation = (data) => {
   mainDiv.classList.add("MedicalDet");
   const div = document.createElement("div");
   const h3 = document.createElement("h3");
-  h3.innerText = `${data.hospital.name}`;
+  h3.innerText = `${data.hospital}`;
   div.appendChild(h3);
   mainDiv.appendChild(div);
   // Type: TypeValue
