@@ -1,3 +1,4 @@
+const loader = document.querySelector(".loader");
 document.addEventListener("DOMContentLoaded", () => {
   const login = document.getElementById("login");
   const error = document.getElementById("error");
@@ -39,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
   login.addEventListener("click", async (e) => {
     try {
       e.preventDefault();
-
       let phone = document.getElementById("email").value;
       const password = document.getElementById("pass").value;
       if (!phone || !password) return sendError("Please fill all the fields");
@@ -56,7 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
         password,
         token: localStorage.getItem("uid"),
       };
-
+      const temp = login.innerHTML;
+      login.innerHTML = `<div class="spinner"></div>`;
       const resData = await fetch(
         "https://HnC-Backend.pancham1305.repl.co/api/login",
         {
@@ -72,15 +73,20 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("token", resData.token);
         window.location.href = "./services.html";
       } else {
+        login.innerHTML = temp;
         sendError(resData.message);
       }
     } catch (e) {
+      login.innerHTML = temp;
       sendError(`Failed to login: ${e.message}`);
     }
   });
 
   const guestbtn = document.getElementById("guest");
   guestbtn.addEventListener("click", async (e) => {
+    const temp = guestbtn.innerHTML;
+    guestbtn.innerHTML = `<div class="spinner"></div>
+`;
     const data = {
       phone: "+910000000000",
       password: "guestOogwayrocks",
@@ -101,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem("user", JSON.stringify(res.data));
       window.location.href = "./services.html";
     } else {
+      guestbtn.innerHTML = temp;
       const error = document.getElementById("error");
       error.style.height = "";
       error.style.top = "";
