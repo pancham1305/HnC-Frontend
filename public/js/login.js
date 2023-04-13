@@ -91,18 +91,16 @@ document.addEventListener("DOMContentLoaded", () => {
       phone: "+910000000000",
       password: "guestOogwayrocks",
       uid: "0".repeat(64),
+      endpoint: "/api/login",
     };
 
-    const res = await fetch(
-      "https://hnc-backend.pancham1305.repl.co/api/login",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    ).then((d) => d.json());
+    const res = await fetch("http://34.131.71.19/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((d) => d.json());
     if (res.status === 200) {
       localStorage.setItem("user", JSON.stringify(res.data));
       window.location.href = "./services.html";
