@@ -8,62 +8,62 @@ const loader = document.querySelector(".loaderContainer");
 const address = document.querySelector("#address");
 const body = document.querySelector("body");
 testbtn?.addEventListener("click", async (e) => {
-  testb.classList.remove("hide");
-  scanb.classList.add("hide");
-  checkupb.classList.add("hide");
+    testb.classList.remove("hide");
+    scanb.classList.add("hide");
+    checkupb.classList.add("hide");
 });
 
 scanbtn?.addEventListener("click", async (e) => {
-  scanb.classList.remove("hide");
-  testb.classList.add("hide");
-  checkupb.classList.add("hide");
+    scanb.classList.remove("hide");
+    testb.classList.add("hide");
+    checkupb.classList.add("hide");
 });
 
 checkupbtn?.addEventListener("click", async (e) => {
-  testb.classList.add("hide");
-  checkupb.classList.remove("hide");
-  scanb.classList.add("hide");
+    testb.classList.add("hide");
+    checkupb.classList.remove("hide");
+    scanb.classList.add("hide");
 });
 
 // For Hospital Data
 const getData = async () => {
-  const a = new URLSearchParams(window.location.search);
-  const [b, hospitalinfo] = a.get("id").split(":");
+    const a = new URLSearchParams(window.location.search);
+    const [b, hospitalinfo] = a.get("id").split(":");
 
-  // localStorage.removeItem("hospitalinfo");
-  loader?.classList.remove("hide");
-  body?.classList.add("hide");
-  const data = await fetch(
-    "https://hnc-backend.pancham1305.repl.co/api/hospital",
-    {
-      method: "POST",
-      body: JSON.stringify({ hospitalinfo, b }),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  ).then((r) => r.json());
-  const arr = data.split(":");
-  console.log(arr);
-  showdata(arr);
+    // localStorage.removeItem("hospitalinfo");
+    loader?.classList.remove("hide");
+    body?.classList.add("hide");
+    const data = await fetch(
+        "https://pancham1305-proxy.deno.dev/",
+        {
+            method: "POST",
+            body: JSON.stringify({ hospitalinfo, b, endpoint: "/api/hospital" }),
+            headers: {
+                "Content-Type": "application/json",
+            },
+        },
+    ).then((r) => r.json());
+    const arr = data.split(":");
+    console.log(arr);
+    showdata(arr);
 
-  loader?.classList.add("hide");
-  body?.classList.remove("hide");
+    loader?.classList.add("hide");
+    body?.classList.remove("hide");
 };
 getData();
 const showdata = async (arr) => {
-  const name = document.getElementById("name");
-  name.innerHTML = arr[0].split(",")[0];
-  address.innerHTML = arr[5];
-  const rating = document.getElementById("rating");
-  rating.innerHTML = `Rating: ${arr[3]}`;
+    const name = document.getElementById("name");
+    name.innerHTML = arr[0].split(",")[0];
+    address.innerHTML = arr[5];
+    const rating = document.getElementById("rating");
+    rating.innerHTML = `Rating: ${arr[3]}`;
 };
 
 const login = document.getElementById("login");
 
 const user = JSON.parse(localStorage.getItem("user"));
 if (user) {
-  login.innerHTML = `${user.username}
+    login.innerHTML = `${user.username}
             <span class="material-symbols-outlined" id="loginicon">
               login
             </span>`;
@@ -72,8 +72,8 @@ if (user) {
 const viewmap = document.getElementById("viewmap");
 
 viewmap?.addEventListener("click", async (e) => {
-  const id = new URLSearchParams(window.location.search).get("id");
-  window.location.href = `./map.html?id=${id}`;
+    const id = new URLSearchParams(window.location.search).get("id");
+    window.location.href = `./map.html?id=${id}`;
 });
 
 const Name = document.getElementById("username");
@@ -90,26 +90,33 @@ phone.value = user?.phone;
 
 type.innerHTML = `
 ${Object.keys(list)
-  .map(
-    (x) => `<option value="${x}">${x[0].toUpperCase() + x.slice(1)}</option>`
-  )
-  .join("\n")}
+    .map(
+        (x) =>
+            `<option value="${x}">${x[0].toUpperCase() + x.slice(1)}</option>`,
+    )
+    .join("\n")}
 `;
 
 typevalue.innerHTML = `
   ${list["test"]
-    .map(
-      (x) => `<option value="${x}">${x[0].toUpperCase() + x.slice(1)}</option>`
-    )
-    .join("\n")}
+      .map(
+          (x) =>
+              `<option value="${x}">${
+                  x[0].toUpperCase() + x.slice(1)
+              }</option>`,
+      )
+      .join("\n")}
   `;
 
 type?.addEventListener("change", async (e) => {
-  typevalue.innerHTML = `
+    typevalue.innerHTML = `
   ${list[e.target.value]
-    .map(
-      (x) => `<option value="${x}">${x[0].toUpperCase() + x.slice(1)}</option>`
-    )
-    .join("\n")}
+      .map(
+          (x) =>
+              `<option value="${x}">${
+                  x[0].toUpperCase() + x.slice(1)
+              }</option>`,
+      )
+      .join("\n")}
   `;
 });
