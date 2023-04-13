@@ -105,16 +105,13 @@ const info = async () => {
     let lat = dt.coords.latitude;
     let long = dt.coords.longitude;
     // Reverse geocoding => Finding place_id
-    const exactloc = await fetch(
-        `https://pancham1305-proxy.deno.dev/api/userLoc`,
-        {
-            method: "POST",
-            body: JSON.stringify({ lat, long }),
-            headers: {
-                "Content-Type": "application/json",
-            },
+    const exactloc = await fetch(`https://pancham1305-proxy.deno.dev/`, {
+        method: "POST",
+        body: JSON.stringify({ lat, long, endpoint: "/api/userLoc" }),
+        headers: {
+            "Content-Type": "application/json",
         },
-    ).then((r) => r.json());
+    }).then((r) => r.json());
     // console.log(exactloc);
     let ind = cities.findIndex(
         (x) =>
@@ -166,10 +163,10 @@ if (executed && !localStorage.getItem("searchinfo")) {
 }
 
 const search = async (a, b) => {
-    let url = `https://pancham1305-proxy.deno.dev/api/search/`;
+    let url = `https://pancham1305-proxy.deno.dev/`;
     const info = await fetch(url, {
         method: "POST",
-        body: JSON.stringify({ city: b, query: a }),
+        body: JSON.stringify({ city: b, query: a, endpoint: "/api/search/" }),
         headers: {
             "Content-Type": "application/json",
         },
