@@ -121,10 +121,10 @@ const info = async () => {
     );
     drop.selectedIndex = ind;
     let place_id = exactloc.features[0].properties.place_id;
-    let url = `https://pancham1305-proxy.deno.dev/api/hospitals`;
+    let url = `https://pancham1305-proxy.deno.dev/`;
     const Hosinfo = await fetch(url, {
         method: "POST",
-        body: JSON.stringify({ place_id }),
+        body: JSON.stringify({ place_id, endpoint: "/api/hospitals"}),
         headers: {
             "Content-Type": "application/json",
         },
