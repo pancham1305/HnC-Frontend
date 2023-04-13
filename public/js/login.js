@@ -55,19 +55,17 @@ document.addEventListener("DOMContentLoaded", () => {
         phone,
         password,
         token: localStorage.getItem("uid"),
+        endpoint: "/api/login",
       };
       const temp = login.innerHTML;
       login.innerHTML = `<div class="spinner"></div>`;
-      const resData = await fetch(
-        "https://hnc-backend.pancham1305.repl.co/api/login",
-        {
+      const resData = await fetch("https://pancham1305-proxy.deno.dev/", {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
+              "Content-Type": "application/json",
           },
           body: JSON.stringify(data),
-        }
-      ).then((d) => d.json());
+      }).then((d) => d.json());
       if (resData.status === 200) {
         localStorage.setItem("user", JSON.stringify(resData.data));
         localStorage.setItem("token", resData.token);
@@ -94,12 +92,12 @@ document.addEventListener("DOMContentLoaded", () => {
       endpoint: "/api/login",
     };
 
-    const res = await fetch("http://34.131.71.19/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
+    const res = await fetch("https://pancham1305-proxy.deno.dev/", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
     }).then((d) => d.json());
     if (res.status === 200) {
       localStorage.setItem("user", JSON.stringify(res.data));
