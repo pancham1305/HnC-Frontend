@@ -479,3 +479,20 @@ input {
 
 
 /* Loader */
+
+.emergencybtn {
+  border: none;
+  color: white;
+  width: 9em;
+  height: 9em;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  bottom:16px;
+  right:16px;
+  position: fixed;
+  cursor: pointer;
+    background: linear-gradient(90deg,red,red,red,red);
+  border-radius:  100%;
+  z-index: 2;
+}
