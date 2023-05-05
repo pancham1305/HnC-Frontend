@@ -17,7 +17,7 @@
     "start_url": "/?source=pwa",
     "background_color": "#9AC2C9",
     "display": "fullscreen",
-    "scope": "./public",
+    "scope": "/",
     "theme_color": "#9AC2C9",
     "description": "Made by People, For People"
 }
