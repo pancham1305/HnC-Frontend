@@ -3,12 +3,12 @@
     "name": "Health N Care",
     "icons": [
         {
-            "src": "./public/images/HnC512.webp",
+            "src": "./images/icons/HnC512.webp",
             "type": "image/webp",
             "sizes": "512x512"
         },
         {
-            "src": "./public/images/HnC128.webp",
+            "src": "./images/icons/HnC128.webp",
             "type": "image/webp",
             "sizes": "128x128"
         }
