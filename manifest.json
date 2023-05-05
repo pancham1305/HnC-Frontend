@@ -1,0 +1,23 @@
+{
+    "short_name": "HnC",
+    "name": "Health N Care",
+    "icons": [
+        {
+            "src": "./public/images/HnC512.webp",
+            "type": "image/webp",
+            "sizes": "512x512"
+        },
+        {
+            "src": "./public/images/HnC128.webp",
+            "type": "image/webp",
+            "sizes": "192x192"
+        }
+    ],
+    "id": "/?source=pwa",
+    "start_url": "/?source=pwa",
+    "background_color": "#9AC2C9",
+    "display": "fullscreen",
+    "scope": "./public",
+    "theme_color": "#9AC2C9",
+    "description": "Made by People, For People"
+}
