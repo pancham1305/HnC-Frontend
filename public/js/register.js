@@ -60,16 +60,18 @@ document.addEventListener("DOMContentLoaded", () => {
         name,
         age,
         bloodgroup,
-        endpoint: "/api/register",
       };
 
-      const resData = await fetch("https://pancham1305-proxy.deno.dev", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }).then((d) => d.json());
+      const resData = await fetch(
+        "https://hnc-backend.pancham1305.repl.co/api/register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      ).then((d) => d.json());
       console.log(resData);
       if (resData.status === 200) {
         localStorage.setItem("user", JSON.stringify(resData.data));
