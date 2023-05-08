@@ -97,11 +97,14 @@
           <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
           <form class="example" action="" method="get">
             <input
+            list="possible"
               type="text"
               placeholder="Search hospitals near you"
               name="search"
               class="search"
             />
+            <datalist id="possible">
+            </datalist>
             <button type="submit" class="btn" id="btn">
               <span class="searchbtnicon material-symbols-outlined">
                 search

@@ -338,3 +338,32 @@ if (user) {
 }
 login.style.fontSize = "20px";
 login.style.flexDirection = "row";
+const searchBar = document.querySelector(".search");
+searchBar.addEventListener("input", async () => {
+  const query = searchBar.value;
+  const name = drop.options[drop.selectedIndex].text;
+  console.log(name, query);
+  const data = await fetch("http://localhost:50000/api/search/auto", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ name, query }),
+  }).then((rs) => rs.json());
+  console.log(data);
+
+  const arr = data.features;
+  const possible = document.querySelector("#possible");
+  possible.innerHTML = "";
+  createoptions(arr);
+});
+
+// data ko iterate karke daal do option
+const createoptions = (arr) => {
+  const possible = document.querySelector("#possible");
+  for (let i of arr) {
+    const option = document.createElement("option");
+    option.innerText = `${i.properties.name}`;
+    possible.appendChild(option);
+  }
+};

@@ -94,18 +94,19 @@
               dropzone=""
               contenteditable="true"
             >
-              <!-- <select class="cityName" contenteditable="true">KANPUR</select>
-              <span class="material-symbols-outlined"> arrow_drop_down </span> -->
             </select>
           </div>
-          <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
           <form class="example" action="" method="get">
             <input
-              type="text"
+            list="possible"
+              type="search"
               placeholder="Search hospitals near you"
               name="search"
               class="search"
             />
+            <datalist id="possible">
+              
+            </datalist>
             <button type="submit" class="btn">
               <span class="searchbtnicon material-symbols-outlined">
                 search
@@ -163,57 +164,6 @@
       </div>
     </div>
     <div class="cnt" id="third">
-      <!-- Purana Footer Section Starts -->
-      <!-- <div class="background">
-            <div class="con">
-              <div class="screen">
-                <div class="screen-header">
-                  <div class="screen-header-left">
-                    <div class="screen-header-button close"></div>
-                    <div class="screen-header-button maximize"></div>
-                    <div class="screen-header-button minimize"></div>
-                  </div>
-                  <div class="screen-header-right">
-                    <div class="screen-header-ellipsis"></div>
-                    <div class="screen-header-ellipsis"></div>
-                    <div class="screen-header-ellipsis"></div>
-                  </div>
-                </div>
-                <div class="screen-body">
-                  <div class="screen-body-item left">
-                    <div class="app-title">
-                      <span>Want To Contribute</span>
-                      <span>Write Us At</span>
-                    </div>
-                    <div class="app-contact">Mail Us At: HnC@gmail.com</div>
-                  </div>
-                  <div class="screen-body-item">
-                    <div class="app-form">
-                      <div class="app-form-group">
-                        <input class="app-form-control" placeholder="NAME">
-                      </div>
-                      <div class="app-form-group">
-                        <input class="app-form-control" placeholder="EMAIL">
-                      </div>
-                      <div class="app-form-group">
-                        <input class="app-form-control" placeholder="CONTACT NO">
-                      </div>
-                      <div class="app-form-group message">
-                        <input class="app-form-control" placeholder="MESSAGE">
-                      </div>
-                      <div class="app-form-group buttons">
-                        <button class="app-form-button">CANCEL</button>
-                        <button class="app-form-button">SEND</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-      <!-- Purana Footer Section Ends -->
-
-      <!-- Naya Footer Section Starts -->
       <div class="con" id="footercon">
         <div class="foot">
           <div class="raw">
@@ -224,14 +174,6 @@
           <div class="const2">
             <div class="left">
               <div class="top">
-                <!-- <span class="true">About Us</span>
-                        <span class="true1">HnC is a platform for the students of IIIT Bhagalpur to share their
-                            experiences
-                            and
-                            knowledge
-                            with
-                            the
-                            world.</span> -->
                 <span class="tam"> Under Progress </span>
                 <button class="btn">Reach Us</button>
               </div>
