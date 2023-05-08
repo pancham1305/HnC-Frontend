@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const profile = document.getElementById("profileAvatar");
   if (user.hasProfile) {
-    profile.src = "https://hnc-backend.pancham1305.repl.co/images/" + user.uid;
+    profile.src = "https://api-hnc.onrender.com/images/" + user.uid;
   }
 });
 const center = document.querySelector(".center");
@@ -130,7 +130,7 @@ btnup.addEventListener("click", async (e) => {
   const formData = new FormData(imgupload);
   formData.append("phone", user.phone);
   btnup.textContent = "Uploading...";
-  let url = "https://hnc-backend.pancham1305.repl.co/api/upload";
+  let url = "https://api-hnc.onrender.com/api/upload";
   const { imgLink, hasProfile } = await fetch(url, {
     method: "POST",
     body: formData,
