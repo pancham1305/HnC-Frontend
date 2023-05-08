@@ -343,13 +343,16 @@ searchBar.addEventListener("input", async () => {
   const query = searchBar.value;
   const name = drop.options[drop.selectedIndex].text;
   console.log(name, query);
-  const data = await fetch("http://localhost:50000/api/search/auto", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ name, query }),
-  }).then((rs) => rs.json());
+  const data = await fetch(
+    "https://hnc-backend.pancham1305.repl.co/api/search/auto",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, query }),
+    }
+  ).then((rs) => rs.json());
   console.log(data);
 
   const arr = data.features;
