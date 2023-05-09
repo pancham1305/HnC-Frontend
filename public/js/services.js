@@ -7,17 +7,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   drop.innerHTML = `${cities
     .map((city) => `<option class="links">${city.name}</option>`)
     .join("\n")}`;
-
+  //
   if (localStorage.getItem("searchinfo")) {
     const { name, query, selectedIndex } = JSON.parse(
       localStorage.getItem("searchinfo")
     );
     console.log(name, query, selectedIndex);
     s.value = query;
-    console.log(drop.selectedIndex);
+    // drop.options.findIndex((x) => {
+    //   name == x;
+    // })
     drop.selectedIndex = selectedIndex;
     document.getElementById("btn").click();
-    localStorage.removeItem("searchinfo");
+    // localStorage.removeItem("searchinfo");
   }
 });
 
@@ -163,10 +165,11 @@ if (executed && !localStorage.getItem("searchinfo")) {
 }
 
 const search = async (a, b) => {
-  if (localStorage.getItem("searchinfo")) {
-    city = localStorage.getItem("searchinfo").name;
-    localStorage.removeItem("searchinfo");
-  }
+  // if (localStorage.getItem("searchinfo")) {
+  //   b = searchinfo.name;
+  //   localStorage.removeItem("searchinfo");
+  // }
+  // console.log(b);
   let url = `https://api-hnc.onrender.com/api/search/`;
   const info = await fetch(url, {
     method: "POST",

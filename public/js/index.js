@@ -65,6 +65,17 @@ btn.addEventListener("click", async (e) => {
     ).then((res) => res.json());
     console.log(name);
     name = name[0].PostOffice[0].Block;
+    console.log(name);
+    for (let i = 0; i < drop.options.length; i++) {
+      // console.log(drop.options[i].value);
+      if (name == drop.options[i].value) {
+        drop.selectedIndex = i;
+        console.log(i);
+        break;
+      }
+    }
+    // console.log(drop.selectedIndex, drop.options.length);
+
     // return;
   } else {
     name = drop.options[drop.selectedIndex].text;
