@@ -163,6 +163,10 @@ if (executed && !localStorage.getItem("searchinfo")) {
 }
 
 const search = async (a, b) => {
+  if (localStorage.getItem("searchinfo")) {
+    city = localStorage.getItem("searchinfo").name;
+    localStorage.removeItem("searchinfo");
+  }
   let url = `https://api-hnc.onrender.com/api/search/`;
   const info = await fetch(url, {
     method: "POST",

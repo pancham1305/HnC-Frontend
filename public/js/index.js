@@ -36,7 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
             x.name === exactloc.features[0].properties.state_district
         );
         console.log(index);
+        if (currentType == "cities") {
           input.value = cities[index].name;
+        }
         drop.selectedIndex = index;
       },
       (err) => {
@@ -54,7 +56,19 @@ btn.addEventListener("click", async (e) => {
 
   e.preventDefault();
   const info = searchBar.value;
-  const name = drop.options[drop.selectedIndex].text;
+
+  // const name = drop.options[drop.selectedIndex].text;
+  let name;
+  if (currentType !== "cities") {
+    name = await fetch(
+      `https://api.postalpincode.in/pincode/${input.value}`
+    ).then((res) => res.json());
+    console.log(name);
+    name = name[0].PostOffice[0].Block;
+    // return;
+  } else {
+    name = drop.options[drop.selectedIndex].text;
+  }
   const query = searchBar.value;
   console.log(name, query);
   localStorage.setItem(
@@ -75,8 +89,14 @@ if (user) {
 }
 
 searchBar.addEventListener("input", async () => {
+  if (currentType != "cities") {
+    return;
+  }
   const query = searchBar.value;
-  const name = currentType === 'cities' ? drop.options[drop.selectedIndex].text : input.value;
+  const name =
+    currentType === "cities"
+      ? drop.options[drop.selectedIndex].text
+      : input.value;
   console.log(name, query);
   const data = await fetch("https://api-hnc.onrender.com/api/search/auto", {
     method: "POST",
@@ -110,21 +130,24 @@ const createoptions = (arr) => {
 //   });
 // }
 
-
 const change = (e) => {
   e.preventDefault();
-  if(currentType === 'cities') {
+  if (currentType === "cities") {
     drop?.classList.add("disable");
     input?.classList.remove("disable");
-    changetype.innerText = 'Search by Cities'
-    currentType = 'pincode'
-  }
-  else {
+    changetype.innerText = "Search by Cities";
+    currentType = "pincode";
+    input.value = "";
+  } else {
     drop?.classList.remove("disable");
     input?.classList.add("disable");
-    changetype.innerText = 'Search by Pincode'
-    currentType = 'cities'
+    changetype.innerText = "Search by Pincode";
+    currentType = "cities";
   }
-}
+};
 
 changetype.addEventListener("click", change);
+if (currentType != "cities") {
+  const possible = document.querySelector("#possible");
+  possible.innerHTML = "";
+}
