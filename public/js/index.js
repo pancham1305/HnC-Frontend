@@ -1,6 +1,9 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 let isDropdownToggled = false;
+const changetype = document.getElementById("changetype");
+let currentType = "cities";
+const input = document.getElementById("input");
 document.addEventListener("DOMContentLoaded", () => {
   const drop = document.getElementById("dropbtn");
   drop.innerHTML = `${cities
@@ -33,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
             x.name === exactloc.features[0].properties.state_district
         );
         console.log(index);
-
+          input.value = cities[index].name;
         drop.selectedIndex = index;
       },
       (err) => {
@@ -44,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const searchBar = document.querySelector(".search");
-const btn = document.querySelector(".btn");
+const btn = document.querySelector(".searchbtnicon");
 const drop = document.getElementById("dropbtn");
 btn.addEventListener("click", async (e) => {
   // check if user has disabled location access
@@ -73,7 +76,7 @@ if (user) {
 
 searchBar.addEventListener("input", async () => {
   const query = searchBar.value;
-  const name = drop.options[drop.selectedIndex].text;
+  const name = currentType === 'cities' ? drop.options[drop.selectedIndex].text : input.value;
   console.log(name, query);
   const data = await fetch("https://api-hnc.onrender.com/api/search/auto", {
     method: "POST",
@@ -99,10 +102,29 @@ const createoptions = (arr) => {
     possible.appendChild(option);
   }
 };
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("../service-worker.js").then(() => {
-      console.log("Service Worker Registered");
-    });
-  });
+// if ("serviceWorker" in navigator) {
+//   window.addEventListener("load", () => {
+//     navigator.serviceWorker.register("./service-worker.js").then(() => {
+//       console.log("Service Worker Registered");
+//     });
+//   });
+// }
+
+
+const change = (e) => {
+  e.preventDefault();
+  if(currentType === 'cities') {
+    drop?.classList.add("disable");
+    input?.classList.remove("disable");
+    changetype.innerText = 'Search by Cities'
+    currentType = 'pincode'
+  }
+  else {
+    drop?.classList.remove("disable");
+    input?.classList.add("disable");
+    changetype.innerText = 'Search by Pincode'
+    currentType = 'cities'
+  }
 }
+
+changetype.addEventListener("click", change);

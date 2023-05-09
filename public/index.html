@@ -6,11 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Material Icons -->
     <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
-    <link
-      rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
     />
     <!-- Material Symbol -->
@@ -18,10 +13,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0"
-    />
+
     <!-- import landingpage.css -->
     <link rel="stylesheet" href=".\css\landingpage.css" />
     <link rel="stylesheet" href="./css/navbar.css" />
@@ -87,8 +79,8 @@
       <div class="con" id="firstcon">
         <div class="cent">
           <div class="dropdown">
+            <input class="dropbtn disable" type="text" placeholder="pin code..." name="search" id="input" style="color:black; font-weight: 500;"/>
             <select
-              onclick="myFunction()"
               class="dropbtn"
               id="dropbtn"
               dropzone=""
@@ -107,11 +99,12 @@
             <datalist id="possible">
               
             </datalist>
-            <button type="submit" class="btn">
-              <span class="searchbtnicon material-symbols-outlined">
+            <div class="btn">
+              <button  id="changetype" >Search by Pincode</button>
+              <span type="submit" class="searchbtnicon material-symbols-outlined">
                 search
               </span>
-            </button>
+            </div>
           </form>
         </div>
       </div>

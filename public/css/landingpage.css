@@ -367,6 +367,8 @@ form.example {
   /* margin-top: 8%; */
 }
 
+
+
 form.example input[type="search"] {
   padding: 10px;
   font-size: 20px;
@@ -380,9 +382,13 @@ form.example input[type="search"] {
 }
 
 /* Style the submit button */
-form.example button {
+form.example .btn {
   float: left;
   height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around ;
+  align-items: center;
   width: 20%;
   max-width: 180px;
   padding: 4px;
@@ -394,6 +400,24 @@ form.example button {
   border: none;
   border-top-right-radius: 16px;
   border-bottom-right-radius: 16px;
+}
+
+#changetype {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border:none ;
+  border-right: 1px solid white;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  background-color: transparent;
+  padding-right: 8px;
+  color:white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 form.example button:hover {
@@ -671,6 +695,7 @@ form.example::after {
 .foot .const2 .left .top .btn {
   padding: 1.3em 3em;
   font-size: 12px;
+  
   text-transform: uppercase;
   letter-spacing: 2.5px;
   justify-content: center;
@@ -847,6 +872,10 @@ form.example::after {
 #third {
   max-height: 300px;
 }
+
+input[type="text"]::placeholder {
+  color:#827474b5;
+}
 /* About Us Section CSS Ends */
 
 @media only screen and (max-width: 689px) {
@@ -904,6 +933,18 @@ form.example::after {
   .third1,
   .fourth1 {
     font-size: 12px;
+  }
+
+  form.example .btn {
+    width:100px;
+  }
+
+  .searchbtnicon.material-symbols-outlined {
+    font-size: 15px;
+  }
+
+  #changetype {
+    font-size: 10px;
   }
 }
 
@@ -979,4 +1020,14 @@ form.example::after {
 
 .cld:active {
   background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+}
+
+input[type="text"].dropbtn {
+  outline: 1px solid #03a9f4;
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.disable {
+  display: none;
 }
