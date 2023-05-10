@@ -64,12 +64,12 @@ btn.addEventListener("click", async (e) => {
       `https://api.postalpincode.in/pincode/${input.value}`
     ).then((res) => res.json());
     console.log(name);
-    name = name[0].PostOffice[0].Region;
+    name = name[0].PostOffice[0].Division;
     console.log(name);
     // return;
     for (let i = 0; i < drop.options.length; i++) {
       // console.log(drop.options[i].value);
-      if (name == drop.options[i].value) {
+      if (drop.options[i].value.includes(name.split(" ")[0])) {
         drop.selectedIndex = i;
         console.log(i);
         break;
