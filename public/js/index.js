@@ -64,8 +64,9 @@ btn.addEventListener("click", async (e) => {
       `https://api.postalpincode.in/pincode/${input.value}`
     ).then((res) => res.json());
     console.log(name);
-    name = name[0].PostOffice[0].Block;
+    name = name[0].PostOffice[0].Region;
     console.log(name);
+    // return;
     for (let i = 0; i < drop.options.length; i++) {
       // console.log(drop.options[i].value);
       if (name == drop.options[i].value) {
