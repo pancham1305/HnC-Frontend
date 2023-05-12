@@ -367,8 +367,6 @@ form.example {
   /* margin-top: 8%; */
 }
 
-
-
 form.example input[type="search"] {
   padding: 10px;
   font-size: 20px;
@@ -387,7 +385,7 @@ form.example .btn {
   height: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around ;
+  justify-content: space-around;
   align-items: center;
   width: 20%;
   max-width: 180px;
@@ -407,14 +405,14 @@ form.example .btn {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  border:none ;
+  border: none;
   border-right: 1px solid white;
   height: 100%;
   width: 50%;
   text-align: center;
   background-color: transparent;
   padding-right: 8px;
-  color:white;
+  color: white;
   font-size: 16px;
   font-weight: 700;
   cursor: pointer;
@@ -695,7 +693,7 @@ form.example::after {
 .foot .const2 .left .top .btn {
   padding: 1.3em 3em;
   font-size: 12px;
-  
+
   text-transform: uppercase;
   letter-spacing: 2.5px;
   justify-content: center;
@@ -874,14 +872,14 @@ form.example::after {
 }
 
 input[type="text"]::placeholder {
-  color:#827474b5;
+  color: #827474b5;
 }
 /* About Us Section CSS Ends */
 
-  .searchbtnicon.material-symbols-outlined {
-    background: none;
-    border: none;
-  }
+.searchbtnicon.material-symbols-outlined {
+  background: none;
+  border: none;
+}
 
 @media only screen and (max-width: 689px) {
   .aboutus .head {
@@ -941,7 +939,7 @@ input[type="text"]::placeholder {
   }
 
   form.example .btn {
-    width:100px;
+    width: 100px;
   }
 
   .searchbtnicon.material-symbols-outlined {
@@ -950,8 +948,6 @@ input[type="text"]::placeholder {
     border: none;
   }
 
-
-
   #changetype {
     font-size: 10px;
   }
@@ -959,7 +955,7 @@ input[type="text"]::placeholder {
 
 .emergencybtn {
   border: none;
-  color: white;
+  /* color: white; */
   width: 9em;
   height: 9em;
   justify-content: center;
@@ -969,31 +965,33 @@ input[type="text"]::placeholder {
   right: 16px;
   position: fixed;
   cursor: pointer;
-  background: linear-gradient(90deg, red, red, red, red);
-  border-radius: 100%;
+  /* background: linear-gradient(90deg, red, red, red, red); */
+  /* border-radius: 100%; */
   z-index: 2;
 }
 
 .cld {
   /* background: linear-gradient(90deg,red,red,red,red); */
   background-size: 400%;
-  border-radius: 100%;
+  /* border-radius: 100%; */
   transition: 250ms;
+  background-color: crimson;
   text-decoration: none;
   position: relative;
   border: none;
   font-size: 14px;
   font-family: inherit;
-  color: #fff;
+  /* color: #fff; */
   width: 9em;
   height: 9em;
   line-height: 2em;
   text-align: center;
-  background: linear-gradient(90deg, red, red, red, red);
+  /* background: linear-gradient(90deg, red, red, red, red); */
   background-size: 300%;
-  border-radius: 500px;
+  /* border-radius: 500px; */
   z-index: 2;
   cursor: pointer;
+  transition-duration: 300ms;
 }
 
 .cld .content {
@@ -1005,12 +1003,31 @@ input[type="text"]::placeholder {
   font-weight: 800;
   cursor: pointer;
 }
-
+.cld::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  filter: blur(15px);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* Only for Testing Purposes */
+.cld:hover {
+  transform: scale(0.9) rotate(3deg);
+  background: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(255, 94, 247, 1) 17.8%,
+    rgba(2, 245, 255, 1) 100.2%
+  );
+  transition: 0.5s;
+}
 .cld:hover,
 .cld .content:hover {
   animation: ani 8s linear infinite;
   border: none;
-  box-shadow: 0 0 64px 0 red;
+  /* box-shadow: 0 0 64px 0 red; */
 }
 
 @keyframes ani {
@@ -1025,10 +1042,6 @@ input[type="text"]::placeholder {
 
 .cld:hover {
   backdrop-filter: blur(20px) brightness(0.5);
-}
-
-.cld:active {
-  background: linear-gradient(32deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
 }
 
 input[type="text"].dropbtn {
@@ -1050,7 +1063,7 @@ select {
   background-repeat: no-repeat;
   background-position-x: 90%;
   background-position-y: center;
-  background-size:15%;
+  background-size: 15%;
   border: 1px solid #dfdfdf;
   border-radius: 2px;
   margin-right: 2rem;

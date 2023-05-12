@@ -43,13 +43,17 @@ window.onclick = function (event) {
 const emercont = document.querySelector(".wrapper");
 const button_e_emergency = document.querySelector(".emergencybtn");
 let a = 0;
+const btn5 = document.querySelector(".cld");
+
 button_e_emergency.addEventListener("click", (e) => {
   a++;
   if (a % 2) {
     emercont.classList.remove("hidden");
     emercont.classList.add("blur");
+    btn5.innerHTML = '<span class="material-symbols-outlined">close</span>';
   } else {
     emercont.classList.add("hidden");
     emercont.classList.remove("blur");
+    btn5.innerHTML = '<span class="content">Emergency Button</span>';
   }
 });
