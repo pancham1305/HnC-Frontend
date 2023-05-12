@@ -1,4 +1,4 @@
-var btn1 = document.getElementById("b1");
+var btn6 = document.getElementById("b1");
 var btn2 = document.getElementById("b2");
 var btn3 = document.getElementById("b3");
 var btn4 = document.getElementById("b4");
@@ -8,7 +8,7 @@ var modal = document.getElementById("myModal");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-btn1.addEventListener("click", (e) => {
+btn6.addEventListener("click", (e) => {
   console.log("1");
   modal.style.display = "block";
 });
