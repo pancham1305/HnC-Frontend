@@ -31,11 +31,18 @@ btn4.addEventListener("click", async (e) => {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
   modal.style.display = "none";
-}
+};
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
   }
-}
+};
+
+const emercont = document.querySelector(".container");
+const button_e_emergency = document.querySelector(".emergencybtn");
+
+button_e_emergency.addEventListener("click", (e) => {
+  emercont.classList.remove("hide");
+});

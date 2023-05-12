@@ -30,6 +30,8 @@
     <!-- Linking JavaScript File -->
     <script defer src="./js/index.js"></script>
     <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./css/emergencybtnpopup.css" />
+    <script src="./js/emergencybtnpopup.js"></script>
     <meta name="theme-color" content="#333" />
   </head>
 
@@ -79,29 +81,36 @@
       <div class="con" id="firstcon">
         <div class="cent">
           <div class="dropdown">
-            <input class="dropbtn disable" type="text" placeholder="pin code..." name="search" id="input" style="color:black; font-weight: 500;"/>
+            <input
+              class="dropbtn disable"
+              type="text"
+              placeholder="pin code..."
+              name="search"
+              id="input"
+              style="color: black; font-weight: 500"
+            />
             <select
               class="dropbtn"
               id="dropbtn"
               dropzone=""
               contenteditable="true"
-            >
-            </select>
+            ></select>
           </div>
           <form class="example" action="" method="get">
             <input
-            list="possible"
+              list="possible"
               type="search"
               placeholder="Search hospitals near you"
               name="search"
               class="search"
             />
-            <datalist id="possible">
-              
-            </datalist>
+            <datalist id="possible"> </datalist>
             <div class="btn">
-              <div  id="changetype" >Search by Pincode</div>
-              <button type="submit" class="searchbtnicon material-symbols-outlined">
+              <div id="changetype">Search by Pincode</div>
+              <button
+                type="submit"
+                class="searchbtnicon material-symbols-outlined"
+              >
                 search
               </button>
             </div>
