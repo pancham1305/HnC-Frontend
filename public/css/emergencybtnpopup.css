@@ -11,7 +11,7 @@ body {
   width: 100%;
   justify-content: center;
   align-items: center;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
 }
 
@@ -57,6 +57,7 @@ body {
   width: 100%;
   text-align: center;
   padding: 8px;
+  justify-content: center;
 }
 
 .grid-item1 {
@@ -303,5 +304,8 @@ button {
 
 .hide {
   visibility: hidden;
-  
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
 }

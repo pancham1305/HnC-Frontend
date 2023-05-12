@@ -8,22 +8,22 @@ var modal = document.getElementById("myModal");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-btn1.addEventListener("click", async (e) => {
+btn1.addEventListener("click",  (e) => {
   console.log("1");
   modal.style.display = "block";
 });
 
-btn2.addEventListener("click", async (e) => {
+btn2.addEventListener("click",  (e) => {
   console.log("2");
   modal.style.display = "block";
 });
 
-btn3.addEventListener("click", async (e) => {
+btn3.addEventListener("click",  (e) => {
   console.log("3");
   modal.style.display = "block";
 });
 
-btn4.addEventListener("click", async (e) => {
+btn4.addEventListener("click",  (e) => {
   console.log("4");
   modal.style.display = "block";
 });
