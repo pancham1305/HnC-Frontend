@@ -979,7 +979,7 @@ input[type="text"]::placeholder {
   text-decoration: none;
   position: relative;
   border: none;
-  font-size: 14px;
+  font-size: 16px;
   font-family: inherit;
   /* color: #fff; */
   width: 9em;
