@@ -1,6 +1,8 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-
+const changetype = document.getElementById("changetype");
+let currentType = "cities";
+const inputs = document.getElementById("input");
 document.addEventListener("DOMContentLoaded", async () => {
   const drop = document.getElementById("dropbtn");
   const s = document.querySelector(".search");
@@ -371,3 +373,25 @@ const createoptions = (arr) => {
     possible.appendChild(option);
   }
 };
+
+const change = (e) => {
+    e.preventDefault();
+    if (currentType === "cities") {
+        drop?.classList.add("disable");
+        inputs?.classList.remove("disable");
+        changetype.innerText = "Search by Cities";
+        currentType = "pincode";
+        input.value = "";
+    } else {
+        drop?.classList.remove("disable");
+        inputs?.classList.add("disable");
+        changetype.innerText = "Search by Pincode";
+        currentType = "cities";
+    }
+};
+
+changetype.addEventListener("click", change);
+if (currentType != "cities") {
+    const possible = document.querySelector("#possible");
+    possible.innerHTML = "";
+}

@@ -675,7 +675,9 @@ textarea {
   resize: vertical;
 }
 
-[type="submit"] {
+
+
+/* [type="submit"] {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   width: 100%;
   background: #cc6666;
@@ -693,7 +695,7 @@ textarea {
 
 [type="submit"]:hover {
   background: #cc4949;
-}
+} */
 
 .hide {
   visibility: hidden;
@@ -1015,10 +1017,41 @@ form.example input[type="text"] {
   outline: none;
 }
 
-/* Style the submit button */
+/* Style the submit button
 form.example button {
   float: left;
   height: 100%;
+  width: 20%;
+  max-width: 180px;
+  padding: 4px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  /* border: 1px solid grey; 
+  cursor: pointer;
+  border: none;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+} */
+
+form.example button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+form.example .btn {
+  float: left;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around ;
+  align-items: center;
   width: 20%;
   max-width: 180px;
   padding: 4px;
@@ -1032,8 +1065,38 @@ form.example button {
   border-bottom-right-radius: 16px;
 }
 
+#changetype {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border:none ;
+  border-right: 1px solid white;
+  height: 100%;
+  width: 50%;
+  text-align: center;
+  background-color: transparent;
+  padding-right: 8px;
+  color:white;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+}
+
 form.example button:hover {
   background: #0b7dda;
+}
+form.example input[type="search"] {
+  padding: 10px;
+  font-size: 20px;
+  border: 1px solid grey;
+  float: left;
+  height: 100%;
+  width: 90%;
+  background: #f1f1f1;
+  border: none;
+  outline: none;
 }
 
 /* Clear floats */
@@ -1064,4 +1127,50 @@ form.example::after {
   width: 100%;
   height: 100%;
   padding: 0;
+}
+  
+  input[type="text"].dropbtn {
+    outline: 1px solid #03a9f4;
+    background-color: #f1f1f1;
+    color: black;
+  }
+
+  .disable {
+    display: none;
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y: center;
+    background-size:15%;
+    border: 1px solid #dfdfdf;
+    border-radius: 2px;
+    margin-right: 2rem;
+    padding: 1rem;
+  }
+
+  @media only screen and (max-width:689px){
+    
+  form.example .btn {
+    width:100px;
+  }
+
+  .searchbtnicon.material-symbols-outlined {
+    font-size: 15px;
+  }
+
+  #changetype {
+    font-size: 10px;
+  }
+  }
+
+  .searchbtnicon.material-symbols-outlined {
+  background: none;
+  border: none;
 }

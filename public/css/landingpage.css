@@ -878,6 +878,11 @@ input[type="text"]::placeholder {
 }
 /* About Us Section CSS Ends */
 
+  .searchbtnicon.material-symbols-outlined {
+    background: none;
+    border: none;
+  }
+
 @media only screen and (max-width: 689px) {
   .aboutus .head {
     font-size: 4rem;
@@ -941,7 +946,11 @@ input[type="text"]::placeholder {
 
   .searchbtnicon.material-symbols-outlined {
     font-size: 15px;
+    background: transparent;
+    border: none;
   }
+
+
 
   #changetype {
     font-size: 10px;
@@ -1035,6 +1044,7 @@ input[type="text"].dropbtn {
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
   background: transparent;
   background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
   background-repeat: no-repeat;

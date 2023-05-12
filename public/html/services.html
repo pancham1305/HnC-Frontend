@@ -85,31 +85,32 @@
 <div class="con" id="firstcon">
         <div class="cent">
           <div class="dropdown">
-            <select onclick="myFunction()" class="dropbtn" id="dropbtn" dropzone="" contenteditable="true">
-                            <!-- <select class="cityName" contenteditable="true">KANPUR</select>
-              <span class="material-symbols-outlined"> arrow_drop_down </span> -->
-
-              
+            <input class="dropbtn disable" type="text" placeholder="pin code..." name="search" id="input" style="color:black; font-weight: 500;"/>
+            <select
+              class="dropbtn"
+              id="dropbtn"
+              dropzone=""
+              contenteditable="true"
+            >
             </select>
-            
-            
           </div>
-          <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
           <form class="example" action="" method="get">
             <input
             list="possible"
-              type="text"
+              type="search"
               placeholder="Search hospitals near you"
               name="search"
               class="search"
             />
             <datalist id="possible">
+              
             </datalist>
-            <button type="submit" class="btn" id="btn">
-              <span class="searchbtnicon material-symbols-outlined">
+            <div class="btn">
+              <div  id="changetype" >Search by Pincode</div>
+              <button id="btn" type="submit" class="searchbtnicon material-symbols-outlined">
                 search
-              </span>
-            </button>
+              </button>
+            </div>
           </form>
         </div>
       </div>

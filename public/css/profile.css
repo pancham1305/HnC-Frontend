@@ -263,3 +263,31 @@ button:active {
 .etext {
   padding: 16px;
 }
+
+
+.picup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  background-color: #ffffff;
+  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/126/126477.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+#imgupload {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap:8px;
+}
+
+#file-chosen {
+  margin-right: 8px;
+}

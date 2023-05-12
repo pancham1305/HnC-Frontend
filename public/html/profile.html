@@ -83,12 +83,15 @@
         <div class="logo">
           <img src="../images/guestlogo.jpg" alt="" id="profileAvatar" />
           <form method="" action="" enctype="" id="imgupload">
+            <label for="img" class="picup"></label>
             <input
               type="file"
               name="img"
               id="img"
               accept="image/jpeg, image/png, image/jpg"
+              hidden
             />
+            <span id="file-chosen">No file chosen</span>
             <input type="hidden" name="uid" id="hidid" value="" />
             <button id="Upload">Upload</button>
           </form>

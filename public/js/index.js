@@ -32,12 +32,12 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(loc);
         let index = cities.findIndex(
           (x) =>
-            x.name === loc ||
-            x.name === exactloc.features[0].properties.state_district
+            x.name.startsWith(loc.split(" ")[0]) ||
+            x.name.startsWith(exactloc.features[0].properties.state_district)
         );
         console.log(index);
         if (currentType == "cities") {
-          input.value = cities[index].name;
+          input.value = cities[index]?.name;
         }
         drop.selectedIndex = index;
       },
