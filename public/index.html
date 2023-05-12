@@ -31,309 +31,317 @@
     <script defer src="./js/index.js"></script>
     <link rel="manifest" href="./manifest.json" />
     <link rel="stylesheet" href="./css/emergencybtnpopup.css" />
-    <script src="./js/emergencybtnpopup.js"></script>
+    <script defer src="./js/emergencybtnpopup.js"></script>
     <meta name="theme-color" content="#333" />
   </head>
 
   <body>
-    <div class="emergencybtn">
-      <!-- <div class="circle">
-                <span class="content">Emergency Button</span>
-            </div> -->
-      <!-- <button class="circle">Emergency Button</button> -->
-      <button class="cld">
-        <span class="content">Emergency Button</span>
-      </button>
-    </div>
-    <div class="cnt" id="first">
-      <div class="topnav">
-        <div class="tile">
-          <div class="imgs">
-            <img
-              src="./images/logo.png"
-              onclick="window.location.href='../'"
-              alt="/"
-            />
-          </div>
-          <h2>HnC</h2>
-        </div>
-        <div class="options">
-          <a
-            onclick="localStorage.getItem('user') ? window.location.href='./html/profile.html' : window.location.href='./html/login.html'"
-            id="login"
-            >Login
-            <span class="material-symbols-outlined" id="loginicon">
-              login
-            </span></a
-          >
-        </div>
-      </div>
-      <!-- <form class="example" action="/api/hospitals">
-        <input
-          type="text"
-          placeholder="PATNA &nbsp;| &nbsp;Search.."
-          name="search"
-        />
-        <button type="submit">
-          <span class="searchbtnicon material-symbols-outlined"> search </span>
+    <div id="main">
+      <div class="emergencybtn">
+        <!-- <div class="circle">
+                  <span class="content">Emergency Button</span>
+              </div> -->
+        <!-- <button class="circle">Emergency Button</button> -->
+        <button class="cld">
+          <span class="content">Emergency Button</span>
         </button>
-      </form> -->
-      <div class="con" id="firstcon">
-        <div class="cent">
-          <div class="dropdown">
-            <input
-              class="dropbtn disable"
-              type="text"
-              placeholder="pin code..."
-              name="search"
-              id="input"
-              style="color: black; font-weight: 500"
-            />
-            <select
-              class="dropbtn"
-              id="dropbtn"
-              dropzone=""
-              contenteditable="true"
-            ></select>
-          </div>
-          <form class="example" action="" method="get">
-            <input
-              list="possible"
-              type="search"
-              placeholder="Search hospitals near you"
-              name="search"
-              class="search"
-            />
-            <datalist id="possible"> </datalist>
-            <div class="btn">
-              <div id="changetype">Search by Pincode</div>
-              <button
-                type="submit"
-                class="searchbtnicon material-symbols-outlined"
-              >
-                search
-              </button>
-            </div>
-          </form>
-        </div>
       </div>
-    </div>
-    <div class="cnt" id="second">
-      <div class="con">
-        <div class="aboutus">
-          <span class="head"> Committed To You </span>
-          <div class="infos">
-            <p>
-              HnC is a platform for the students of IIIT Bhagalpur to share
-              their experiences and knowledge with the world.
-            </p>
+      <div class="cnt" id="first">
+        <div class="topnav">
+          <div class="tile">
+            <div class="imgs">
+              <img
+                src="./images/logo.png"
+                onclick="window.location.href='../'"
+                alt="/"
+              />
+            </div>
+            <h2>HnC</h2>
+          </div>
+          <div class="options">
+            <a
+              onclick="localStorage.getItem('user') ? window.location.href='./html/profile.html' : window.location.href='./html/login.html'"
+              id="login"
+              >Login
+              <span class="material-symbols-outlined" id="loginicon">
+                login
+              </span></a
+            >
           </div>
         </div>
-        <div class="collection">
-          <div class="cds">
-            <div class="tp">
-              <span class="material-symbols-outlined" id="lg"> ecg_heart </span>
+        <!-- <form class="example" action="/api/hospitals">
+          <input
+            type="text"
+            placeholder="PATNA &nbsp;| &nbsp;Search.."
+            name="search"
+          />
+          <button type="submit">
+            <span class="searchbtnicon material-symbols-outlined"> search </span>
+          </button>
+        </form> -->
+        <div class="con" id="firstcon">
+          <div class="cent">
+            <div class="dropdown">
+              <input
+                class="dropbtn disable"
+                type="text"
+                placeholder="pin code..."
+                name="search"
+                id="input"
+                style="color: black; font-weight: 500"
+              />
+              <select
+                class="dropbtn"
+                id="dropbtn"
+                dropzone=""
+                contenteditable="true"
+              ></select>
             </div>
-            <div class="btm">
-              <span class="servicesnames">Maternity Services</span>
-            </div>
-          </div>
-          <div class="cds">
-            <div class="tp">
-              <span class="material-symbols-outlined" id="lg"> surgical </span>
-            </div>
-            <div class="btm">
-              <span class="servicesnames">Surgical Services</span>
-            </div>
-          </div>
-          <div class="cds">
-            <div class="tp">
-              <span class="material-symbols-outlined" id="lg"> genetics </span>
-            </div>
-            <div class="btm">
-              <span class="servicesnames">Gynecological Services</span>
-            </div>
-          </div>
-          <div class="cds">
-            <div class="tp">
-              <span class="material-symbols-outlined" id="lg"> genetics </span>
-            </div>
-            <div class="btm">
-              <span class="servicesnames">Accidental Control</span>
-            </div>
+            <form class="example" action="" method="get">
+              <input
+                list="possible"
+                type="search"
+                placeholder="Search hospitals near you"
+                name="search"
+                class="search"
+              />
+              <datalist id="possible"> </datalist>
+              <div class="btn">
+                <div id="changetype">Search by Pincode</div>
+                <button
+                  type="submit"
+                  class="searchbtnicon material-symbols-outlined"
+                >
+                  search
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
-    </div>
-    <div class="cnt" id="third">
-      <div class="con" id="footercon">
-        <div class="foot">
-          <div class="raw">
-            <div class="imgs1">
-              <img src=".\images\logo.png" alt="/" />
+      <div class="cnt" id="second">
+        <div class="con">
+          <div class="aboutus">
+            <span class="head"> Committed To You </span>
+            <div class="infos">
+              <p>
+                HnC is a platform for the students of IIIT Bhagalpur to share
+                their experiences and knowledge with the world.
+              </p>
             </div>
           </div>
-          <div class="const2">
-            <div class="left">
-              <div class="top">
-                <span class="tam"> Under Progress </span>
-                <button class="btn">Reach Us</button>
+          <div class="collection">
+            <div class="cds">
+              <div class="tp">
+                <span class="material-symbols-outlined" id="lg">
+                  ecg_heart
+                </span>
+              </div>
+              <div class="btm">
+                <span class="servicesnames">Maternity Services</span>
               </div>
             </div>
-            <div class="right">
-              <span class="first">Get In Touch</span>
-              <span class="second">Mailing Address</span>
-              <span class="second1"
-                >Hostel No. 2, IIIT Bhagalpur, Bhagalpur, Bihar, India</span
-              >
-              <span class="third">Email Address</span>
-              <span class="third1">hnc@gmail.com</span>
-              <span class="fourth">Phone</span>
-              <span class="fourth1">9874563210</span>
+            <div class="cds">
+              <div class="tp">
+                <span class="material-symbols-outlined" id="lg">
+                  surgical
+                </span>
+              </div>
+              <div class="btm">
+                <span class="servicesnames">Surgical Services</span>
+              </div>
+            </div>
+            <div class="cds">
+              <div class="tp">
+                <span class="material-symbols-outlined" id="lg">
+                  genetics
+                </span>
+              </div>
+              <div class="btm">
+                <span class="servicesnames">Gynecological Services</span>
+              </div>
+            </div>
+            <div class="cds">
+              <div class="tp">
+                <span class="material-symbols-outlined" id="lg">
+                  genetics
+                </span>
+              </div>
+              <div class="btm">
+                <span class="servicesnames">Accidental Control</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="wrapper hide">
-        <div class="container">
-          <div class="innercnt">
-            <!-- <div class="text">
+      <div class="cnt" id="third">
+        <div class="con" id="footercon">
+          <div class="foot">
+            <div class="raw">
+              <div class="imgs1">
+                <img src=".\images\logo.png" alt="/" />
+              </div>
+            </div>
+            <div class="const2">
+              <div class="left">
+                <div class="top">
+                  <span class="tam"> Under Progress </span>
+                  <button class="btn">Reach Us</button>
+                </div>
+              </div>
+              <div class="right">
+                <span class="first">Get In Touch</span>
+                <span class="second">Mailing Address</span>
+                <span class="second1"
+                  >Hostel No. 2, IIIT Bhagalpur, Bhagalpur, Bihar, India</span
+                >
+                <span class="third">Email Address</span>
+                <span class="third1">hnc@gmail.com</span>
+                <span class="fourth">Phone</span>
+                <span class="fourth1">9874563210</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Naya Footer Section Ends -->
+      </div>
+    </div>
+    <div class="wrapper hidden">
+      <div class="container">
+        <div class="innercnt">
+          <!-- <div class="text">
                     <h1>Select Emergency Service Required</h1>
                 </div> -->
-            <div class="grid-container1">
-              <div class="grid-item1">
-                <h1>Select Emergency</h1>
+          <div class="grid-container1">
+            <div class="grid-item1">
+              <h1>Select Emergency</h1>
+            </div>
+            <div class="grid-item2">
+              <h1>Service Required</h1>
+            </div>
+          </div>
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="cont">
+                <div class="head">
+                  <h1>Heart Attack</h1>
+                </div>
+                <div class="btn1" id="b1">
+                  <button>Click Here</button>
+                </div>
               </div>
-              <div class="grid-item2">
-                <h1>Service Required</h1>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <div class="modaltext">
+                    <span
+                      >Your response has been recorded and the nearest hospital
+                      providing these emergency services has been alerted.</span
+                    >
+                    <span>
+                      The details for the hospital alerted are:
+                      <div class="hosdetails">
+                        <span>Hospital Name:</span>
+                        <span>Hospital Addresss:</span>
+                      </div>
+                    </span>
+                    <span> Thank you for using our services. </span>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="grid-container">
-              <div class="grid-item">
-                <div class="cont">
-                  <div class="head">
-                    <h1>Heart Attack</h1>
-                  </div>
-                  <div class="btn1" id="b1">
-                    <button>Click Here</button>
-                  </div>
+            <div class="grid-item">
+              <div class="cont">
+                <div class="head">
+                  <h1>Seizures</h1>
                 </div>
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                  <!-- Modal content -->
-                  <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="modaltext">
-                      <span
-                        >Your response has been recorded and the nearest
-                        hospital providing these emergency services has been
-                        alerted.</span
-                      >
-                      <span>
-                        The details for the hospital alerted are:
-                        <div class="hosdetails">
-                          <span>Hospital Name:</span>
-                          <span>Hospital Addresss:</span>
-                        </div>
-                      </span>
-                      <span> Thank you for using our services. </span>
-                    </div>
+                <div class="btn2" id="b2">
+                  <button>Click Here</button>
+                </div>
+              </div>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <div class="modaltext">
+                    <span
+                      >Your response has been recorded and the nearest hospital
+                      providing these emergency services has been alerted.</span
+                    >
+                    <span>
+                      The details for the hospital alerted are:
+                      <div class="hosdetails">
+                        <span>Hospital Name:</span>
+                        <span>Hospital Addresss:</span>
+                      </div>
+                    </span>
+                    <span> Thank you for using our services. </span>
                   </div>
                 </div>
               </div>
-              <div class="grid-item">
-                <div class="cont">
-                  <div class="head">
-                    <h1>Seizures</h1>
-                  </div>
-                  <div class="btn2" id="b2">
-                    <button>Click Here</button>
-                  </div>
+            </div>
+            <div class="grid-item">
+              <div class="cont">
+                <div class="head">
+                  <h1>Accident</h1>
                 </div>
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                  <!-- Modal content -->
-                  <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="modaltext">
-                      <span
-                        >Your response has been recorded and the nearest
-                        hospital providing these emergency services has been
-                        alerted.</span
-                      >
-                      <span>
-                        The details for the hospital alerted are:
-                        <div class="hosdetails">
-                          <span>Hospital Name:</span>
-                          <span>Hospital Addresss:</span>
-                        </div>
-                      </span>
-                      <span> Thank you for using our services. </span>
-                    </div>
+                <div class="btn3" id="b3">
+                  <button>Click Here</button>
+                </div>
+              </div>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <div class="modaltext">
+                    <span
+                      >Your response has been recorded and the nearest hospital
+                      providing these emergency services has been alerted.</span
+                    >
+                    <span>
+                      The details for the hospital alerted are:
+                      <div class="hosdetails">
+                        <span>Hospital Name:</span>
+                        <span>Hospital Addresss:</span>
+                      </div>
+                    </span>
+                    <span> Thank you for using our services. </span>
                   </div>
                 </div>
               </div>
-              <div class="grid-item">
-                <div class="cont">
-                  <div class="head">
-                    <h1>Accident</h1>
-                  </div>
-                  <div class="btn3" id="b3">
-                    <button>Click Here</button>
-                  </div>
+            </div>
+            <div class="grid-item">
+              <div class="cont">
+                <div class="head">
+                  <h1>Other</h1>
                 </div>
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                  <!-- Modal content -->
-                  <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="modaltext">
-                      <span
-                        >Your response has been recorded and the nearest
-                        hospital providing these emergency services has been
-                        alerted.</span
-                      >
-                      <span>
-                        The details for the hospital alerted are:
-                        <div class="hosdetails">
-                          <span>Hospital Name:</span>
-                          <span>Hospital Addresss:</span>
-                        </div>
-                      </span>
-                      <span> Thank you for using our services. </span>
-                    </div>
-                  </div>
+                <div class="btn4" id="b4">
+                  <button>Click Here</button>
                 </div>
               </div>
-              <div class="grid-item">
-                <div class="cont">
-                  <div class="head">
-                    <h1>Other</h1>
-                  </div>
-                  <div class="btn4" id="b4">
-                    <button>Click Here</button>
-                  </div>
-                </div>
-                <!-- The Modal -->
-                <div id="myModal" class="modal">
-                  <!-- Modal content -->
-                  <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <div class="modaltext">
-                      <span
-                        >Your response has been recorded and the nearest
-                        hospital providing these emergency services has been
-                        alerted.</span
-                      >
-                      <span>
-                        The details for the hospital alerted are:
-                        <div class="hosdetails">
-                          <span>Hospital Name:</span>
-                          <span>Hospital Addresss:</span>
-                        </div>
-                      </span>
-                      <span> Thank you for using our services. </span>
-                    </div>
+              <!-- The Modal -->
+              <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <div class="modaltext">
+                    <span
+                      >Your response has been recorded and the nearest hospital
+                      providing these emergency services has been alerted.</span
+                    >
+                    <span>
+                      The details for the hospital alerted are:
+                      <div class="hosdetails">
+                        <span>Hospital Name:</span>
+                        <span>Hospital Addresss:</span>
+                      </div>
+                    </span>
+                    <span> Thank you for using our services. </span>
                   </div>
                 </div>
               </div>
@@ -341,7 +349,6 @@
           </div>
         </div>
       </div>
-      <!-- Naya Footer Section Ends -->
     </div>
   </body>
 </html>

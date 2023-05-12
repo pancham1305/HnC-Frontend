@@ -8,22 +8,22 @@ var modal = document.getElementById("myModal");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-btn1.addEventListener("click",  (e) => {
+btn1.addEventListener("click", (e) => {
   console.log("1");
   modal.style.display = "block";
 });
 
-btn2.addEventListener("click",  (e) => {
+btn2.addEventListener("click", (e) => {
   console.log("2");
   modal.style.display = "block";
 });
 
-btn3.addEventListener("click",  (e) => {
+btn3.addEventListener("click", (e) => {
   console.log("3");
   modal.style.display = "block";
 });
 
-btn4.addEventListener("click",  (e) => {
+btn4.addEventListener("click", (e) => {
   console.log("4");
   modal.style.display = "block";
 });
@@ -40,9 +40,16 @@ window.onclick = function (event) {
   }
 };
 
-const emercont = document.querySelector(".container");
+const emercont = document.querySelector(".wrapper");
 const button_e_emergency = document.querySelector(".emergencybtn");
-
+let a = 0;
 button_e_emergency.addEventListener("click", (e) => {
-  emercont.classList.remove("hide");
+  a++;
+  if (a % 2) {
+    emercont.classList.remove("hidden");
+    emercont.classList.add("blur");
+  } else {
+    emercont.classList.add("hidden");
+    emercont.classList.remove("blur");
+  }
 });

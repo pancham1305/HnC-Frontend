@@ -302,12 +302,20 @@ button {
   }
 }
 
-.hide {
-  visibility: hidden;
+.hidden {
+  display: none !important;
 }
 .wrapper {
   display: flex;
   justify-content: center;
   height: 100%;
   align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+}
+.blur {
+  backdrop-filter: blur(8px);
 }
