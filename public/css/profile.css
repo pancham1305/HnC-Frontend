@@ -278,7 +278,7 @@ button:active {
   background-image: url("https://cdn-icons-png.flaticon.com/512/126/126477.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
+  background-size: 50%;
 }
 
 #imgupload {
@@ -290,4 +290,27 @@ button:active {
 
 #file-chosen {
   margin-right: 8px;
+}
+
+@media only screen and (max-width:689px) {
+  .det {
+    width:auto;
+  }
+
+  #Profile {
+    width:100%;
+    height:auto;
+    padding: 0;
+    padding-top:16px;
+    padding-bottom:16px;
+  }
+
+  #Profile img {
+    width:200px;
+    height:200px;
+  }
+
+  .logo {
+    margin-top: 16px;
+  }
 }

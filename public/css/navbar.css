@@ -96,3 +96,16 @@
   color: rgb(255, 255, 255);
 }
 
+@media screen and (max-width:689px) {
+  .topnav .tile h2 {
+    font-size: 30px;
+  }
+
+  .topnav a {
+    font-size: 15px;
+  }
+
+  .material-symbols-outlined {
+    font-size: 15px;
+  }
+}
