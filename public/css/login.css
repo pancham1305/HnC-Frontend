@@ -89,6 +89,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 16px;
+  cursor: pointer;
 }
 
 .logo img {
