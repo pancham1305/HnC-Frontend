@@ -746,6 +746,11 @@ form.example::after {
   text-align: center;
 }
 
+.foot .const2 .right .first{
+  font-weight: bold;
+  font-size: 28px;
+}
+
 .foot .const2 .right .second,
 .third,
 .fourth {
@@ -838,6 +843,7 @@ form.example::after {
 }
 
 .cds #lg {
+  color: mediumseagreen;
   font-size: 40px;
   justify-content: center;
   display: flex;
