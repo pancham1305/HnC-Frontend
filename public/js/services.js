@@ -3,9 +3,10 @@ toggle between hiding and showing the dropdown content */
 const changetype = document.getElementById("changetype");
 let currentType = "cities";
 const inputs = document.getElementById("input");
+// document.addEventListener("DOMContentLoaded", async () => {
+const drop = document.getElementById("dropbtn");
+const s = document.querySelector(".search");
 document.addEventListener("DOMContentLoaded", async () => {
-  const drop = document.getElementById("dropbtn");
-  const s = document.querySelector(".search");
   drop.innerHTML = `${cities
     .map((city) => `<option class="links">${city.name}</option>`)
     .join("\n")}`;
@@ -21,10 +22,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     // })
     drop.selectedIndex = selectedIndex;
     document.getElementById("btn").click();
-    // localStorage.removeItem("searchinfo");
+    localStorage.removeItem("searchinfo");
   }
 });
-
 // Filter Box JS
 
 var button = document.getElementById("filter-button");
@@ -89,8 +89,8 @@ var requestOptions = {
 // DOM Variables
 const loader = document.querySelector(".loaderContainer");
 const body = document.querySelector(".hospitals");
-const drop = document.getElementById("dropbtn");
-const s = document.querySelector(".search");
+// const drop = document.getElementById("dropbtn");
+// const s = document.querySelector(".search");
 const btn1 = document.getElementById("btn");
 const collection = document.querySelector(".collection");
 // Functional Programming Starts
@@ -195,97 +195,144 @@ btn1.addEventListener("click", async (e) => {
   e.preventDefault();
   loader.classList.remove("hide");
   body.classList.add("hide");
-  const params = {
-    cityname: drop.options[drop.selectedIndex].value,
-    query: s.value,
-  };
-  const info = await search(params.query, params.cityname);
-  console.log(info.results);
-  collection.innerHTML = "";
-  for (let i of info.results) {
-    console.log(i);
-    newCardCreation(i);
+  if (changetype != "cities") {
+    e.preventDefault();
+    const info = searchBar.value;
+
+    // const name = drop.options[drop.selectedIndex].text;
+    let name;
+    if (currentType !== "cities") {
+      console.log(inputs.value);
+      name = await fetch(
+        `https://api.postalpincode.in/pincode/${inputs.value}`
+      ).then((res) => res.json());
+      console.log(name);
+      name = name[0].PostOffice[0].Division;
+      // console.log(name);
+      // return;
+      for (let i = 0; i < drop.options.length; i++) {
+        // console.log(drop.options[i].value);
+        for (let j = 0; j < drop.options[i].value.length; j++) {
+          if (
+            drop.options[i].value.includes(
+              drop.options[i].value.substr(0, j)
+            ) == name
+          ) {
+            drop.selectedIndex = i;
+            console.log(i);
+            break;
+          }
+        }
+      }
+    } else {
+      name = drop.options[drop.selectedIndex].text;
+    }
+    const query = searchBar.value;
+    console.log(name, query);
+    localStorage.setItem(
+      "searchinfo",
+      JSON.stringify({ name, query, selectedIndex: drop.selectedIndex })
+    );
+    const Sinfo = await search(name, query);
+    collection.innerHTML = "";
+    for (let i of Sinfo.results) {
+      console.log(i);
+      newCardCreation(i);
+    }
+  } else {
+    const params = {
+      cityname: drop.options[drop.selectedIndex].value,
+      query: s.value,
+    };
+    const info = await search(params.query, params.cityname);
+    console.log(info.results);
+    collection.innerHTML = "";
+    for (let i of info.results) {
+      console.log(i);
+      newCardCreation(i);
+    }
   }
+
   loader.classList.add("hide");
   body.classList.remove("hide");
 });
 
-const cardCreation = (name, address, id) => {
-  console.log(name, address, id);
-  const div = document.createElement("div");
-  div.classList.add("card");
-  const div2 = document.createElement("div");
-  div2.classList.add("finfo");
-  const div3 = document.createElement("div3");
-  div3.classList.add("image");
-  const div4 = document.createElement("div");
-  div4.classList.add("top");
-  const h4 = document.createElement("h4");
-  const b = document.createElement("b");
-  const p = document.createElement("p");
-  const br = document.createElement("br");
-  const span = document.createElement("span");
-  const spanI = document.createElement("spanI");
-  const spanII = document.createElement("spanII");
-  const spanIII = document.createElement("spanIII");
-  const spanIV = document.createElement("spanIV");
-  span.classList.add("material-symbols-outlined");
-  span.id = "star";
-  span.innerText = "star";
-  spanI.classList.add("material-symbols-outlined");
-  spanI.id = "star";
-  spanI.innerText = "star";
-  spanII.classList.add("material-symbols-outlined");
-  spanII.id = "star";
-  spanII.innerText = "star";
-  spanIII.classList.add("material-symbols-outlined");
-  spanIII.id = "star";
-  spanIII.innerText = "star";
-  spanIV.classList.add("material-symbols-outlined");
-  spanIV.id = "star";
-  spanIV.innerText = "star";
-  const div5 = document.createElement("div");
-  div5.classList.add("bottom");
-  const p2 = document.createElement("p");
-  p2.innerHTML = "<b>Rating:</b>";
-  const btn = document.createElement("button");
-  const span2 = document.createElement("span");
-  span2.innerText = "Status";
-  const img = document.createElement("img");
-  img.src = "../images/hospital-1.jpg";
-  div3.appendChild(img);
-  b.innerText = name;
-  h4.appendChild(b);
-  p.appendChild(br);
-  p.innerHTML = `<br><b>Address:</b> ${address}`;
-  // Insertions Start
-  h4.appendChild(b);
-  div4.appendChild(h4);
-  div4.appendChild(p); //left
-  div4.innerHTML += "<br>";
-  p2.appendChild(span);
-  p2.appendChild(spanI);
-  p2.appendChild(spanII);
-  p2.appendChild(spanIII);
-  p2.appendChild(spanIV);
-  div4.appendChild(p2);
-  btn.appendChild(span2);
-  div5.appendChild(btn);
-  div.appendChild(div3);
-  div.appendChild(div2);
-  div2.appendChild(div4);
-  div2.appendChild(div5);
-  collection.appendChild(div);
-  const form = document.createElement("form");
-  form.method = "GET";
-  form.action = "/hospital";
-  const input = document.createElement("input");
-  input.type = "hidden";
-  input.name = "id";
-  input.value = id.iv;
-  form.appendChild(input);
-  div.appendChild(form);
-};
+// const cardCreation = (name, address, id) => {
+//   console.log(name, address, id);
+//   const div = document.createElement("div");
+//   div.classList.add("card");
+//   const div2 = document.createElement("div");
+//   div2.classList.add("finfo");
+//   const div3 = document.createElement("div3");
+//   div3.classList.add("image");
+//   const div4 = document.createElement("div");
+//   div4.classList.add("top");
+//   const h4 = document.createElement("h4");
+//   const b = document.createElement("b");
+//   const p = document.createElement("p");
+//   const br = document.createElement("br");
+//   const span = document.createElement("span");
+//   const spanI = document.createElement("spanI");
+//   const spanII = document.createElement("spanII");
+//   const spanIII = document.createElement("spanIII");
+//   const spanIV = document.createElement("spanIV");
+//   span.classList.add("material-symbols-outlined");
+//   span.id = "star";
+//   span.innerText = "star";
+//   spanI.classList.add("material-symbols-outlined");
+//   spanI.id = "star";
+//   spanI.innerText = "star";
+//   spanII.classList.add("material-symbols-outlined");
+//   spanII.id = "star";
+//   spanII.innerText = "star";
+//   spanIII.classList.add("material-symbols-outlined");
+//   spanIII.id = "star";
+//   spanIII.innerText = "star";
+//   spanIV.classList.add("material-symbols-outlined");
+//   spanIV.id = "star";
+//   spanIV.innerText = "star";
+//   const div5 = document.createElement("div");
+//   div5.classList.add("bottom");
+//   const p2 = document.createElement("p");
+//   p2.innerHTML = "<b>Rating:</b>";
+//   const btn = document.createElement("button");
+//   const span2 = document.createElement("span");
+//   span2.innerText = "Status";
+//   const img = document.createElement("img");
+//   img.src = "../images/hospital-1.jpg";
+//   div3.appendChild(img);
+//   b.innerText = name;
+//   h4.appendChild(b);
+//   p.appendChild(br);
+//   p.innerHTML = `<br><b>Address:</b> ${address}`;
+//   // Insertions Start
+//   h4.appendChild(b);
+//   div4.appendChild(h4);
+//   div4.appendChild(p); //left
+//   div4.innerHTML += "<br>";
+//   p2.appendChild(span);
+//   p2.appendChild(spanI);
+//   p2.appendChild(spanII);
+//   p2.appendChild(spanIII);
+//   p2.appendChild(spanIV);
+//   div4.appendChild(p2);
+//   btn.appendChild(span2);
+//   div5.appendChild(btn);
+//   div.appendChild(div3);
+//   div.appendChild(div2);
+//   div2.appendChild(div4);
+//   div2.appendChild(div5);
+//   collection.appendChild(div);
+//   const form = document.createElement("form");
+//   form.method = "GET";
+//   form.action = "/hospital";
+//   const input = document.createElement("input");
+//   input.type = "hidden";
+//   input.name = "id";
+//   input.value = id.iv;
+//   form.appendChild(input);
+//   div.appendChild(form);
+// };
 
 const newCardCreation = (data) => {
   const con = document.createElement("a");
@@ -345,25 +392,27 @@ if (user) {
 login.style.fontSize = "20px";
 login.style.flexDirection = "row";
 const searchBar = document.querySelector(".search");
-searchBar.addEventListener("input", async () => {
-  const query = searchBar.value;
-  const name = drop.options[drop.selectedIndex].text;
-  console.log(name, query);
-  const data = await fetch("https://api-hnc.onrender.com/api/search/auto", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ name, query }),
-  }).then((rs) => rs.json());
-  console.log(data);
 
-  const arr = data.features;
-  const possible = document.querySelector("#possible");
-  possible.innerHTML = "";
-  createoptions(arr);
-});
+if (changetype == "cities") {
+  searchBar.addEventListener("input", async () => {
+    const query = searchBar.value;
+    const name = drop.options[drop.selectedIndex].text;
+    console.log(name, query);
+    const data = await fetch("https://api-hnc.onrender.com/api/search/auto", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name, query }),
+    }).then((rs) => rs.json());
+    console.log(data);
 
+    const arr = data.features;
+    const possible = document.querySelector("#possible");
+    possible.innerHTML = "";
+    createoptions(arr);
+  });
+}
 // data ko iterate karke daal do option
 const createoptions = (arr) => {
   const possible = document.querySelector("#possible");
@@ -375,23 +424,68 @@ const createoptions = (arr) => {
 };
 
 const change = (e) => {
-    e.preventDefault();
-    if (currentType === "cities") {
-        drop?.classList.add("disable");
-        inputs?.classList.remove("disable");
-        changetype.innerText = "Search by Cities";
-        currentType = "pincode";
-        input.value = "";
-    } else {
-        drop?.classList.remove("disable");
-        inputs?.classList.add("disable");
-        changetype.innerText = "Search by Pincode";
-        currentType = "cities";
-    }
+  e.preventDefault();
+  if (currentType === "cities") {
+    drop?.classList.add("disable");
+    inputs?.classList.remove("disable");
+    changetype.innerText = "Search by Cities";
+    currentType = "pincode";
+    input.value = "";
+  } else {
+    drop?.classList.remove("disable");
+    inputs?.classList.add("disable");
+    changetype.innerText = "Search by Pincode";
+    currentType = "cities";
+  }
 };
 
 changetype.addEventListener("click", change);
 if (currentType != "cities") {
-    const possible = document.querySelector("#possible");
-    possible.innerHTML = "";
+  const possible = document.querySelector("#possible");
+  possible.innerHTML = "";
+}
+const btn8 = document.querySelector(".searchbtnicon");
+
+btn8.addEventListener("click", async (e) => {
+  // check if user has disabled location access
+  if (changetype != "cities") {
+    e.preventDefault();
+    const info = searchBar.value;
+
+    // const name = drop.options[drop.selectedIndex].text;
+    let name;
+    if (currentType !== "cities") {
+      name = await fetch(
+        `https://api.postalpincode.in/pincode/${inputs.value}`
+      ).then((res) => res.json());
+      console.log(name);
+      name = name[0].PostOffice[0].Division;
+      console.log(name);
+      // return;
+      for (let i = 0; i < drop.options.length; i++) {
+        // console.log(drop.options[i].value);
+        if (drop.options[i].value.includes(name.split(" ")[0])) {
+          drop.selectedIndex = i;
+          console.log(i);
+          break;
+        }
+      }
+    } else {
+      name = drop.options[drop.selectedIndex].text;
+    }
+    const query = searchBar.value;
+    console.log(name, query);
+    localStorage.setItem(
+      "searchinfo",
+      JSON.stringify({ name, query, selectedIndex: drop.selectedIndex })
+    );
+    search(query, name);
+  } else {
+  }
+});
+
+changetype.addEventListener("click", change);
+if (currentType != "cities") {
+  const possible = document.querySelector("#possible");
+  possible.innerHTML = "";
 }
