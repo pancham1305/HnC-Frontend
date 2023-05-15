@@ -155,4 +155,19 @@ body {
   color: #ffffff;
   border: none;
 }
-    
+@media screen and (max-width: 689px) {
+  .inputs {
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .form .input,
+  .form .select {
+    width: 100%;
+  }
+  body {
+    overflow-x: hidden;
+    font-weight: 600;
+  }
+}
