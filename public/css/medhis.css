@@ -81,6 +81,16 @@ body {
     transform:  scale(1.1);
 }
 
+.viewonmap .material-symbols-outlined {
+    font-size: 24px;
+    margin-right: 8px;
+    transition: 250ms;
+}
+
+.viewonmap:hover .material-symbols-outlined {
+    color: #000;
+}
+
 .form {
     margin-top: calc( 100vh - 64vh );
     display: flex;
