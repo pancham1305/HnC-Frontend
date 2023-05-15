@@ -216,7 +216,7 @@ span {
 }
 textarea:required:invalid,
 input:required:invalid {
-  background-color: rgba(255, 144, 144, 0.5);
+  background-color: lavender;
 }
 
 @media only screen and (max-width: 550px) {

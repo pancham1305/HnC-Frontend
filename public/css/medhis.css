@@ -73,6 +73,7 @@ body {
     box-shadow: 0 0 8px rgb(255, 255, 255);
     transition: 250ms;
     border: 1px solid #fff;
+    gap: 10px;
 }
 
 .viewonmap:hover {
@@ -117,3 +118,58 @@ body {
     align-items: center;
     padding-left: 16px;
 }
+
+.part{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .banner .leftside{
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+    }
+    .banner .rightside{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content:flex-end;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .viewonmap{
+        width: 100%;
+        font-size: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .date{
+        font-size: 16px;
+    }
+
+    .form{
+        width: 90%;
+    }
+    .part{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        display: flex;
+    }
+    .form .input, .form .select{
+        width: 100%;
+    }
+  }
