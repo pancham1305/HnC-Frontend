@@ -40,10 +40,11 @@ const getData = async () => {
       "Content-Type": "application/json",
     },
   }).then((r) => r.json());
-  const arr = data.split(":");
+  console.log(data);
+  const arr = data.data2.split(":");
   console.log(arr);
   showdata(arr);
-
+  renderHosInfo(data)
   loader?.classList.add("hide");
   body?.classList.remove("hide");
 };
@@ -110,3 +111,72 @@ type?.addEventListener("change", async (e) => {
     .join("\n")}
   `;
 });
+
+function renderHosInfo(data) {
+  const hosInfo = document.getElementById("hosInfo");
+  hosInfo.innerHTML = `
+  <div class="head">
+    Hospital Details
+  </div>
+  <div class="info">
+    <div class="det">
+      <div class="name">
+        Number of Beds
+      </div>
+      <div class="value">
+        ${data.info.no_of_beds.free_beds ?? 10}/${
+      data.info.no_of_beds.total_beds ?? 20
+  }
+      </div>
+    </div>
+    <div class="det">
+      <div class="name">
+        Number of Ventilators
+      </div>
+      <div class="value">
+        ${data.info.no_of_ventilators.free_ventilators ?? 5}/${
+      data.info.no_of_ventilators.total_ventilators ?? 10
+  }
+      </div>
+    </div>
+    <div class="det">
+      <div class="name">
+        Doctor's Count
+      </div>
+      <div class="value">
+        ${data.info.doctors_count ?? 6}
+      </div>
+    </div>
+    <div class="det">
+      <div class="name">
+        Employee's Count
+      </div>
+      <div class="value">
+        ${data.info.employees_count ?? 60}
+      </div>
+    </div>
+    <div class="det">
+      <div class="name">
+        Facilities
+      </div>
+      <pre class="value">
+${data.info.facilities.map((x) => `∷ ${x}`).join("\n")}
+      </pre>
+    </div>
+  </div>
+  `;
+}
+
+/*
+  info: {
+    noOfBeds: {
+      total: 100,
+      free: 50,
+    },
+    noOfVentilators: {
+      total: 10,
+      free: 5,
+    },
+
+  }
+*/

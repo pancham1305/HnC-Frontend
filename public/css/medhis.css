@@ -18,10 +18,10 @@ body {
 }
 
 .banner {
-    background: url(../images/hospital.avif) no-repeat center center;
+    background: url(../images/hospital.avif) no-repeat center center fixed;
     background-color: rgba(0, 0, 0, 0.5);
     background-size: cover;
-    height: 64vh;
+    height: calc(100vh - 95px);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -42,18 +42,20 @@ body {
 .banner .leftside,
 .banner .rightside {
     width: 50%;
-    height: auto;
+    height: 50%;
     display: flex;
-    gap: 16px;
-    justify-content: space-evenly;
+    gap: 32px;
+    justify-content: flex-end;
     align-items: flex-start;
     flex-direction: column;
     color: #fff;
     z-index: 1;
     padding: 16px;
+    margin-bottom: 32px;
 }
 
 .banner .rightside {
+    height: auto;
     align-items: flex-end;
 }
 
@@ -66,7 +68,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Exo 2', sans-serif;
+    font-family: "Exo 2", sans-serif;
     font-weight: 700;
     cursor: pointer;
     border-radius: 4px;
@@ -107,8 +109,27 @@ body {
     color: #000;
 }
 
-.form {
-    margin-top: calc(100vh - 64vh);
+.wrap {
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+        background-image: 
+     radial-gradient(
+    circle at top left,
+        #ffffff 10%,
+        #e4e4e4 30%,
+        #ffffff 20%,
+        #cbcbcb 75%,
+        #3c3c3c
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form,.info {
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -121,6 +142,21 @@ body {
     padding-bottom: 64px;
     box-shadow: 0 0 8px rgb(0, 0, 0);
     margin-bottom: 64px;
+}
+.info {
+    justify-content: center;
+    padding-bottom: 16px;
+    border: 1px solid #bbbbbb;
+}
+.form .head {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    font-size: 2rem;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 .form .input,
@@ -137,7 +173,6 @@ body {
 
 @media only screen and (max-width: 768px) {
     .banner .leftside {
-        width: 90%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -174,9 +209,9 @@ body {
     .form .input,
     .form .select {
         width: 100%;
+        font-size: 1rem;
     }
 }
-
 
 .form .input,
 .form .select {
@@ -192,7 +227,6 @@ body {
 
 .inputs {
     display: flex;
-    flex-wrap: wrap;
     width: 100%;
     height: 100%;
     justify-content: space-between;
@@ -204,8 +238,11 @@ body {
 }
 
 .btn2 {
-    width: 80%;
+    width: 50%;
     height: 40px;
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 300px;
     border-radius: 4px;
     border: none;
     background-color: #4573fe;
@@ -215,6 +252,11 @@ body {
     cursor: pointer;
     margin-top: 16px;
     transition: 0.25s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .btn2 {
@@ -228,21 +270,81 @@ body {
     color: #ffffff;
     border: none;
 }
+label {
+    font-size: 0.8em;
+}
+
+#hosInfo {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 32px;
+    height:100%;
+    padding-top: 16px;
+    margin-top: 16px;
+}
+
+#hosInfo .head {
+    font-size: 1.5rem;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    padding-right: 16px;
+    height:100%;
+}
+
+.info .det {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    border-left: 2px dashed #5b5b5b;
+    padding-left: 16px;
+    display: flex;
+    margin-bottom: 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.info .det .name {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.info .det .value {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-left: 2rem;
+}
 
 @media screen and (max-width: 689px) {
     .inputs {
-        flex-direction: column;
-        justify-content: center;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        font-size: 12px;
+        font-size: 2vw;
         font-weight: 400;
         padding-left: 4px;
         padding-right: 4px;
+        gap:0;
+    }
+
+    label {
+        font-size: 1rem;
     }
 
     .form .input,
     .form .select {
-        width: 100%;
+        width: 50%;
     }
 
     body {
