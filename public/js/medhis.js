@@ -1,3 +1,4 @@
+
 var testb = document.getElementById("testbox");
 var scanb = document.getElementById("scanbox");
 var checkupb = document.getElementById("checkupbox");
@@ -44,7 +45,7 @@ const getData = async () => {
   const arr = data.data2.split(":");
   console.log(arr);
   showdata(arr);
-  renderHosInfo(data)
+  renderHosInfo(data);
   loader?.classList.add("hide");
   body?.classList.remove("hide");
 };
@@ -125,7 +126,7 @@ function renderHosInfo(data) {
       </div>
       <div class="value">
         ${data.info.no_of_beds.free_beds ?? 10}/${
-      data.info.no_of_beds.total_beds ?? 20
+    data.info.no_of_beds.total_beds ?? 20
   }
       </div>
     </div>
@@ -135,7 +136,7 @@ function renderHosInfo(data) {
       </div>
       <div class="value">
         ${data.info.no_of_ventilators.free_ventilators ?? 5}/${
-      data.info.no_of_ventilators.total_ventilators ?? 10
+    data.info.no_of_ventilators.total_ventilators ?? 10
   }
       </div>
     </div>

@@ -359,7 +359,11 @@ const newCardCreation = (data) => {
   info.style.width = "100%";
   info.style.height = "40%";
 
-  con.href = `./hospital.html?id=${data.sig.iv}:${data.sig.data}`;
+  if (user) {
+    con.href = `./hospital.html?id=${data.sig.iv}:${data.sig.data}`;
+  } else {
+    con.href = "./login.html";
+  }
 
   const namet = document.createElement("h3");
   namet.innerText = data.name;
