@@ -337,6 +337,7 @@ btn1.addEventListener("click", async (e) => {
 const newCardCreation = (data) => {
   const con = document.createElement("a");
   con.classList.add("card");
+  con.classList.add("roll-in-blurred-left");
   con.style.backgroundImage = "url('../images/hospital.avif')";
   con.style.backgroundSize = "cover";
   con.style.backgroundPosition = "center";
