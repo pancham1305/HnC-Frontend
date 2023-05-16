@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     .join("\n")}`;
   //
   if (localStorage.getItem("searchinfo")) {
-    const { name, query, selectedIndex } = JSON.parse(
+    let { name, query, selectedIndex } = JSON.parse(
       localStorage.getItem("searchinfo")
     );
     console.log(name, query, selectedIndex);
@@ -21,7 +21,15 @@ document.addEventListener("DOMContentLoaded", async () => {
     //   name == x;
     // })
     drop.selectedIndex = selectedIndex;
-    document.getElementById("btn").click();
+    // document.getElementById("btn").click();
+    query = !query ? "hospital" : query;
+    const info = await search(name, query);
+    collection.innerHTML = "";
+    for (let i of info.results) {
+      console.log(i);
+      newCardCreation(i);
+    }
+    loader.classList.add("hide");
     localStorage.removeItem("searchinfo");
   }
 });
