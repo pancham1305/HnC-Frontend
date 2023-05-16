@@ -1077,3 +1077,10 @@ select {
   margin-right: 2rem;
   padding: 1rem;
 }
+@media only screen and (max-width: 689px){
+  .emergencybtn{
+    width: 6rem;
+    /* height: 1rem; */
+    
+  }
+}
