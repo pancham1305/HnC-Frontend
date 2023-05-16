@@ -96,7 +96,7 @@
           "Content-Type": "application/json",
         },
       }).then((r) => r.json());
-      const arr = data.split(":");
+      const arr = data.data2.split(":");
       console.log(arr);
       console.log(arr[0]);
       const [lat, lng] = arr[1].split(",").map((x) => parseFloat(x));
