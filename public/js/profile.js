@@ -85,6 +85,7 @@ const getProfileData = async () => {
 
 const showdata = (profileData) => {
   let data = profileData;
+  console.log(data)
   const username = data.username;
   let age = data.age;
   let bloodGroup = data.bloodgroup;
@@ -104,29 +105,30 @@ const showdata = (profileData) => {
       cardCreation(e);
     });
   } else {
-    data = {
-      hospital: "No hospitals visited yet...",
-      payment: "-",
-      type: "-",
-      typeValue: " ",
-      date: "NaN",
-    };
-    cardCreation(data);
-  }
-  if (data.appointments?.length) {
-    data.appointments.forEach((e) => {
-      cardCreation2(e);
+ 
+    cardCreation({
+        hospital: "No hospitals visited yet...",
+        payment: "-",
+        type: "-",
+        typeValue: " ",
+        date: "NaN",
     });
+  }
+  console.log(data.username);
+  if (data.appointments.length) {
+      data.appointments.forEach((e) => {
+          cardCreation2(e);
+      });
   } else {
-    data = {
-      hospital: "No appointments yet...",
+      data = {
+          hospital: "No appointments yet...",
 
-      payment: "-",
-      type: "-",
-      typeValue: " ",
-      date: "NaN",
-    };
-    cardCreation2(data);
+          payment: "-",
+          type: "-",
+          typeValue: " ",
+          date: "NaN",
+      };
+      cardCreation2(data);
   }
 };
 getProfileData();

@@ -1,6 +1,7 @@
 
 var testb = document.getElementById("testbox");
 var scanb = document.getElementById("scanbox");
+var hospitalName;
 var checkupb = document.getElementById("checkupbox");
 var testbtn = document.getElementById("test");
 var scanbtn = document.getElementById("scan");
@@ -43,6 +44,7 @@ const getData = async () => {
   }).then((r) => r.json());
   console.log(data);
   const arr = data.data2.split(":");
+  hospitalName = arr[0];
   console.log(arr);
   showdata(arr);
   renderHosInfo(data);
@@ -96,7 +98,7 @@ ${Object.keys(list)
 `;
 
 typevalue.innerHTML = `
-  ${list["test"]
+  ${list["Test"]
     .map(
       (x) => `<option value="${x}">${x[0].toUpperCase() + x.slice(1)}</option>`
     )
@@ -181,3 +183,37 @@ ${data.info.facilities.map((x) => `∷ ${x}`).join("\n")}
 
   }
 */
+
+const formming = document.getElementById("formming");
+
+formming?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  
+  const data = {
+    name: Name.value,
+    age: age.value,
+    bloodgroup: bloodgroup.value,
+    phone: phone.value,
+    type: type.value,
+    typeValue: typevalue.value,
+    hospital: hospitalName,
+    date: new Date().toLocaleString(),
+  };
+
+  console.log(data);
+
+  const res = await fetch("http://localhost:50000/api/formsubmit", {
+    method: "POST",
+    body: JSON.stringify(data),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }).then( e=> {
+   return  e.json();
+  });
+
+  localStorage.setItem("user", JSON.stringify(res.data));
+
+  window.location.href = "./profile.html";
+
+});
