@@ -69,54 +69,54 @@
       </div>
     </div>
     <div class="wrap">
-    <div id="main">
-      <div id="Profile">
-        <div class="logo">
-          <img src="../images/guestlogo.jpg" alt="" id="profileAvatar" />
-          <form method="" action="" enctype="" id="imgupload">
-            <label for="img" class="picup"></label>
-            <input
-              type="file"
-              name="img"
-              id="img"
-              accept="image/jpeg, image/png, image/jpg"
-              hidden
-            />
-            <span id="file-chosen">No file chosen</span>
-            <input type="hidden" name="uid" id="hidid" value="" />
-            <button id="Upload">Upload</button>
-          </form>
-          <button id="logout">Logout</button>
-        </div>
-        <div class="details">
-          <section>
-            Name:
-            <div class="det" id="username"></div>
-          </section>
-          <div class="part">
+      <div id="main">
+        <div id="Profile">
+          <div class="logo">
+            <img src="../images/guestlogo.jpg" alt="" id="profileAvatar" />
+            <form method="" action="" enctype="" id="imgupload">
+              <label for="img" class="picup"></label>
+              <input
+                type="file"
+                name="img"
+                id="img"
+                accept="image/jpeg, image/png, image/jpg"
+                hidden
+              />
+              <span id="file-chosen">No file chosen</span>
+              <input type="hidden" name="uid" id="hidid" value="" />
+              <button id="Upload">Upload</button>
+            </form>
+            <button id="logout">Logout</button>
+          </div>
+          <div class="details">
             <section>
-              Age:
-              <div class="det" id="age"></div>
+              Name:
+              <div class="det" id="username"></div>
             </section>
+            <div class="part">
+              <section>
+                Age:
+                <div class="det" id="age"></div>
+              </section>
+              <section>
+                Blood Group:
+                <div class="det" id="bloodGroup"></div>
+              </section>
+            </div>
             <section>
-              Blood Group:
-              <div class="det" id="bloodGroup"></div>
+              Phone:
+              <div class="det" id="phone"></div>
             </section>
           </div>
-          <section>
-            Phone:
-            <div class="det" id="phone"></div>
-          </section>
         </div>
+        <div id="MedHis"></div>
       </div>
-      <div id="MedHis"></div>
-    </div>
 
-    <div class="cen">
-      <div class="center">
-        <h2 style="text-align: center">Medical History</h2>
+      <div class="cen">
+        <div class="center" id="center1">
+          <h2 style="text-align: center">Medical History</h2>
 
-        <!-- <div class="MedicalDet">
+          <!-- <div class="MedicalDet">
           
           <section class="detail">Hospital Name</section>
           <section class="detail">Type</section>
@@ -125,8 +125,22 @@
           <section class="detail">Time</section>
           <section class="detail">Payment</section>
         </div> -->
+        </div>
       </div>
-    </div>
+      <div class="cen">
+        <div class="center" id="center2">
+          <h2 style="text-align: center">Appointments</h2>
+
+          <!-- <div class="MedicalDet">
+            <section class="detail">Hospital Name</section>
+            <section class="detail">Type</section>
+            <section class="detail">TypeValue</section>
+            <section class="detail">Date</section>
+            <section class="detail">Time</section>
+            <section class="detail">Payment</section>
+          </div> -->
+        </div>
+      </div>
     </div>
     <div id="profile" class="hide"></div>
   </body>

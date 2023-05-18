@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     profile.src = "https://api-hnc.onrender.com/images/" + user.uid;
   }
 });
-const center = document.querySelector(".center");
+const center = document.querySelector("#center1");
 const body = document.querySelector("body");
 
 const hidid = document.getElementById("hidid");
@@ -43,6 +43,33 @@ const cardCreation = (data) => {
   div1.appendChild(divpart2of2);
   mainDiv.appendChild(div1);
   center.appendChild(mainDiv);
+};
+const center2 = document.querySelector("#center2");
+const cardCreation2 = (data) => {
+  //Hospital Name
+  const mainDiv = document.createElement("div");
+  mainDiv.classList.add("MedicalDet");
+  const div = document.createElement("div");
+  const h3 = document.createElement("h3");
+  h3.innerText = `${data.hospital}`;
+  div.appendChild(h3);
+  mainDiv.appendChild(div);
+  // Type: TypeValue
+  const div1 = document.createElement("div");
+  div1.classList.add("name");
+  const divpart1of2 = document.createElement("div");
+  divpart1of2.classList.add("part2");
+  divpart1of2.innerHTML = `${data.type}: ${data.typeValue}`;
+  const divpart2of2 = document.createElement("div");
+  divpart2of2.classList.add("part2");
+  divpart2of2.innerHTML = `<section>${
+    data.date === "NaN" ? "NaN" : new Date(data.date).toLocaleString()
+  }</section><section class="currency">${data.payment}Rs</section>`;
+
+  div1.appendChild(divpart1of2);
+  div1.appendChild(divpart2of2);
+  mainDiv.appendChild(div1);
+  center2.appendChild(mainDiv);
 };
 
 body.classList.add("hide");
@@ -78,16 +105,28 @@ const showdata = (profileData) => {
     });
   } else {
     data = {
-      hospital: {
-        name: "No hospitals visited yet...",
-        address: "Unavailable",
-      },
+      hospital: "No hospitals visited yet...",
       payment: "-",
       type: "-",
       typeValue: " ",
       date: "NaN",
     };
     cardCreation(data);
+  }
+  if (data.appointments?.length) {
+    data.appointments.forEach((e) => {
+      cardCreation2(e);
+    });
+  } else {
+    data = {
+      hospital: "No appointments yet...",
+
+      payment: "-",
+      type: "-",
+      typeValue: " ",
+      date: "NaN",
+    };
+    cardCreation2(data);
   }
 };
 getProfileData();
@@ -163,5 +202,5 @@ const actualBtn = document.getElementById("img");
 const fileChosen = document.getElementById("file-chosen");
 
 actualBtn.addEventListener("change", function () {
-    fileChosen.textContent = this.files[0].name;
+  fileChosen.textContent = this.files[0].name;
 });
