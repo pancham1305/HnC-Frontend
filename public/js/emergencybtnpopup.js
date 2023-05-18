@@ -36,6 +36,7 @@ span.onclick = function () {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
+    document.body.style.overflow = "auto";
     modal.style.display = "none";
   }
 };
@@ -51,9 +52,11 @@ button_e_emergency.addEventListener("click", (e) => {
     emercont.classList.remove("hidden");
     emercont.classList.add("blur");
     btn5.innerHTML = '<span class="material-symbols-outlined">close</span>';
+    document.body.style.overflow = "hidden";
   } else {
     emercont.classList.add("hidden");
     emercont.classList.remove("blur");
     btn5.innerHTML = '<span class="content">Emergency Button</span>';
+    document.body.style.overflow = "auto";
   }
 });
