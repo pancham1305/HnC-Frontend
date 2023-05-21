@@ -60,3 +60,30 @@ button_e_emergency.addEventListener("click", (e) => {
     document.body.style.overflow = "auto";
   }
 });
+function giveRandom(mini, maxi) {
+  return Math.random() * (maxi - mini) + mini;
+}
+
+// Emergency Button Final Work
+const hosDetails = document.querySelector(".hosdetails");
+const btn_of_emergency = document.querySelectorAll(".emer");
+btn_of_emergency.forEach((e) => {
+  e.addEventListener("click", async () => {
+    let url = `https://api-hnc.onrender.com/api/search/`;
+    const a = "hospital";
+    const b = drop.options[drop.selectedIndex].text;
+    const info = await fetch(url, {
+      method: "POST",
+      body: JSON.stringify({ city: b, query: a }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then((e) => e.json());
+    console.log(info.results);
+    // hosDetails.innerHTML = "";
+    const index = Math.floor(giveRandom(0, info.results.length));
+    console.log("index:", index);
+    hosDetails.innerHTML = `<span class="hosname">Hospital Name::${info.results[index].name}</span>
+    <span class="hosadd"> Hospital Address::${info.results[index].address_line2}</span>`;
+  });
+});

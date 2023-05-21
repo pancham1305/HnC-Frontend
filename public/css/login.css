@@ -45,7 +45,7 @@ body {
 .box {
   background-color: #ffffff;
   width: 500px;
-  height: 500px;
+  height: 589px;
   border-radius: 10px;
   display: flex;
   justify-content: flex-start;
@@ -222,7 +222,7 @@ input:required:invalid {
 @media only screen and (max-width: 550px) {
   .box {
     width: 90%;
-    height: 500px;
+    height: 589px;
   }
 
   .err {

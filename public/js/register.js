@@ -37,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log({ closebtn });
 
   register.addEventListener("click", async (e) => {
+    const guestbtn = document.querySelector(".guestbtn");
+    const temp = guestbtn.innerHTML;
+    guestbtn.innerHTML = `<div class="spinner"></div>`;
     try {
       e.preventDefault();
 
@@ -45,14 +48,29 @@ document.addEventListener("DOMContentLoaded", () => {
       const age = document.getElementById("age").value;
       const bloodgroup = document.getElementById("bloodgroup").value;
       const password = document.getElementById("pass").value;
-      if (!phone || !password) return sendError("Please fill all the fields");
-      if (phone.length === 13) phone = phone.slice(3);
+      if (!phone || !password) {
+        sendError("Please fill all the fields");
+        guestbtn.innerHTML = `${temp}`;
+        return;
+      }
+      if (phone.length === 13) {
+        phone = phone.slice(3);
+        guestbtn.innerHTML = `${temp}`;
+        return;
+      }
 
       phone = Number(phone).toString();
-      if (isNaN(phone) || phone.length !== 10)
-        return sendError("Invalid Phone Number");
-      if (password.length < 8)
-        return sendError("Password must be atleast 8 characters long");
+      if (isNaN(phone) || phone.length !== 10) {
+        sendError("Invalid Phone Number");
+        guestbtn.innerHTML = `${temp}`;
+        // console.log(temp);
+        return;
+      }
+      if (password.length < 8) {
+        sendError("Password must be atleast 8 characters long");
+        guestbtn.innerHTML = `${temp}`;
+        return;
+      }
 
       const data = {
         phone,
@@ -76,9 +94,11 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "./services.html";
       } else {
         sendError(resData.message);
+        // guestbtn.innerHTML = `${temp}`;
       }
     } catch (e) {
       sendError(`Failed to register: ${e.message}`);
+      // guestbtn.innerHTML = `${temp}`;
     }
   });
 });

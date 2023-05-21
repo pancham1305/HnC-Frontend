@@ -163,3 +163,4 @@ if (currentType != "cities") {
   const possible = document.querySelector("#possible");
   possible.innerHTML = "";
 }
+

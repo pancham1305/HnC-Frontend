@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- import login.css -->
-  <link rel="stylesheet" href="login.css" />
-  <!-- Material Icons -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" />
-  <!-- Material Symbol -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined" />
-  <link rel="stylesheet" href="style.css" />
 
   <head>
     <meta charset="UTF-8">
@@ -25,7 +13,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
     <!-- Material Symbol -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
 
     <title>Register</title>
     <link rel="shortcut icon" href="..\images\favicon1.ico">
@@ -67,9 +56,11 @@
         <label for="password">Password</label>
         <input type="password" class="password" id="pass" required minlength="8">
       </div>
+      <div class="g-recaptcha"
+       data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRUiMYl_00o5mXJrR"></div>
       <a href="" class="forgor">Forgot Password...</a>
 
-      <input type="submit" class="btn" id="register"></input>
+      <div class="guestbtn"><input type="submit" class="btn" id="register"></input></div>
 
 
       <div class="text"><span>Already Have An Account?</span>&nbsp;&nbsp;<a href="./login.html"
