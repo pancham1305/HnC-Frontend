@@ -178,7 +178,7 @@ btnup.addEventListener("click", async (e) => {
         body: formData,
         headers: {
             "x-uid": hidid.value,
-            Authorization: `Bearer ${user.token}`,
+            Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
     }).then((e) => e.json());
     console.log(imgLink);
