@@ -67,7 +67,10 @@ body {
   align-items: center;
   /* background-image: linear-gradient(to right, #cdd6c8 0%, #4698a6 51%, #335489d3 100%); */
   /* background-image: linear-gradient(to right, #30332f8a 0%, #222d2ebd 51%, #00050cb6 100%); */
-  border: 2px solid rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(0, 0, 0, 0.169);
+  background-color: rgba(0, 0, 0, 0.171);
+    box-shadow: 0 0 16px 1px rgba(225, 225, 225, 0.71);
+  color:#fafafa;
   text-align: center;
   gap: 0px;
   padding: 4px;
@@ -92,13 +95,9 @@ body {
 
 .grid-item {
   /* background-image: linear-gradient(to right, #cdd6c8 0%, #4698a6 51%, #335489d3 100%); */
-  background-image: linear-gradient(
-    to right,
-    #30332f8a 0%,
-    #222d2ebd 51%,
-    #00050cb6 100%
-  );
-  border: 2px solid rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.171);
+  border: 2px solid rgba(0, 0, 0, 0.137);
+  box-shadow: 0 0 16px 1px rgba(225, 225, 225, 0.71);
   text-align: center;
   padding-bottom: 16px;
   border-radius: 16px;
@@ -130,6 +129,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 250ms;
 }
 
 button {
