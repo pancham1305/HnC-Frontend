@@ -181,10 +181,10 @@ const search = async (a, b) => {
   //   localStorage.removeItem("searchinfo");
   // }
   // console.log(b);
-  let url = `http://localhost:80/api/search`;
+  let url = `https://pancham1305-proxy.deno.dev/`;
   const info = await fetch(url, {
     method: "POST",
-    body: JSON.stringify({ city: b, query: a }),
+    body: JSON.stringify({ city: b, query: a ,endpoint: "/api/search"}),
     headers: {
       "Content-Type": "application/json",
     },
