@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const profile = document.getElementById("profileAvatar");
     if (user.hasProfile) {
-        profile.src = "https://pancham1305-proxy.deno.dev/images/" + user.uid;
+        profile.src = "https://api-hnc.onrender.com/images/" + user.uid;
     }
 });
 const center = document.querySelector("#center1");
@@ -172,7 +172,7 @@ btnup.addEventListener("click", async (e) => {
     formData.append("phone", user.phone);
     formData.append("endpoint", "/api/upload");
     btnup.textContent = "Uploading...";
-    let url = "https://pancham1305-proxy.deno.dev/";
+    let url = "https://api-hnc.onrender.com/api/upload";
     const { imgLink, hasProfile } = await fetch(url, {
         method: "POST",
         body: formData,

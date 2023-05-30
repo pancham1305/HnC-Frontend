@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const temp = login.innerHTML;
             login.innerHTML = `<div class="spinner"></div>`;
             const resData = await fetch(
-                "https://pancham1305-proxy.deno.dev/",
+                "https://api-hnc.onrender.com/api/login",
                 {
                     method: "POST",
                     headers: {
@@ -101,16 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
             endpoint: "/api/login",
         };
 
-        const res = await fetch(
-            "https://pancham1305-proxy.deno.dev/",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data),
+        const res = await fetch("https://api-hnc.onrender.com/api/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
             },
-        ).then((d) => d.json());
+            body: JSON.stringify(data),
+        }).then((d) => d.json());
         if (res.status === 200) {
             localStorage.setItem("user", JSON.stringify(res.data));
             window.location.href = "./services.html";

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             async (pos) => {
                 const { latitude, longitude } = pos.coords;
                 const exactloc = await fetch(
-                    `https://pancham1305-proxy.deno.dev/`,
+                    `https://api-hnc.onrender.com/api/userLoc`,
                     {
                         method: "POST",
                         body: JSON.stringify({
@@ -113,18 +113,13 @@ searchBar.addEventListener("input", async () => {
             ? drop.options[drop.selectedIndex].text
             : input.value;
     console.log(name, query);
-    const data = await fetch(
-        "https://pancham1305-proxy.deno.dev/",
-        {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ name, query ,
-            endpoint: "/api/search/auto",
-            }),
+    const data = await fetch("https://api-hnc.onrender.com/api/search/auto", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
         },
-    ).then((rs) => rs.json());
+        body: JSON.stringify({ name, query, endpoint: "/api/search/auto" }),
+    }).then((rs) => rs.json());
     console.log(data);
 
     const arr = data.features;

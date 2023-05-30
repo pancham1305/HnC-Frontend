@@ -89,16 +89,17 @@
             const id = new URLSearchParams(window.location.search).get("id");
             const [b, hospitalinfo] = id.split(":");
 
-            const data = await fetch(
-                "https://pancham1305-proxy.deno.dev/",
-                {
-                    method: "POST",
-                    body: JSON.stringify({ hospitalinfo, b, endpoint:"/api/hospital" }),
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
+            const data = await fetch("https://api-hnc.onrender.com/api/hospital", {
+                method: "POST",
+                body: JSON.stringify({
+                    hospitalinfo,
+                    b,
+                    endpoint: "/api/hospital",
+                }),
+                headers: {
+                    "Content-Type": "application/json",
                 },
-            ).then((r) => r.json());
+            }).then((r) => r.json());
             const arr = data.data2.split(":");
             console.log(arr);
             console.log(arr[0]);
@@ -138,16 +139,17 @@
             };
             // Request To backend For Routing
             const getRoute = async () => {
-                const data = await fetch(
-                    "https://pancham1305-proxy.deno.dev/",
-                    {
-                        method: "POST",
-                        body: JSON.stringify({ fromWaypoint, towaypoint, endpoint: "/api/route" }),
-                        headers: {
-                            "Content-Type": "application/json",
-                        },
+                const data = await fetch("https://api-hnc.onrender.com/api/route", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        fromWaypoint,
+                        towaypoint,
+                        endpoint: "/api/route",
+                    }),
+                    headers: {
+                        "Content-Type": "application/json",
                     },
-                ).then((r) => r.json());
+                }).then((r) => r.json());
                 return data;
             };
             const route = await getRoute();

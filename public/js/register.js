@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             const resData = await fetch(
-                "https://pancham1305-proxy.deno.dev/",
+                "https://api-hnc.onrender.com/api/register",
                 {
                     method: "POST",
                     headers: {

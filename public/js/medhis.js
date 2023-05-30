@@ -34,7 +34,7 @@ const getData = async () => {
     // localStorage.removeItem("hospitalinfo");
     loader?.classList.remove("hide");
     body?.classList.add("hide");
-    const data = await fetch("https://pancham1305-proxy.deno.dev/", {
+    const data = await fetch("https://api-hnc.onrender.com/api/hospital", {
         method: "POST",
         body: JSON.stringify({ hospitalinfo, b, endpoint: "/api/hospital" }),
         headers: {
@@ -209,7 +209,7 @@ formming?.addEventListener("submit", async (e) => {
 
     console.log(data);
 
-    const res = await fetch("https://pancham1305-proxy.deno.dev/", {
+    const res = await fetch("https://api-hnc.onrender.com/api/formsubmit", {
         method: "POST",
         body: JSON.stringify(data),
         headers: {
